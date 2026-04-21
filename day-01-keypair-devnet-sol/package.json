@@ -1,0 +1,13 @@
+{
+  "name": "day-01-keypair-devnet-sol",
+  "version": "1.0.0",
+  "description": "Day 1 of 100 Days of Solana — Generate a keypair and get devnet SOL",
+  "type": "module",
+  "scripts": {
+    "create-wallet": "node create-wallet.mjs",
+    "check-balance": "node check-balance.mjs"
+  },
+  "dependencies": {
+    "@solana/kit": "latest"
+  }
+}
