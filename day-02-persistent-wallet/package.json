@@ -1,0 +1,12 @@
+{
+  "name": "day-02-persistent-wallet",
+  "version": "1.0.0",
+  "description": "Day 2 of 100 Days of Solana — Persistent wallet with balance check",
+  "type": "module",
+  "scripts": {
+    "start": "node persistent-wallet.mjs"
+  },
+  "dependencies": {
+    "@solana/kit": "latest"
+  }
+}

@@ -1,0 +1,3 @@
+# Never commit your private key file!
+wallet.json
+node_modules/

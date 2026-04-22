@@ -12,6 +12,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 | Day | Challenge | Status |
 |-----|-----------|--------|
 | [Day 1](./day-01-keypair-devnet-sol/) | Generate a keypair and get devnet SOL | ✅ Done |
+| [Day 2](./day-02-persistent-wallet/) | Create a persistent wallet and check its balance | ✅ Done |
 
 ---
 
