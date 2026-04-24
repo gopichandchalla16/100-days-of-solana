@@ -14,6 +14,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 | [Day 1](./day-01-keypair-devnet-sol/) | Generate a keypair and get devnet SOL | ✅ Done |
 | [Day 2](./day-02-persistent-wallet/) | Create a persistent wallet and check its balance | ✅ Done |
 | [Day 3](./day-03-sol-and-lamports/) | Understand SOL and Lamports | ✅ Done |
+| [Day 4](./day-04-browser-wallet/) | Connect a browser wallet — display live address & balance | ✅ Done |
 
 ---
 
@@ -27,4 +28,6 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 ## Tech Stack
 - Solana Web3.js / `@solana/kit`
 - Node.js
+- Vite (browser apps from Day 4)
+- Wallet Standard (`@wallet-standard/app`)
 - Solana Devnet
