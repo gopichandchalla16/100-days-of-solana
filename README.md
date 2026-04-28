@@ -16,6 +16,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 | [Day 3](./day-03-sol-and-lamports/) | Understand SOL and Lamports | ✅ Done |
 | [Day 4](./day-04-browser-wallet/) | Connect a browser wallet — display live address & balance | ✅ Done |
 | [Day 5](./day-05-wallet-types/) | Explore different wallet types — CLI, browser, mobile | ✅ Done |
+| Day 6 | [Share your experiences on DEV](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) — On-chain identity blog post | ✅ Done |
 
 ---
 
@@ -23,6 +24,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 - 🐦 Twitter: [@GopichandAI](https://twitter.com/GopichandAI)
 - 💼 GitHub: [gopichandchalla16](https://github.com/gopichandchalla16)
 - 🔗 LinkedIn: [gopichandchalla](https://linkedin.com/in/gopichandchalla)
+- ✍️ DEV: [gopichand_dev](https://dev.to/gopichand_dev)
 
 ---
 
