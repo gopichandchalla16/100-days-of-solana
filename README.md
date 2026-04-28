@@ -18,6 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 | [Day 5](./day-05-wallet-types/) | Explore different wallet types — CLI, browser, mobile | ✅ Done |
 | Day 6 | [Share your experiences on DEV](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) — On-chain identity blog post | ✅ Done |
 | Day 7 | [Amplify Day](https://x.com/GopichandAI/status/2049175042584445308) — Shared Week 1 progress on X & engaged with community | ✅ Done |
+| [Day 8](./day-08-read-solana/) | Read your first on-chain data — balance reader with @solana/kit | ✅ Done |
 
 ---
 
