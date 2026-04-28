@@ -15,6 +15,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 | [Day 2](./day-02-persistent-wallet/) | Create a persistent wallet and check its balance | ✅ Done |
 | [Day 3](./day-03-sol-and-lamports/) | Understand SOL and Lamports | ✅ Done |
 | [Day 4](./day-04-browser-wallet/) | Connect a browser wallet — display live address & balance | ✅ Done |
+| [Day 5](./day-05-wallet-types/) | Explore different wallet types — CLI, browser, mobile | ✅ Done |
 
 ---
 
