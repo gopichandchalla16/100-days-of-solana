@@ -9,9 +9,9 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-9%20%2F%20100%20Days-01696f?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-10%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
-![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-9945FF?style=for-the-badge)
+![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
 ```
 Day  1  ████████████████████████████████████████  ✅
@@ -23,11 +23,12 @@ Day  6  ████████████████████████
 Day  7  ████████████████████████████████████████  ✅
 Day  8  ████████████████████████████████████████  ✅
 Day  9  ████████████████████████████████████████  ✅
-Day 10  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 10  ████████████████████████████████████████  ✅
+Day 11  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 9%
+[██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 10%
 ```
 
 ---
@@ -52,7 +53,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 |-----|-----------|-------------|--------|
 | [Day 8](./day-08-read-solana/) | Read your first on-chain data — SOL balance | RPC, `getBalance`, lamports → SOL | ✅ Done |
 | [Day 9](./day-09-fetch-transactions/) | Fetch & display recent transactions | `getSignaturesForAddress`, slots, blockTime | ✅ Done |
-| Day 10 | Coming soon | — | ⏳ |
+| [Day 10](./day-10-dashboard/) | Browser dashboard — balance + transactions UI | Vite, `@solana/kit` in browser, DOM rendering | ✅ Done |
 | Day 11 | Coming soon | — | ⏳ |
 | Day 12 | Coming soon | — | ⏳ |
 | Day 13 | Coming soon | — | ⏳ |
@@ -77,11 +78,14 @@ Slot      : 459179358
 Time      : 1/5/2026, 12:24:18 am
 Status    : Success
 ---
-Signature : 5MSFcXCr21ePqgBH9PKeQw46KW215Ym4mthvu7EXCgu1S7vC8feDU1oqtXv75UnQjFo5xHS5yzxDKCph9aWHQ7Yy
-Slot      : 459179356
-Time      : 1/5/2026, 12:24:17 am
-Status    : Success
----
+```
+
+**Day 10 — Browser Dashboard**
+```
+🌐 Vite dev server running at http://localhost:5173
+✅ Live SOL balance + 5 recent transactions rendered in browser
+✅ Clickable signatures → Solana Explorer (devnet)
+✅ Error handling + loading spinner
 ```
 
 ---
@@ -94,7 +98,7 @@ Status    : Success
 
 - `@solana/kit` — Official Solana TypeScript SDK
 - `Node.js` — Runtime for scripts
-- `Vite` — Browser apps (from Day 4)
+- `Vite` — Browser apps bundler (Days 4, 10)
 - `Wallet Standard` — Browser wallet integration
 - Solana Devnet — Test network
 
@@ -110,5 +114,5 @@ Status    : Success
 
 ---
 
-> *"Solana is a massive database where every table is public and every query is free."*
-> — 100 Days of Solana, Day 8
+> *"Days 8 & 9 = terminal scripts. Day 10 = browser app. Same RPC. Different destination."*
+> — 100 Days of Solana, Day 10
