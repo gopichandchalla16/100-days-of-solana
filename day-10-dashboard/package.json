@@ -1,0 +1,16 @@
+{
+  "name": "day-10-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@solana/kit": "^0.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
