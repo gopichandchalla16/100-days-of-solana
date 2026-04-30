@@ -3,60 +3,48 @@
 > **100 Days of Solana** | Arc Theme: Reading the Blockchain
 
 ## What I built
-A **zero-dependency browser dashboard** that reads live Solana devnet data for any address. No Vite, no npm, no build step — just open `index.html` directly in your browser. Calls the Solana RPC API using the browser's native `fetch()`.
+A dark-themed browser dashboard using Vite + `@solana/kit` that fetches **live on-chain data** from Solana devnet — SOL balance and 5 recent transactions — for any address entered by the user.
 
 ## Features
-- 🔍 Search any Solana devnet address
-- 💰 Live SOL balance with animated number counter
-- 📜 Last 5 transactions — signature, slot, timestamp, status
-- 🔗 Clickable signatures → open in Solana Explorer
-- ⚠️ Error handling for invalid addresses and network issues
-- ⏳ Loading state with spinner
-- 🎨 Dark themed UI with Solana brand colors
+- 🔍 Search any devnet address
+- 💰 Live SOL balance (green)
+- 📜 Last 5 transactions with signature, slot, timestamp, status
+- 🔗 Clickable signatures → Solana Explorer (devnet)
+- ⚠️ Error handling for invalid addresses / network failures
+- ⏳ Loading spinner while fetching
+- ⚡ Auto-fetches Token-2022 address on page load
 
-## How to run
-**Option 1 — Open directly in browser:**
-```
-Just double-click index.html — no server needed!
-```
+## Setup
 
-**Option 2 — Simple HTTP server (if CORS issues):**
+### Option A — Vite (Official)
 ```bash
-# Python (from the day-10-dashboard folder)
-python3 -m http.server 8080
-# Open http://localhost:8080
+# Inside WSL / Ubuntu terminal
+npm create vite@latest day-10-dashboard -- --template vanilla
+cd day-10-dashboard
+npm install
+npm install @solana/kit
+# Copy index.html, main.js, style.css from this repo
+npm run dev
 ```
+Open http://localhost:5173
 
-## How it works
-This dashboard calls the [Solana JSON-RPC API](https://solana.com/docs/rpc) directly using the browser's built-in `fetch()`. No SDK needed — the RPC endpoints are standard HTTP POST requests.
-
-```js
-// Example: Get balance
-const res = await fetch('https://api.devnet.solana.com', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    jsonrpc: '2.0', id: 1,
-    method: 'getBalance',
-    params: [address, { commitment: 'confirmed' }]
-  })
-});
-```
+### Option B — Standalone (No build tools)
+Open `dashboard-standalone.html` directly in any browser. Uses Solana JSON RPC via `fetch()` — no npm needed.
 
 ## What I learned
-- Solana RPC is plain JSON-RPC over HTTP — no special SDK required in the browser
-- `getBalance` returns lamports as an integer → divide by 1,000,000,000 for SOL
-- `getSignaturesForAddress` returns newest-first transaction history
-- Error handling in browser is critical — bad addresses and network errors need graceful UI
-- Moving from `console.log` (Days 8 & 9) to DOM rendering is the Web2 → Web3 frontend bridge
+- `@solana/kit` works identically in Node.js AND the browser — Vite bundles it automatically
+- Days 8 & 9 RPC calls (`getBalance`, `getSignaturesForAddress`) are identical in browser vs terminal
+- Error handling is more critical in browser apps — users need readable feedback, not stack traces
+- Moving from `console.log` to DOM rendering = the bridge from Web2 backend scripts to Web3 frontend
+- `fetch()` can call Solana JSON RPC directly without any SDK (vanilla JS option)
 
 ## Key Concept
-> Days 8 & 9 = backend terminal scripts
-> Day 10 = frontend browser app
-> **Same RPC calls. Different output target.**
+> Days 8 & 9 = backend terminal (`console.log`)
+> Day 10 = frontend browser (`innerHTML`)
+> **Same RPC. Different destination.**
 
 ## Resources
-- [Solana RPC docs](https://solana.com/docs/rpc)
-- [getBalance](https://solana.com/docs/rpc/http/getbalance)
-- [getSignaturesForAddress](https://solana.com/docs/rpc/http/getsignaturesforaddress)
+- [Vite Getting Started](https://vitejs.dev/guide/)
+- [Solana Kit docs](https://www.solanakit.com/docs)
 - [Solana Explorer (devnet)](https://explorer.solana.com/?cluster=devnet)
+- [Solana JSON RPC docs](https://solana.com/docs/rpc)
