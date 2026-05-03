@@ -7,56 +7,98 @@ Solana's account model is **not** a replacement for databases — it solves a di
 
 ---
 
-## CLI Commands Run
+## CLI Commands Run (All 5 Steps)
 
-### Step 1: Inspect wallet account
+### Step 1: Configure devnet + airdrop
 ```bash
 solana config set --url https://api.devnet.solana.com
 solana airdrop 2
+```
+
+### Output
+```
+Config File: /home/gopichand/.config/solana/cli/config.yml
+RPC URL: https://api.devnet.solana.com
+WebSocket URL: wss://api.devnet.solana.com/ (computed)
+Keypair Path: /home/gopichand/.config/solana/id.json
+Commitment: confirmed
+
+# Note: airdrop rate-limited — used faucet.solana.com instead
+```
+
+---
+
+### Step 2: Inspect my wallet account
+```bash
+solana address
 solana account $(solana address)
 ```
 
-### Output — Wallet Account
+### ✅ Live Output — Wallet Account
 ```
-Public Key: <your-wallet-address>
-Balance: 2000000000 lamports (2 SOL)
+Public Key: AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
+Balance: 2.5 SOL
 Owner: 11111111111111111111111111111111
 Executable: false
 Rent Epoch: 18446744073709551615
-Length: 0 (0x0) bytes
 ```
 
-### Step 2: Inspect Token Program account
+> **Key insight:** Owner is the System Program (`111...1`) — this is a plain wallet.
+> `Executable: false` means it stores **data (SOL balance)**, not code.
+> `0 bytes` of data — wallet accounts carry no extra payload.
+
+---
+
+### Step 3: Inspect Token Program account
 ```bash
 solana account TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
 ```
 
-### Output — Token Program Account
+### ✅ Live Output — Token Program
 ```
 Public Key: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
-Balance: 1141440 lamports
+Balance: 6.453353357 SOL
 Owner: BPFLoaderUpgradeab1e11111111111111111111111
 Executable: true
 Rent Epoch: 18446744073709551615
-Length: 134080 bytes (compiled program code)
+Length: 36 (0x24) bytes
+0000:   02 00 00 00  27 f1 90 b1  d3 af 98 b8  ce 71 4c 44   ....'........qLD
+0010:   e8 ca df f9  f8 fc 45 cb  8e 5f ac 42  02 ef f8 11   ......E.._.B....
+0020:   0d 97 dd 37                                          ...7
 ```
 
-### Step 3: Rent costs
+> **Key insight:** Owner is BPF Loader — this is an **executable program account**.
+> The 36 bytes are a pointer to the actual compiled program code (upgradeable loader pattern).
+> Same account model, totally different purpose from a wallet.
+
+---
+
+### Step 4: Check rent-exempt costs
 ```bash
 solana rent 0
 solana rent 100
 solana rent 1000
 ```
 
-### Output — Rent Costs
+### ✅ Live Output — Rent Costs
 ```
-Rent-exempt minimum: 890880 lamports        # 0 bytes
-Rent-exempt minimum: 1588800 lamports       # 100 bytes
-Rent-exempt minimum: 7991040 lamports       # 1000 bytes
+Rent-exempt minimum: 0.00089088 SOL    # 0 bytes
+Rent-exempt minimum: 0.00158688 SOL    # 100 bytes
+Rent-exempt minimum: 0.00785088 SOL    # 1000 bytes
 ```
 
-> Storage cost scales **linearly** with data size — ~6,960 lamports per byte.
+> Storage cost scales **linearly** — ~0.00000696 SOL per byte (~6,960 lamports/byte).
 > This deposit is **fully refundable** when you close the account.
+> Compare to Web2: you pay AWS/GCP monthly regardless of individual record size.
+
+---
+
+### Step 5: View on Solana Explorer
+Wallet address on devnet Explorer:
+[https://explorer.solana.com/address/AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y?cluster=devnet](https://explorer.solana.com/address/AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y?cluster=devnet)
+
+> Anyone can view this — no login, no API key, no admin access needed.
+> In Web2 you’d need DB admin credentials. On Solana, it’s public by default.
 
 ---
 
@@ -103,14 +145,14 @@ Rent-exempt minimum: 7991040 lamports       # 1000 bytes
 
 ---
 
-## Account Types Encountered Today
+## Account Types Compared Today
 
-| Account | Type | Executable | Owner |
-|---------|------|-----------|-------|
-| Your wallet | System account | `false` | System Program (`111...1`) |
-| Token Program | Program account | `true` | BPF Loader |
-| Token mint | Data account | `false` | Token Program |
-| Token account | Data account | `false` | Token Program |
+| Account | Type | Executable | Owner | Balance |
+|---------|------|-----------|-------|--------|
+| My wallet | System account | `false` | System Program (`111...1`) | 2.5 SOL |
+| Token Program | Program account | `true` | BPF Loader | 6.45 SOL |
+| Token mint | Data account | `false` | Token Program | rent deposit |
+| Token account | Data account | `false` | Token Program | rent deposit |
 
 ---
 
