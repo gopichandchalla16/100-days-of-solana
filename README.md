@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-10%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-11%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -24,11 +24,12 @@ Day  7  ████████████████████████
 Day  8  ████████████████████████████████████████  ✅
 Day  9  ████████████████████████████████████████  ✅
 Day 10  ████████████████████████████████████████  ✅
-Day 11  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 11  ████████████████████████████████████████  ✅
+Day 12  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 10%
+[███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 11%
 ```
 
 ---
@@ -54,14 +55,14 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 8](./day-08-read-solana/) | Read your first on-chain data — SOL balance | RPC, `getBalance`, lamports → SOL | ✅ Done |
 | [Day 9](./day-09-fetch-transactions/) | Fetch & display recent transactions | `getSignaturesForAddress`, slots, blockTime | ✅ Done |
 | [Day 10](./day-10-dashboard/) | Browser dashboard — balance + transactions UI | Vite, `@solana/kit` in browser, DOM rendering | ✅ Done |
-| Day 11 | Coming soon | — | ⏳ |
+| [Day 11](./day-11-accounts-vs-databases/) | Compare accounts vs databases | Account model, rent, PDAs, ownership rules | ✅ Done |
 | Day 12 | Coming soon | — | ⏳ |
 | Day 13 | Coming soon | — | ⏳ |
 | Day 14 | Coming soon | — | ⏳ |
 
 ---
 
-## Live Outputs So Far
+## Live CLI Outputs So Far
 
 **Day 8 — Balance Reader**
 ```
@@ -71,21 +72,24 @@ Balance: 0.001159846 SOL
 
 **Day 9 — Transaction Fetcher**
 ```
-Last 5 transactions for TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb:
-
 Signature : 5wJa1Pz83czCHuKb4eQsRoUXfL9GdPQfKgVDrGowiesFh2KEuoDamA6BTZ7svckxBJQMToPLfuwakUq3xn6Q7TKA
-Slot      : 459179358
-Time      : 1/5/2026, 12:24:18 am
-Status    : Success
----
+Slot      : 459179358 | Time: 1/5/2026, 12:24:18 am | Status: Success
 ```
 
-**Day 10 — Browser Dashboard**
+**Day 11 — Account Inspection**
 ```
-🌐 Vite dev server running at http://localhost:5173
-✅ Live SOL balance + 5 recent transactions rendered in browser
-✅ Clickable signatures → Solana Explorer (devnet)
-✅ Error handling + loading spinner
+# Wallet account
+Owner: 11111111111111111111111111111111  (System Program)
+Executable: false | Data: 0 bytes
+
+# Token Program account
+Owner: BPFLoaderUpgradeab1e11111111111111111111111
+Executable: true  | Data: 134080 bytes
+
+# Rent costs
+solana rent 0     → 890880 lamports
+solana rent 100   → 1588800 lamports
+solana rent 1000  → 7991040 lamports
 ```
 
 ---
@@ -99,7 +103,7 @@ Status    : Success
 - `@solana/kit` — Official Solana TypeScript SDK
 - `Node.js` — Runtime for scripts
 - `Vite` — Browser apps bundler (Days 4, 10)
-- `Wallet Standard` — Browser wallet integration
+- `Solana CLI` — Account inspection, rent calculation (Day 11)
 - Solana Devnet — Test network
 
 ---
@@ -114,5 +118,5 @@ Status    : Success
 
 ---
 
-> *"Days 8 & 9 = terminal scripts. Day 10 = browser app. Same RPC. Different destination."*
-> — 100 Days of Solana, Day 10
+> *"When you think 'I'd just add a column for that' — pause and ask: How does this map to an account?"*
+> — 100 Days of Solana, Day 11
