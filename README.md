@@ -9,9 +9,9 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-11%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-12%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
-![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
+![Chain](https://img.shields.io/badge/Chain-Devnet%20%26%20Mainnet-14f195?style=for-the-badge)
 
 ```
 Day  1  ████████████████████████████████████████  ✅
@@ -25,11 +25,12 @@ Day  8  ████████████████████████
 Day  9  ████████████████████████████████████████  ✅
 Day 10  ████████████████████████████████████████  ✅
 Day 11  ████████████████████████████████████████  ✅
-Day 12  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 12  ████████████████████████████████████████  ✅
+Day 13  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 11%
+[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 12%
 ```
 
 ---
@@ -56,7 +57,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 9](./day-09-fetch-transactions/) | Fetch & display recent transactions | `getSignaturesForAddress`, slots, blockTime | ✅ Done |
 | [Day 10](./day-10-dashboard/) | Browser dashboard — balance + transactions UI | Vite, `@solana/kit` in browser, DOM rendering | ✅ Done |
 | [Day 11](./day-11-accounts-vs-databases/) | Compare accounts vs databases | Account model, rent, PDAs, ownership rules | ✅ Done |
-| Day 12 | Coming soon | — | ⏳ |
+| [Day 12](./day-12-compare-networks/) | Compare devnet vs mainnet — same address, different data | `devnet()` & `mainnet()` helpers, network isolation | ✅ Done |
 | Day 13 | Coming soon | — | ⏳ |
 | Day 14 | Coming soon | — | ⏳ |
 
@@ -70,26 +71,30 @@ Address: TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
 Balance: 0.001159846 SOL
 ```
 
-**Day 9 — Transaction Fetcher**
-```
-Signature : 5wJa1Pz83czCHuKb4eQsRoUXfL9GdPQfKgVDrGowiesFh2KEuoDamA6BTZ7svckxBJQMToPLfuwakUq3xn6Q7TKA
-Slot      : 459179358 | Time: 1/5/2026, 12:24:18 am | Status: Success
-```
-
 **Day 11 — Account Inspection**
 ```
-# Wallet account
-Owner: 11111111111111111111111111111111  (System Program)
-Executable: false | Data: 0 bytes
+Wallet  → Owner: System Program | Executable: false | 2.5 SOL | 0 bytes
+Token Program → Owner: BPF Loader | Executable: true  | 6.45 SOL | 36 bytes
+Rent: 0 bytes=0.00089088 SOL | 1000 bytes=0.00785088 SOL
+```
 
-# Token Program account
-Owner: BPFLoaderUpgradeab1e11111111111111111111111
-Executable: true  | Data: 134080 bytes
+**Day 12 — Network Comparison**
+```
+==================================================
+  DEVNET  (test network — free SOL, test data)
+==================================================
+  Address : TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
+  Balance : [devnet balance]
+  Recent Transactions: [devnet-specific signatures]
 
-# Rent costs
-solana rent 0     → 890880 lamports
-solana rent 100   → 1588800 lamports
-solana rent 1000  → 7991040 lamports
+==================================================
+  MAINNET (live network — real SOL, real data)
+==================================================
+  Address : TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
+  Balance : [mainnet balance — different from devnet]
+  Recent Transactions: [mainnet-specific signatures]
+
+Same address. Same code. Only the URL changed.
 ```
 
 ---
@@ -103,8 +108,8 @@ solana rent 1000  → 7991040 lamports
 - `@solana/kit` — Official Solana TypeScript SDK
 - `Node.js` — Runtime for scripts
 - `Vite` — Browser apps bundler (Days 4, 10)
-- `Solana CLI` — Account inspection, rent calculation (Day 11)
-- Solana Devnet — Test network
+- `Solana CLI` — Account inspection, rent calculation
+- Solana Devnet + Mainnet — Both networks
 
 ---
 
@@ -118,5 +123,5 @@ solana rent 1000  → 7991040 lamports
 
 ---
 
-> *"When you think 'I'd just add a column for that' — pause and ask: How does this map to an account?"*
-> — 100 Days of Solana, Day 11
+> *"Same address. Same code. Same RPC calls. Only the URL changed — but the data is totally different."*
+> — 100 Days of Solana, Day 12
