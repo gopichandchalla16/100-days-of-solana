@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-12%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-13%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Devnet%20%26%20Mainnet-14f195?style=for-the-badge)
 
@@ -26,11 +26,12 @@ Day  9  ████████████████████████
 Day 10  ████████████████████████████████████████  ✅
 Day 11  ████████████████████████████████████████  ✅
 Day 12  ████████████████████████████████████████  ✅
-Day 13  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 13  ████████████████████████████████████████  ✅
+Day 14  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 12%
+[█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 13%
 ```
 
 ---
@@ -58,18 +59,12 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 10](./day-10-dashboard/) | Browser dashboard — balance + transactions UI | Vite, `@solana/kit` in browser, DOM rendering | ✅ Done |
 | [Day 11](./day-11-accounts-vs-databases/) | Compare accounts vs databases | Account model, rent, PDAs, ownership rules | ✅ Done |
 | [Day 12](./day-12-compare-networks/) | Compare devnet vs mainnet — same address, different data | `devnet()` & `mainnet()` helpers, network isolation | ✅ Done |
-| Day 13 | Coming soon | — | ⏳ |
+| [Day 13](./day-13-week2-reflection/) | [Week 2 reflection — DEV.to post](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) | Writing, mental models, public learning | ✅ Done |
 | Day 14 | Coming soon | — | ⏳ |
 
 ---
 
-## Live CLI Outputs So Far
-
-**Day 8 — Balance Reader**
-```
-Address: TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
-Balance: 0.001159846 SOL
-```
+## Live Outputs So Far
 
 **Day 11 — Account Inspection**
 ```
@@ -80,20 +75,8 @@ Rent: 0 bytes=0.00089088 SOL | 1000 bytes=0.00785088 SOL
 
 **Day 12 — Network Comparison**
 ```
-==================================================
-  DEVNET  (test network — free SOL, test data)
-==================================================
-  Address : TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
-  Balance : [devnet balance]
-  Recent Transactions: [devnet-specific signatures]
-
-==================================================
-  MAINNET (live network — real SOL, real data)
-==================================================
-  Address : TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
-  Balance : [mainnet balance — different from devnet]
-  Recent Transactions: [mainnet-specific signatures]
-
+DEVNET  → 0.001159846 SOL  |  Slot: 459,981,397
+MAINNET → 0.069875097 SOL  |  Slot: 417,486,413
 Same address. Same code. Only the URL changed.
 ```
 
@@ -123,5 +106,5 @@ Same address. Same code. Only the URL changed.
 
 ---
 
-> *"Same address. Same code. Same RPC calls. Only the URL changed — but the data is totally different."*
-> — 100 Days of Solana, Day 12
+> *"Stop thinking in tables and rows. Start thinking in accounts and owners."*
+> — 100 Days of Solana, Day 13
