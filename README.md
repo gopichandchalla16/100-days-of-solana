@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-13%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-14%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Devnet%20%26%20Mainnet-14f195?style=for-the-badge)
 
@@ -27,11 +27,12 @@ Day 10  ████████████████████████
 Day 11  ████████████████████████████████████████  ✅
 Day 12  ████████████████████████████████████████  ✅
 Day 13  ████████████████████████████████████████  ✅
-Day 14  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 14  ████████████████████████████████████████  ✅
+Day 15  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 13%
+[██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 14%
 ```
 
 ---
@@ -60,7 +61,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 11](./day-11-accounts-vs-databases/) | Compare accounts vs databases | Account model, rent, PDAs, ownership rules | ✅ Done |
 | [Day 12](./day-12-compare-networks/) | Compare devnet vs mainnet — same address, different data | `devnet()` & `mainnet()` helpers, network isolation | ✅ Done |
 | [Day 13](./day-13-week2-reflection/) | [Week 2 reflection — DEV.to post](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) | Writing, mental models, public learning | ✅ Done |
-| Day 14 | Coming soon | — | ⏳ |
+| [Day 14](./day-14-amplify-week2/) | [Amplify Week 2 — X post](https://x.com/GopichandAI/status/2051216227356528884) | Social media, building in public | ✅ Done |
 
 ---
 
@@ -106,5 +107,5 @@ Same address. Same code. Only the URL changed.
 
 ---
 
-> *"Stop thinking in tables and rows. Start thinking in accounts and owners."*
-> — 100 Days of Solana, Day 13
+> *"2 weeks in. 14 days done. The public database finally clicked."*
+> — 100 Days of Solana, Day 14
