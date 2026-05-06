@@ -9,9 +9,9 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-14%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-15%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
-![Chain](https://img.shields.io/badge/Chain-Devnet%20%26%20Mainnet-14f195?style=for-the-badge)
+![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
 ```
 Day  1  ████████████████████████████████████████  ✅
@@ -28,11 +28,12 @@ Day 11  ████████████████████████
 Day 12  ████████████████████████████████████████  ✅
 Day 13  ████████████████████████████████████████  ✅
 Day 14  ████████████████████████████████████████  ✅
-Day 15  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 15  ████████████████████████████████████████  ✅
+Day 16  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 14%
+[███████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░] 15%
 ```
 
 ---
@@ -63,22 +64,38 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 13](./day-13-week2-reflection/) | [Week 2 reflection — DEV.to post](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) | Writing, mental models, public learning | ✅ Done |
 | [Day 14](./day-14-amplify-week2/) | [Amplify Week 2 — X post](https://x.com/GopichandAI/status/2051216227356528884) | Social media, building in public | ✅ Done |
 
+### 📅 Week 3 — Transactions & State Changes
+
+| Day | Challenge | Key Concept | Status |
+|-----|-----------|-------------|--------|
+| [Day 15](./day-15-transaction-anatomy/) | Understand transaction anatomy | Signatures, account keys, blockhash, instructions, 1232-byte limit | ✅ Done |
+| Day 16 | Coming soon | — | ⏳ |
+| Day 17 | Coming soon | — | ⏳ |
+| Day 18 | Coming soon | — | ⏳ |
+| Day 19 | Coming soon | — | ⏳ |
+| Day 20 | Coming soon | — | ⏳ |
+| Day 21 | Coming soon | — | ⏳ |
+
 ---
 
 ## Live Outputs So Far
-
-**Day 11 — Account Inspection**
-```
-Wallet  → Owner: System Program | Executable: false | 2.5 SOL | 0 bytes
-Token Program → Owner: BPF Loader | Executable: true  | 6.45 SOL | 36 bytes
-Rent: 0 bytes=0.00089088 SOL | 1000 bytes=0.00785088 SOL
-```
 
 **Day 12 — Network Comparison**
 ```
 DEVNET  → 0.001159846 SOL  |  Slot: 459,981,397
 MAINNET → 0.069875097 SOL  |  Slot: 417,486,413
-Same address. Same code. Only the URL changed.
+```
+
+**Day 15 — Transaction Anatomy**
+```
+Transaction structure:
+  Signatures:     [64-byte Ed25519] ← also the Transaction ID
+  Header:         num_sigs=1 | readonly_signed=0 | readonly_unsigned=1
+  Account Keys:   [fee payer, destination, System Program]
+  Recent Blockhash: <32-byte hash, expires ~150 slots>
+  Instructions:   [{program: System Program, Transfer 0.001 SOL}]
+  Fee:            5000 lamports (charged even on failure)
+  Size limit:     1,232 bytes max
 ```
 
 ---
@@ -91,8 +108,7 @@ Same address. Same code. Only the URL changed.
 
 - `@solana/kit` — Official Solana TypeScript SDK
 - `Node.js` — Runtime for scripts
-- `Vite` — Browser apps bundler (Days 4, 10)
-- `Solana CLI` — Account inspection, rent calculation
+- `Solana CLI` — Transaction inspection, account management
 - Solana Devnet + Mainnet — Both networks
 
 ---
@@ -107,5 +123,5 @@ Same address. Same code. Only the URL changed.
 
 ---
 
-> *"2 weeks in. 14 days done. The public database finally clicked."*
-> — 100 Days of Solana, Day 14
+> *"A Solana transaction is like an HTTP request with built-in authentication, an expiry timestamp, and atomic execution."*
+> — 100 Days of Solana, Day 15
