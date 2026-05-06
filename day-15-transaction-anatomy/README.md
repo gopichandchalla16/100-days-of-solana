@@ -3,7 +3,7 @@
 > **100 Days of Solana** | Arc Theme: Transactions and State Changes
 
 ## What I learned
-Dissected a real Solana transaction to understand its raw components.
+Dissected a real Solana transaction down to its raw components.
 Every state change on Solana flows through a transaction — a signed message
 with a header, account keys, a recent blockhash, and compiled instructions.
 
@@ -11,87 +11,108 @@ with a header, account keys, a recent blockhash, and compiled instructions.
 
 ## CLI Commands Run
 
-### Step 1: Set up devnet + generate temp wallet
+### Step 1: Configure devnet + generate temp wallet
 ```bash
 solana config set --url devnet
 solana-keygen new --no-bip39-passphrase -o /tmp/temp-wallet.json
 ```
 
-### Step 2: Send a transfer (your first SOL send!)
-```bash
-solana transfer --allow-unfunded-recipient $(solana address -k /tmp/temp-wallet.json) 0.001 --url devnet
+### ✅ Output — Temp Wallet Generated
 ```
-
-### Output — Transaction Signature
-```
-Signature: <YOUR_TX_SIGNATURE_HERE>
-```
-> The signature IS the transaction ID — it's the first Ed25519 signature
-> and doubles as the unique identifier for this transaction.
-
-### Step 3: Inspect transaction with verbose CLI
-```bash
-solana confirm -v <YOUR_TX_SIGNATURE_HERE>
-```
-
-### ✅ Live Output — Transaction Details
-```
-Transaction executed in slot <SLOT>:
-  Block Time: <TIMESTAMP>
-  Recent Blockhash: <BLOCKHASH>
-  Fee: 5000 lamports
-  Account 0: <YOUR_WALLET>  (signer, writable, fee payer)
-  Account 1: <TEMP_WALLET> (writable)
-  Account 2: 11111111111111111111111111111111 (System Program)
-
-  Instruction 0:
-    Program: System Program (11111111111111111111111111111111)
-    Transfer: 0.001 SOL
-    From: <YOUR_WALLET>
-    To:   <TEMP_WALLET>
-
-Status: Ok
+pubkey: CUHUuC7JAJjRja2Ve4nN1wCdMgRY1sM5bAq8rn75F1uK
 ```
 
 ---
 
-## Transaction Structure Map
+### Step 2: Send 0.001 SOL transfer
+```bash
+solana transfer --allow-unfunded-recipient $(solana address -k /tmp/temp-wallet.json) 0.001 --url devnet
+```
+
+### ✅ Output — Transaction Signature
+```
+Signature: 4k7Q8AsES8WDyhMMdbaFdURDEY5wrEn8r1wqZ9E6asGMA8jztCMRSeNSZVWoEjuboxAge5eit6my7exYDj1jN27V
+```
+> This signature IS the Transaction ID — the first 64-byte Ed25519 signature
+> doubles as the unique identifier for the entire transaction.
+
+---
+
+### Step 3: Inspect with verbose CLI
+```bash
+solana confirm -v 4k7Q8AsES8WDyhMMdbaFdURDEY5wrEn8r1wqZ9E6asGMA8jztCMRSeNSZVWoEjuboxAge5eit6my7exYDj1jN27V
+```
+
+### ✅ Real Live Output
+```
+Transaction executed in slot 460450085:
+  Block Time:       2026-05-06T08:54:16+00:00
+  Version:          legacy
+  Recent Blockhash: 6D2Qb1LCiqrPHmFRhhnewBsPcoQa2RPQGq7De2VbX6ux
+
+  Signature 0: 4k7Q8AsES8WDyhMMdbaFdURDEY5wrEn8r1wqZ9E6asGMA8jztCMRSeNSZVWoEjuboxAge5eit6my7exYDj1jN27V
+
+  Account 0: srw- AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y  (fee payer)
+  Account 1: -rw- CUHUuC7JAJjRja2Ve4nN1wCdMgRY1sM5bAq8rn75F1uK  (destination)
+  Account 2: -r-x 11111111111111111111111111111111               (System Program)
+
+  Instruction 0:
+    Program:   11111111111111111111111111111111 (index 2)
+    Account 0: AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y (index 0)
+    Account 1: CUHUuC7JAJjRja2Ve4nN1wCdMgRY1sM5bAq8rn75F1uK (index 1)
+    Transfer { lamports: 1000000 }
+
+  Status: Ok
+    Fee:                   ◎0.000005 SOL (5000 lamports)
+    Account 0 balance:     ◎2.5 → ◎2.498995
+    Account 1 balance:     ◎0   → ◎0.001
+    Account 2 balance:     ◎0.000000001 (System Program unchanged)
+  Compute Units Consumed: 150
+
+  Log Messages:
+    Program 11111111111111111111111111111111 invoke [1]
+    Program 11111111111111111111111111111111 success
+
+Finalized
+```
+
+---
+
+## 🔍 Anatomy Breakdown (from real output)
 
 ```
 Transaction
-├── Signatures []
-│    └── [0] 64-byte Ed25519 signature (also the Transaction ID!)
+├── Signatures
+│    └── [0] 4k7Q8AsES8WDyhMMdbaFdURDEY5wr...  ← 64-byte Ed25519 = TX ID
 └── Message
      ├── Header
-     │    ├── num_required_signatures: 1
-     │    ├── num_readonly_signed_accounts: 0
-     │    └── num_readonly_unsigned_accounts: 1
-     ├── Account Keys []
-     │    ├── [0] Your wallet    (signer + writable, fee payer)
-     │    ├── [1] Temp wallet   (writable)
-     │    └── [2] System Program (read-only, the program)
-     ├── Recent Blockhash: <32-byte hash>
-     └── Instructions []
-          └── [0] Compiled Instruction
-               ├── program_id_index: 2  (points to System Program)
-               ├── accounts: [0, 1]    (indexes into Account Keys)
-               └── data: [2,0,0,0, ...] (Transfer command + lamports)
+     │    ├── srw-  = signer + read + write  (Account 0: fee payer)
+     │    ├── -rw-  = writable, not signer   (Account 1: destination)
+     │    └── -r-x  = read-only + executable  (Account 2: System Program)
+     ├── Account Keys
+     │    ├── [0] AWKYsCGB... (your wallet, fee payer)
+     │    ├── [1] CUHUuC7J... (temp wallet, destination)
+     │    └── [2] 11111111... (System Program)
+     ├── Recent Blockhash: 6D2Qb1LCiqrPHmFRhhnewBsPcoQa2RPQGq7De2VbX6ux
+     └── Instructions
+          └── [0] program_id_index=2, accounts=[0,1]
+               data: Transfer { lamports: 1000000 }  (= 0.001 SOL)
 ```
 
 ---
 
 ## 📊 Transaction vs HTTP Request
 
-| HTTP Request | Solana Transaction |
-|---|---|
-| HTTP Headers | Message Header (permission groups) |
-| URL / Query Params | Account Keys (resources involved) |
-| Request Body | Instructions (operations to perform) |
-| Auth Token / JWT | Signatures (Ed25519 proof of authorization) |
-| CSRF Token | Recent Blockhash (replay protection + freshness) |
-| Single server processes | All validators validate simultaneously |
-| Partial success possible | Atomic: all succeed or all fail |
-| No fee on failure | Fee charged even on failure |
+| HTTP Request | Solana Transaction | Real value from this tx |
+|---|---|---|
+| HTTP Headers | Message Header | `srw-`, `-rw-`, `-r-x` permission flags |
+| URL / Query Params | Account Keys | `[AWKYs..., CUHUu..., 11111...]` |
+| Request Body | Instructions | `Transfer { lamports: 1000000 }` |
+| Auth Token / JWT | Signatures | `4k7Q8AsES8WD...` (64 bytes) |
+| CSRF Token | Recent Blockhash | `6D2Qb1LCiqr...` (expires ~150 slots) |
+| Single server | All validators | Finalized across devnet |
+| Partial success | Atomic execution | All or nothing |
+| No fee on failure | Fee on failure | 5000 lamports charged regardless |
 
 ---
 
@@ -99,19 +120,16 @@ Transaction
 
 - **Max transaction size:** 1,232 bytes (IPv6 MTU 1,280 − 48 bytes network headers)
 - **Blockhash expiry:** ~150 slots (~60–90 seconds) — prevents replay attacks
-- **Signature = Transaction ID:** The first signature IS the unique identifier
-- **Account ordering matters:** Header's 3 numbers partition the account keys array into permission groups
-- **Atomic execution:** If any instruction fails, ALL changes are rolled back
-- **Fee on failure:** Base fee (5000 lamports) charged regardless of success
-- **Address Lookup Tables:** Used for complex txns needing more than ~35 accounts
+- **Signature = TX ID:** `4k7Q8AsES8WDyhMMdbaFdURDEY5wrEn8r1...`
+- **Compute units used:** 150 (very cheap — max is 1.4M per tx)
+- **Fee:** 5000 lamports (◎0.000005 SOL)
+- **Atomic:** If any instruction fails, ALL changes roll back
+- **Account flags:** `s`=signer, `r`=readable, `w`=writable, `x`=executable
 
 ---
 
 ## Solana Explorer
-View my transaction on Solana Explorer (devnet):
-[https://explorer.solana.com/?cluster=devnet](https://explorer.solana.com/?cluster=devnet)
-
-Paste the transaction signature in the search bar to see the full breakdown.
+[View this transaction on Solana Explorer (devnet)](https://explorer.solana.com/tx/4k7Q8AsES8WDyhMMdbaFdURDEY5wrEn8r1wqZ9E6asGMA8jztCMRSeNSZVWoEjuboxAge5eit6my7exYDj1jN27V?cluster=devnet)
 
 ---
 
