@@ -10,10 +10,11 @@ No intermediary. No webhook. No pending state. Settled in under a second.
 
 ## Commands Run
 
-### Step 1: Configure devnet
+### Step 1: Configure devnet & verify
 ```bash
 solana config set -ud
 solana config get
+solana balance
 ```
 
 ### ✅ Output
@@ -21,47 +22,24 @@ solana config get
 RPC URL: https://api.devnet.solana.com
 Keypair Path: /home/gopichand/.config/solana/id.json
 Commitment: confirmed
+Balance: 4.49899 SOL
 ```
 
 ---
 
-### Step 2: Check balance
-```bash
-solana balance
-```
-
-### ✅ Output
-```
-2.498995 SOL
-```
-
----
-
-### Step 3: Generate recipient keypair
-```bash
-solana-keygen new --outfile ~/recipient-keypair.json --no-bip39-passphrase
-```
-
-### ✅ Output
-```
-pubkey: 4mW77HkFWnFqq1Zz6Vi4o78RRX5PGEjY5EDUBXtdPiT7
-```
-
----
-
-### Step 4: Send 0.5 SOL transfer
+### Step 2: Send 0.5 SOL to recipient
 ```bash
 solana transfer $(solana address -k ~/recipient-keypair.json) 0.5 --allow-unfunded-recipient
 ```
 
-### ✅ Output
+### ✅ Output — Transaction Signature
 ```
-Signature: 36ZztT5VFAooZsWdrdmYP2jR8q6YVkoLoZ1mPpAmZTJV1WtNEaLi2LUCJJrL1SMUFaWLwzXXhShiEL5rBZFLkYJo
+Signature: 4vCHK66JQd9XmfrVHJ3HnTCJLtFkzYYFwG3gjPZF2XrLWn8NoA69kbeLpa1RQTYGhmLtusqWHiJaDDyGXEgNX1sH
 ```
 
 ---
 
-### Step 5: Verify balances
+### Step 3: Verify both balances
 ```bash
 solana balance
 solana balance $(solana address -k ~/recipient-keypair.json)
@@ -69,8 +47,8 @@ solana balance $(solana address -k ~/recipient-keypair.json)
 
 ### ✅ Output
 ```
-Sender    (AWKYsCGB...): 1.99899 SOL  (was 2.498995 → sent 0.5 + fee)
-Recipient (4mW77HkF...): 0.5 SOL     (was 0 → now funded)
+Sender    (AWKYsCGB...): 3.998985 SOL  (was 4.49899 → sent 0.5 + fee)
+Recipient (4mW77HkF...): 1.0 SOL      (was 0.5 → received another 0.5)
 ```
 
 ---
@@ -81,19 +59,19 @@ Recipient (4mW77HkF...): 0.5 SOL     (was 0 → now funded)
 |-------|-------|
 | **Sender** | `AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y` |
 | **Recipient** | `4mW77HkFWnFqq1Zz6Vi4o78RRX5PGEjY5EDUBXtdPiT7` |
-| **Amount** | 0.5 SOL (500,000,000 lamports) |
+| **Amount sent** | 0.5 SOL (500,000,000 lamports) |
 | **Fee** | ~0.000005 SOL (5000 lamports) |
-| **Sender balance before** | 2.498995 SOL |
-| **Sender balance after** | 1.99899 SOL |
-| **Recipient balance after** | 0.5 SOL |
-| **Signature / TX ID** | `36ZztT5VFAooZsWdrdmYP2jR8q6YVkoLoZ1mPpAmZTJV1WtNEaLi2LUCJJrL1SMUFaWLwzXXhShiEL5rBZFLkYJo` |
+| **Sender balance before** | 4.49899 SOL |
+| **Sender balance after** | 3.998985 SOL |
+| **Recipient balance after** | 1.0 SOL |
+| **Signature / TX ID** | `4vCHK66JQd9XmfrVHJ3HnTCJLtFkzYYFwG3gjPZF2XrLWn8NoA69kbeLpa1RQTYGhmLtusqWHiJaDDyGXEgNX1sH` |
 | **Network** | Devnet |
 | **Settlement time** | < 1 second |
 
 ---
 
 ## Solana Explorer
-[View transaction on Solana Explorer (devnet)](https://explorer.solana.com/tx/36ZztT5VFAooZsWdrdmYP2jR8q6YVkoLoZ1mPpAmZTJV1WtNEaLi2LUCJJrL1SMUFaWLwzXXhShiEL5rBZFLkYJo?cluster=devnet)
+[View transaction on Solana Explorer (devnet)](https://explorer.solana.com/tx/4vCHK66JQd9XmfrVHJ3HnTCJLtFkzYYFwG3gjPZF2XrLWn8NoA69kbeLpa1RQTYGhmLtusqWHiJaDDyGXEgNX1sH?cluster=devnet)
 
 ---
 
