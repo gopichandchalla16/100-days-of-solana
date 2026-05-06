@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-15%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-16%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -29,11 +29,12 @@ Day 12  ████████████████████████
 Day 13  ████████████████████████████████████████  ✅
 Day 14  ████████████████████████████████████████  ✅
 Day 15  ████████████████████████████████████████  ✅
-Day 16  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 16  ████████████████████████████████████████  ✅
+Day 17  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░] 15%
+[████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░] 16%
 ```
 
 ---
@@ -69,7 +70,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 15](./day-15-transaction-anatomy/) | Understand transaction anatomy | Signatures, account keys, blockhash, instructions, 1232-byte limit | ✅ Done |
-| Day 16 | Coming soon | — | ⏳ |
+| [Day 16](./day-16-first-sol-transfer/) | Send first deliberate SOL transfer | `solana transfer`, `--allow-unfunded-recipient`, settlement < 1s | ✅ Done |
 | Day 17 | Coming soon | — | ⏳ |
 | Day 18 | Coming soon | — | ⏳ |
 | Day 19 | Coming soon | — | ⏳ |
@@ -80,22 +81,19 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Live Outputs So Far
 
-**Day 12 — Network Comparison**
-```
-DEVNET  → 0.001159846 SOL  |  Slot: 459,981,397
-MAINNET → 0.069875097 SOL  |  Slot: 417,486,413
-```
-
 **Day 15 — Transaction Anatomy**
 ```
-Transaction structure:
-  Signatures:     [64-byte Ed25519] ← also the Transaction ID
-  Header:         num_sigs=1 | readonly_signed=0 | readonly_unsigned=1
-  Account Keys:   [fee payer, destination, System Program]
-  Recent Blockhash: <32-byte hash, expires ~150 slots>
-  Instructions:   [{program: System Program, Transfer 0.001 SOL}]
-  Fee:            5000 lamports (charged even on failure)
-  Size limit:     1,232 bytes max
+Signature: 4k7Q8AsES8WDyhMMdbaFdURDEY5wrEn8r1wqZ9E6asGMA8jztCMRSeNSZVWoEjuboxAge5eit6my7exYDj1jN27V
+Accounts:  AWKYsCGB (srw- fee payer) | CUHUuC7J (-rw- dest) | 11111111 (-r-x System Program)
+Fee: 5000 lamports | Compute: 150 units | Slot: 460450085
+```
+
+**Day 16 — First SOL Transfer**
+```
+Sender    (AWKYsCGB...): 2.498995 → 1.99899 SOL
+Recipient (4mW77HkF...): 0       → 0.5 SOL
+Signature: 36ZztT5VFAooZsWdrdmYP2jR8q6YVkoLoZ1mPpAmZTJV1WtNEaLi2LUCJJrL1SMUFaWLwzXXhShiEL5rBZFLkYJo
+Settlement: < 1 second | Network: Devnet
 ```
 
 ---
@@ -108,7 +106,7 @@ Transaction structure:
 
 - `@solana/kit` — Official Solana TypeScript SDK
 - `Node.js` — Runtime for scripts
-- `Solana CLI` — Transaction inspection, account management
+- `Solana CLI` — Transaction inspection, transfers, account management
 - Solana Devnet + Mainnet — Both networks
 
 ---
@@ -123,5 +121,5 @@ Transaction structure:
 
 ---
 
-> *"A Solana transaction is like an HTTP request with built-in authentication, an expiry timestamp, and atomic execution."*
-> — 100 Days of Solana, Day 15
+> *"No intermediary. No webhook. No pending state. 0.5 SOL sent and settled in under a second."*
+> — 100 Days of Solana, Day 16
