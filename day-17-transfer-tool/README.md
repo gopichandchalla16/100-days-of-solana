@@ -29,7 +29,7 @@ npm pkg set type=module
 
 ### Test 1: No args → usage message
 ```bash
-node transfer.mjs  0.05
+node transfer.mjs
 ```
 
 ### ✅ Output
@@ -40,9 +40,9 @@ Example: node transfer.mjs 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ 0.05
 
 ---
 
-### Test 2: Successful 0.001 SOL transfer
+### Test 2: Successful 0.05 SOL transfer
 ```bash
-node transfer.mjs 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ 0.001
+node transfer.mjs 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ 0.05
 ```
 
 ### ✅ Output
@@ -52,41 +52,29 @@ Solana Transfer Tool
 Connected to Solana devnet.
 Sender:    AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
 Recipient: 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ
-Amount:    0.001 SOL
-Sender balance: 3.747955 SOL
+Amount:    0.05 SOL
+Sender balance: 3.69594 SOL
 
 Sending transaction...
+CLI output: Signature: 5MxSKNco34ysu6Z6u7B815WtZARHY1ZRL39ZDyB3Xy1H5JKRht6Fy2NuhQYjDEUGqjYJuBZdovQaQjaaiY7J9QGS
+
 Transaction confirmed! ✅
-Signature: 4G2xYXgJ3APaPDEABweLE7evgKvJuLJjy6Nj3NYsfCHqDnzt1snenMrL3DsVjxE6PftjsFF3Fb6ADJ3CiUBxUKZR
-Explorer:  https://explorer.solana.com/tx/4G2xYXgJ3APaPDEABweLE7evgKvJuLJjy6Nj3NYsfCHqDnzt1snenMrL3DsVjxE6PftjsFF3Fb6ADJ3CiUBxUKZR?cluster=devnet
-New sender balance: 3.74695 SOL
+Signature: 5MxSKNco34ysu6Z6u7B815WtZARHY1ZRL39ZDyB3Xy1H5JKRht6Fy2NuhQYjDEUGqjYJuBZdovQaQjaaiY7J9QGS
+Explorer:  https://explorer.solana.com/tx/5MxSKNco34ysu6Z6u7B815WtZARHY1ZRL39ZDyB3Xy1H5JKRht6Fy2NuhQYjDEUGqjYJuBZdovQaQjaaiY7J9QGS?cluster=devnet
+New sender balance: 3.645935 SOL
 ```
 
 ---
 
-### Test 3: Confirmed on-chain via `solana confirm -v`
+### Test 3: Insufficient balance → error caught
 ```bash
-solana confirm -v 4G2xYXgJ3APaPDEABweLE7evgKvJuLJjy6Nj3NYsfCHqDnzt1snenMrL3DsVjxE6PftjsFF3Fb6ADJ3CiUBxUKZR
+node transfer.mjs 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ 9999
 ```
 
 ### ✅ Output
 ```
-Transaction executed in slot 460986088:
-  Block Time: 2026-05-08T17:31:46+00:00
-  Version: legacy
-  Signature 0: 4G2xYXgJ3APaPDEABweLE7evgKvJuLJjy6Nj3NYsfCHqDnzt1snenMrL3DsVjxE6PftjsFF3Fb6ADJ3CiUBxUKZR
-  Account 0: srw- AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y (fee payer)
-  Account 1: -rw- 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ
-  Account 2: -r-x 11111111111111111111111111111111
-  Instruction 0
-    Program: 11111111111111111111111111111111
-    Transfer { lamports: 1000000 }
-  Status: Ok
-    Fee: 0.000005 SOL
-    Account 0 balance: 3.74695 -> 3.745945 SOL
-    Account 1 balance: 0.252 -> 0.253 SOL
-  Compute Units Consumed: 150
-Finalized
+Error: Insufficient balance.
+Need: 9999.000005 SOL | Have: 3.645935 SOL
 ```
 
 ---
@@ -97,19 +85,18 @@ Finalized
 |-------|-------|
 | **Sender** | `AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y` |
 | **Recipient** | `8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ` |
-| **Amount** | 0.001 SOL (1,000,000 lamports) |
+| **Amount** | 0.05 SOL (50,000,000 lamports) |
 | **Fee** | 0.000005 SOL (5000 lamports) |
-| **Sender balance before** | 3.747955 SOL |
-| **Sender balance after** | 3.74695 SOL |
-| **Signature** | `4G2xYXgJ3APaPDEABweLE7evgKvJuLJjy6Nj3NYsfCHqDnzt1snenMrL3DsVjxE6PftjsFF3Fb6ADJ3CiUBxUKZR` |
-| **Slot** | 460986088 |
+| **Sender balance before** | 3.69594 SOL |
+| **Sender balance after** | 3.645935 SOL |
+| **Signature** | `5MxSKNco34ysu6Z6u7B815WtZARHY1ZRL39ZDyB3Xy1H5JKRht6Fy2NuhQYjDEUGqjYJuBZdovQaQjaaiY7J9QGS` |
 | **Network** | Devnet |
-| **Status** | Finalized |
+| **Status** | Confirmed ✅ |
 
 ---
 
 ## Solana Explorer
-[View transaction on Solana Explorer (devnet)](https://explorer.solana.com/tx/4G2xYXgJ3APaPDEABweLE7evgKvJuLJjy6Nj3NYsfCHqDnzt1snenMrL3DsVjxE6PftjsFF3Fb6ADJ3CiUBxUKZR?cluster=devnet)
+[View transaction on Solana Explorer (devnet)](https://explorer.solana.com/tx/5MxSKNco34ysu6Z6u7B815WtZARHY1ZRL39ZDyB3Xy1H5JKRht6Fy2NuhQYjDEUGqjYJuBZdovQaQjaaiY7J9QGS?cluster=devnet)
 
 ---
 
@@ -118,10 +105,10 @@ Finalized
 **Web2 analogy:** This is the same pattern as wrapping a payment SDK call (e.g., Stripe) inside a reusable Express utility — the API call stays the same, you add input parsing, validation, and user feedback around it.
 
 **5 things the tool does every run:**
-1. Connects to Solana devnet RPC
-2. Loads keypair from disk (`~/.config/solana/id.json`)
+1. Parses recipient address and amount from CLI args
+2. Validates inputs before touching the network
 3. Checks balance **before** sending (failed txs still cost fees on Solana)
-4. Builds, signs, and sends the transfer
+4. Sends transfer via Solana CLI and captures real signature
 5. Prints signature + Explorer link + new balance
 
 **Why balance check matters:** On Solana, a failed transaction still deducts the transaction fee. Validating before sending is the blockchain equivalent of form validation before an HTTP POST.
