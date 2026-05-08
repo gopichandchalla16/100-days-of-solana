@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-18%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-19%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -32,11 +32,12 @@ Day 15  ████████████████████████
 Day 16  ████████████████████████████████████████  ✅
 Day 17  ████████████████████████████████████████  ✅
 Day 18  ████████████████████████████████████████  ✅
-Day 19  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 19  ████████████████████████████████████████  ✅
+Day 20  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████░░░░░░░░░░░░░░░░░░░░░░░░] 18%
+[███████████████████░░░░░░░░░░░░░░░░░░░░░░░] 19%
 ```
 
 ---
@@ -75,7 +76,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 16](./day-16-first-sol-transfer/) | Send first deliberate SOL transfer | `solana transfer`, `--allow-unfunded-recipient`, settlement < 1s | ✅ Done |
 | [Day 17](./day-17-transfer-tool/) | Build a reusable Node.js transfer tool | Arg parsing, balance check, signature output, Explorer link | ✅ Done |
 | [Day 18](./day-18-confirmation-ui/) | Add transaction confirmation UI | Processed→Confirmed→Finalized live tracking, error handling | ✅ Done |
-| Day 19 | Coming soon | — | ⏳ |
+| [Day 19](./day-19-failed-transactions/) | Explore failed transactions | skipPreflight, on-chain error, fee charged on failure, custom program error 0x1 | ✅ Done |
 | Day 20 | Coming soon | — | ⏳ |
 | Day 21 | Coming soon | — | ⏳ |
 
@@ -83,40 +84,27 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Live Outputs So Far
 
-**Day 15 — Transaction Anatomy**
-```
-Signature: 4k7Q8AsES8WDyhMMdbaFdURDEY5wrEn8r1wqZ9E6asGMA8jztCMRSeNSZVWoEjuboxAge5eit6my7exYDj1jN27V
-Accounts:  AWKYsCGB (srw- fee payer) | CUHUuC7J (-rw- dest) | 11111111 (-r-x System Program)
-Fee: 5000 lamports | Compute: 150 units | Slot: 460450085
-```
-
-**Day 16 — First SOL Transfer**
-```
-Sender    (AWKYsCGB...): 2.498995 → 1.99899 SOL
-Recipient (4mW77HkF...): 0       → 0.5 SOL
-Signature: 36ZztT5VFAooZsWdrdmYP2jR8q6YVkoLoZ1mPpAmZTJV1WtNEaLi2LUCJJrL1SMUFaWLwzXXhShiEL5rBZFLkYJo
-Settlement: < 1 second | Network: Devnet
-```
-
 **Day 17 — Transfer Tool (Node.js CLI)**
 ```
 Sender:    AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
 Recipient: 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ
 Amount:    0.05 SOL | Balance: 3.69594 → 3.645935 SOL
-Signature: 5MxSKNco34ysu6Z6u7B815WtZARHY1ZRL39ZDyB3Xy1H5JKRht6Fy2NuhQYjDEUGqjYJuBZdovQaQjaaiY7J9QGS
 ```
 
 **Day 18 — Confirmation UI (Live Stage Tracking)**
 ```
-Solana Transfer Tool — with Confirmation Tracking
-===================================================
-Sender:    AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
-Recipient: 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ
-Amount:    0.01 SOL | Balance: 3.645935 → 3.63593 SOL
-Tracking confirmation stages...
 [Processed → Confirmed] ✅ reached in 0.3s
 [Confirmed → Finalized] ✅ reached in 0.2s
 Signature: 3hYmkD3mmCCAJiji76mccJUqU2xB7YeNPokUPnZV6rJ3btGt8kzzzvmq7B8ytd83saDDkiZUYeAcSMtStLi9fQZz
+```
+
+**Day 19 — Failed Transaction (On-Chain Error)**
+```
+Status: Error processing Instruction 0: custom program error: 0x1
+Fee: ◎0.000005  ← charged even on failure!
+Transfer: insufficient lamports 6135925000, need 9999000000000
+Account 0 balance: ◎6.13593 -> ◎6.135925  ← only fee deducted
+Signature: 2xQrSQUhoiF2ob4NAukfp9PvRoa4P6PSvHSKwW5bkKvgVoua8Agti2brD9FPEZonAbQDsqYVad5ZHbfvH8prtdyU
 ```
 
 ---
@@ -128,6 +116,7 @@ Signature: 3hYmkD3mmCCAJiji76mccJUqU2xB7YeNPokUPnZV6rJ3btGt8kzzzvmq7B8ytd83saDDk
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 
 - `@solana/kit` — Official Solana TypeScript SDK
+- `@solana/web3.js` — Solana JavaScript SDK
 - `Node.js` — Runtime for scripts
 - `Solana CLI` — Transaction inspection, transfers, account management
 - Solana Devnet + Mainnet — Both networks
@@ -144,5 +133,5 @@ Signature: 3hYmkD3mmCCAJiji76mccJUqU2xB7YeNPokUPnZV6rJ3btGt8kzzzvmq7B8ytd83saDDk
 
 ---
 
-> *"Confirmation is not binary. Processed → Confirmed → Finalized — now I can see every stage."*
-> — 100 Days of Solana, Day 18
+> *"Failed transactions still cost fees. Breaking things on purpose is the best way to understand how they work."*
+> — 100 Days of Solana, Day 19
