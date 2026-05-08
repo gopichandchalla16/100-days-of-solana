@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-17%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-18%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -31,11 +31,12 @@ Day 14  ████████████████████████
 Day 15  ████████████████████████████████████████  ✅
 Day 16  ████████████████████████████████████████  ✅
 Day 17  ████████████████████████████████████████  ✅
-Day 18  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 18  ████████████████████████████████████████  ✅
+Day 19  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░] 17%
+[██████████████████░░░░░░░░░░░░░░░░░░░░░░░░] 18%
 ```
 
 ---
@@ -73,7 +74,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 15](./day-15-transaction-anatomy/) | Understand transaction anatomy | Signatures, account keys, blockhash, instructions, 1232-byte limit | ✅ Done |
 | [Day 16](./day-16-first-sol-transfer/) | Send first deliberate SOL transfer | `solana transfer`, `--allow-unfunded-recipient`, settlement < 1s | ✅ Done |
 | [Day 17](./day-17-transfer-tool/) | Build a reusable Node.js transfer tool | Arg parsing, balance check, signature output, Explorer link | ✅ Done |
-| Day 18 | Coming soon | — | ⏳ |
+| [Day 18](./day-18-confirmation-ui/) | Add transaction confirmation UI | Processed→Confirmed→Finalized live tracking, error handling | ✅ Done |
 | Day 19 | Coming soon | — | ⏳ |
 | Day 20 | Coming soon | — | ⏳ |
 | Day 21 | Coming soon | — | ⏳ |
@@ -99,13 +100,23 @@ Settlement: < 1 second | Network: Devnet
 
 **Day 17 — Transfer Tool (Node.js CLI)**
 ```
-Solana Transfer Tool
-====================
 Sender:    AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
 Recipient: 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ
-Amount:    0.001 SOL | Balance before: 3.747955 SOL
-Signature: 4G2xYXgJ3APaPDEABweLE7evgKvJuLJjy6Nj3NYsfCHqDnzt1snenMrL3DsVjxE6PftjsFF3Fb6ADJ3CiUBxUKZR
-Slot: 460986088 | Status: Finalized | Fee: 0.000005 SOL
+Amount:    0.05 SOL | Balance: 3.69594 → 3.645935 SOL
+Signature: 5MxSKNco34ysu6Z6u7B815WtZARHY1ZRL39ZDyB3Xy1H5JKRht6Fy2NuhQYjDEUGqjYJuBZdovQaQjaaiY7J9QGS
+```
+
+**Day 18 — Confirmation UI (Live Stage Tracking)**
+```
+Solana Transfer Tool — with Confirmation Tracking
+===================================================
+Sender:    AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
+Recipient: 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ
+Amount:    0.01 SOL | Balance: 3.645935 → 3.63593 SOL
+Tracking confirmation stages...
+[Processed → Confirmed] ✅ reached in 0.3s
+[Confirmed → Finalized] ✅ reached in 0.2s
+Signature: 3hYmkD3mmCCAJiji76mccJUqU2xB7YeNPokUPnZV6rJ3btGt8kzzzvmq7B8ytd83saDDkiZUYeAcSMtStLi9fQZz
 ```
 
 ---
@@ -133,5 +144,5 @@ Slot: 460986088 | Status: Finalized | Fee: 0.000005 SOL
 
 ---
 
-> *"Turned a one-off CLI transfer into a reusable Node.js tool with validation, balance checks, and Explorer output."*
-> — 100 Days of Solana, Day 17
+> *"Confirmation is not binary. Processed → Confirmed → Finalized — now I can see every stage."*
+> — 100 Days of Solana, Day 18
