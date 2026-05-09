@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-19%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-20%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -33,11 +33,12 @@ Day 16  ████████████████████████
 Day 17  ████████████████████████████████████████  ✅
 Day 18  ████████████████████████████████████████  ✅
 Day 19  ████████████████████████████████████████  ✅
-Day 20  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 20  ████████████████████████████████████████  ✅
+Day 21  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████░░░░░░░░░░░░░░░░░░░░░░░] 19%
+[████████████████████░░░░░░░░░░░░░░░░░░░░░░] 20%
 ```
 
 ---
@@ -77,19 +78,12 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 17](./day-17-transfer-tool/) | Build a reusable Node.js transfer tool | Arg parsing, balance check, signature output, Explorer link | ✅ Done |
 | [Day 18](./day-18-confirmation-ui/) | Add transaction confirmation UI | Processed→Confirmed→Finalized live tracking, error handling | ✅ Done |
 | [Day 19](./day-19-failed-transactions/) | Explore failed transactions | skipPreflight, on-chain error, fee charged on failure, custom program error 0x1 | ✅ Done |
-| Day 20 | Coming soon | — | ⏳ |
+| Day 20 | [Write about transactions — DEV.to post](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) | Technical writing, Web2→Web3 mental model, confirmation stages | ✅ Done |
 | Day 21 | Coming soon | — | ⏳ |
 
 ---
 
 ## Live Outputs So Far
-
-**Day 17 — Transfer Tool (Node.js CLI)**
-```
-Sender:    AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
-Recipient: 8Z9e1budzc3CwwLvjo7MaQ9W15Tb3PW21it5nEMf6LeZ
-Amount:    0.05 SOL | Balance: 3.69594 → 3.645935 SOL
-```
 
 **Day 18 — Confirmation UI (Live Stage Tracking)**
 ```
@@ -106,6 +100,10 @@ Transfer: insufficient lamports 6135925000, need 9999000000000
 Account 0 balance: ◎6.13593 -> ◎6.135925  ← only fee deducted
 Signature: 2xQrSQUhoiF2ob4NAukfp9PvRoa4P6PSvHSKwW5bkKvgVoua8Agti2brD9FPEZonAbQDsqYVad5ZHbfvH8prtdyU
 ```
+
+**Day 20 — Blog Post Published**
+> [Solana Transactions Explained for Backend Developers (With Real Failures)](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido)
+> Topics: Transaction anatomy, 3 commitment levels, failed tx analysis, Web2→Web3 mental model
 
 ---
 
@@ -133,5 +131,5 @@ Signature: 2xQrSQUhoiF2ob4NAukfp9PvRoa4P6PSvHSKwW5bkKvgVoua8Agti2brD9FPEZonAbQDs
 
 ---
 
-> *"Failed transactions still cost fees. Breaking things on purpose is the best way to understand how they work."*
-> — 100 Days of Solana, Day 19
+> *"Writing about what you've built forces you to confront the gaps in your understanding. That's where real learning happens."*
+> — 100 Days of Solana, Day 20
