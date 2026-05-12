@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-21%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-22%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -35,11 +35,12 @@ Day 18  ████████████████████████
 Day 19  ████████████████████████████████████████  ✅
 Day 20  ████████████████████████████████████████  ✅
 Day 21  ████████████████████████████████████████  ✅
-Day 22  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 22  ████████████████████████████████████████  ✅
+Day 23  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████░░░░░░░░░░░░░░░░░░░░░] 21%
+[██████████████████████░░░░░░░░░░░░░░░░░░░░] 22%
 ```
 
 ---
@@ -82,30 +83,31 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 20](./day-20-write-about-transactions/) | [Write about transactions — DEV.to post](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) | Technical writing, Web2→Web3 mental model, confirmation stages | ✅ Done |
 | [Day 21](./day-21-share-transfer-tool/) | [Share transfer tool — X post](https://x.com/GopichandAI/status/2054100764197634276) | Building in public, social proof, on-chain receipt | ✅ Done |
 
+### 📅 Week 4 — Accounts & Programs
+
+| Day | Challenge | Key Concept | Status |
+|-----|-----------|-------------|--------|
+| [Day 22](./day-22-inspect-account-data/) | Inspect account data | 5 account fields, wallet vs program vs native, owner model | ✅ Done |
+| Day 23 | Coming soon | — | ⏳ |
+| Day 24 | Coming soon | — | ⏳ |
+| Day 25 | Coming soon | — | ⏳ |
+| Day 26 | Coming soon | — | ⏳ |
+| Day 27 | Coming soon | — | ⏳ |
+| Day 28 | Coming soon | — | ⏳ |
+
 ---
 
 ## Live Outputs So Far
 
-**Day 18 — Confirmation UI (Live Stage Tracking)**
-```
-[Processed → Confirmed] ✅ reached in 0.3s
-[Confirmed → Finalized] ✅ reached in 0.2s
-Signature: 3hYmkD3mmCCAJiji76mccJUqU2xB7YeNPokUPnZV6rJ3btGt8kzzzvmq7B8ytd83saDDkiZUYeAcSMtStLi9fQZz
-```
-
-**Day 19 — Failed Transaction (On-Chain Error)**
-```
-Status: Error processing Instruction 0: custom program error: 0x1
-Fee: ◎0.000005  ← charged even on failure!
-Transfer: insufficient lamports 6135925000, need 9999000000000
-Signature: 2xQrSQUhoiF2ob4NAukfp9PvRoa4P6PSvHSKwW5bkKvgVoua8Agti2brD9FPEZonAbQDsqYVad5ZHbfvH8prtdyU
-```
-
-**Day 20 — Blog Post**
-> [Solana Transactions Explained for Backend Developers (With Real Failures)](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido)
-
 **Day 21 — X Post (Building in Public)**
 > [Day 21/100 — Shared transfer tool on X with on-chain proof](https://x.com/GopichandAI/status/2054100764197634276)
+
+**Day 22 — Account Inspection**
+```
+Wallet:  Owner=System Program | Executable=false | Data=0 bytes
+Token:   Owner=BPFLoaderUpgradeable | Executable=true  | Data=36 bytes
+System:  Owner=NativeLoader    | Executable=true  | Data="system_program"
+```
 
 ---
 
@@ -118,7 +120,7 @@ Signature: 2xQrSQUhoiF2ob4NAukfp9PvRoa4P6PSvHSKwW5bkKvgVoua8Agti2brD9FPEZonAbQDs
 - `@solana/kit` — Official Solana TypeScript SDK
 - `@solana/web3.js` — Solana JavaScript SDK
 - `Node.js` — Runtime for scripts
-- `Solana CLI` — Transaction inspection, transfers, account management
+- `Solana CLI` — Transaction inspection, account inspection, transfers
 - Solana Devnet + Mainnet — Both networks
 
 ---
@@ -133,5 +135,5 @@ Signature: 2xQrSQUhoiF2ob4NAukfp9PvRoa4P6PSvHSKwW5bkKvgVoua8Agti2brD9FPEZonAbQDs
 
 ---
 
-> *"Building in public is one of the most effective ways to grow as a developer. Every production tool started as a devnet experiment."*
-> — 100 Days of Solana, Day 21
+> *"Everything on Solana is an account. Wallets, programs, tokens, NFTs — all five fields, same structure."*
+> — 100 Days of Solana, Day 22
