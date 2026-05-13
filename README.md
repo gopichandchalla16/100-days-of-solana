@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-22%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-23%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -36,11 +36,12 @@ Day 19  ████████████████████████
 Day 20  ████████████████████████████████████████  ✅
 Day 21  ████████████████████████████████████████  ✅
 Day 22  ████████████████████████████████████████  ✅
-Day 23  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 23  ████████████████████████████████████████  ✅
+Day 24  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████░░░░░░░░░░░░░░░░░░░░] 22%
+[███████████████████████░░░░░░░░░░░░░░░░░░░] 23%
 ```
 
 ---
@@ -88,7 +89,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 22](./day-22-inspect-account-data/) | Inspect account data | 5 account fields, wallet vs program vs native, owner model | ✅ Done |
-| Day 23 | Coming soon | — | ⏳ |
+| [Day 23](./day-23-account-explorer/) | Build account explorer | Mini Solscan CLI, `getAccountInfo`, known program map, hex preview | ✅ Done |
 | Day 24 | Coming soon | — | ⏳ |
 | Day 25 | Coming soon | — | ⏳ |
 | Day 26 | Coming soon | — | ⏳ |
@@ -99,14 +100,23 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Live Outputs So Far
 
-**Day 21 — X Post (Building in Public)**
-> [Day 21/100 — Shared transfer tool on X with on-chain proof](https://x.com/GopichandAI/status/2054100764197634276)
-
-**Day 22 — Account Inspection**
+**Day 22 — Account Inspection (CLI)**
 ```
 Wallet:  Owner=System Program | Executable=false | Data=0 bytes
 Token:   Owner=BPFLoaderUpgradeable | Executable=true  | Data=36 bytes
 System:  Owner=NativeLoader    | Executable=true  | Data="system_program"
+```
+
+**Day 23 — Account Explorer (Mini Solscan CLI)**
+```bash
+node explorer.mjs AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
+# 💰 Balance: 6.137925000 SOL | 🚀 Executable: false | 📛 Owner: System Program
+
+node explorer.mjs TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+# 💰 Balance: 11.973563357 SOL | 🚀 Executable: true | 📛 Owner: BPF Loader
+
+node explorer.mjs 11111111111111111111111111111111
+# 💰 Balance: 0.000000001 SOL | 🚀 Executable: true | 📛 Owner: Native Loader
 ```
 
 ---
@@ -135,5 +145,5 @@ System:  Owner=NativeLoader    | Executable=true  | Data="system_program"
 
 ---
 
-> *"Everything on Solana is an account. Wallets, programs, tokens, NFTs — all five fields, same structure."*
-> — 100 Days of Solana, Day 22
+> *"Give it any Solana address. It tells you everything. That's what block explorers do under the hood."*
+> — 100 Days of Solana, Day 23
