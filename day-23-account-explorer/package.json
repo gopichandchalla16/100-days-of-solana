@@ -1,0 +1,16 @@
+{
+  "name": "solana-account-explorer",
+  "version": "1.0.0",
+  "description": "Mini Solscan CLI — inspect any Solana account from the terminal",
+  "main": "explorer.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node explorer.mjs"
+  },
+  "keywords": ["solana", "blockchain", "web3", "account-explorer"],
+  "author": "Gopichand Challa",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/kit": "^2.1.0"
+  }
+}
