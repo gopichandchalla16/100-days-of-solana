@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-23%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-24%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -37,11 +37,12 @@ Day 20  ████████████████████████
 Day 21  ████████████████████████████████████████  ✅
 Day 22  ████████████████████████████████████████  ✅
 Day 23  ████████████████████████████████████████  ✅
-Day 24  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 24  ████████████████████████████████████████  ✅
+Day 25  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████░░░░░░░░░░░░░░░░░░░] 23%
+[████████████████████████░░░░░░░░░░░░░░░░░░] 24%
 ```
 
 ---
@@ -90,7 +91,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 |-----|-----------|-------------|--------|
 | [Day 22](./day-22-inspect-account-data/) | Inspect account data | 5 account fields, wallet vs program vs native, owner model | ✅ Done |
 | [Day 23](./day-23-account-explorer/) | Build account explorer | Mini Solscan CLI, `getAccountInfo`, known program map, hex preview | ✅ Done |
-| Day 24 | Coming soon | — | ⏳ |
+| [Day 24](./day-24-decode-account-data/) | Decode account data | Borsh, DataView, little-endian, getMintDecoder, 3-way validation | ✅ Done |
 | Day 25 | Coming soon | — | ⏳ |
 | Day 26 | Coming soon | — | ⏳ |
 | Day 27 | Coming soon | — | ⏳ |
@@ -100,23 +101,12 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Live Outputs So Far
 
-**Day 22 — Account Inspection (CLI)**
+**Day 24 — Decode Account Data (3-way validation)**
 ```
-Wallet:  Owner=System Program | Executable=false | Data=0 bytes
-Token:   Owner=BPFLoaderUpgradeable | Executable=true  | Data=36 bytes
-System:  Owner=NativeLoader    | Executable=true  | Data="system_program"
-```
-
-**Day 23 — Account Explorer (Mini Solscan CLI)**
-```bash
-node explorer.mjs AWKYsCGBcfGLSz6QpmXzRn7EJ9fRhiJsjYSLDV3c9L9y
-# 💰 Balance: 6.137925000 SOL | 🚀 Executable: false | 📛 Owner: System Program
-
-node explorer.mjs TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
-# 💰 Balance: 11.973563357 SOL | 🚀 Executable: true | 📛 Owner: BPF Loader
-
-node explorer.mjs 11111111111111111111111111111111
-# 💰 Balance: 0.000000001 SOL | 🚀 Executable: true | 📛 Owner: Native Loader
+Codec decode  → Supply: 0 | Decimals: 9 | Initialized: true
+Manual decode → Supply: 0 | Decimals: 9 | Initialized: true
+jsonParsed    → Supply: 0 | Decimals: 9 | Initialized: true
+Match check   → Supply: true | Decimals: true ✅
 ```
 
 ---
@@ -128,7 +118,7 @@ node explorer.mjs 11111111111111111111111111111111
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 
 - `@solana/kit` — Official Solana TypeScript SDK
-- `@solana/web3.js` — Solana JavaScript SDK
+- `@solana-program/token` — Pre-built Mint/Token codecs
 - `Node.js` — Runtime for scripts
 - `Solana CLI` — Transaction inspection, account inspection, transfers
 - Solana Devnet + Mainnet — Both networks
@@ -145,5 +135,5 @@ node explorer.mjs 11111111111111111111111111111111
 
 ---
 
-> *"Give it any Solana address. It tells you everything. That's what block explorers do under the hood."*
-> — 100 Days of Solana, Day 23
+> *"Raw bytes are just data without a schema. Borsh is the schema. DataView is the reader. Now you can decode anything."*
+> — 100 Days of Solana, Day 24
