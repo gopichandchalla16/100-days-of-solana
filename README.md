@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-24%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-25%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -38,11 +38,12 @@ Day 21  ████████████████████████
 Day 22  ████████████████████████████████████████  ✅
 Day 23  ████████████████████████████████████████  ✅
 Day 24  ████████████████████████████████████████  ✅
-Day 25  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 25  ████████████████████████████████████████  ✅
+Day 26  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████░░░░░░░░░░░░░░░░░░] 24%
+[█████████████████████████░░░░░░░░░░░░░░░░░] 25%
 ```
 
 ---
@@ -75,39 +76,17 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ### 📅 Week 3 — Transactions & State Changes (✅ Complete!)
 
-| Day | Challenge | Key Concept | Status |
-|-----|-----------|-------------|--------|
-| [Day 15](./day-15-transaction-anatomy/) | Understand transaction anatomy | Signatures, account keys, blockhash, instructions, 1232-byte limit | ✅ Done |
-| [Day 16](./day-16-first-sol-transfer/) | Send first deliberate SOL transfer | `solana transfer`, `--allow-unfunded-recipient`, settlement < 1s | ✅ Done |
-| [Day 17](./day-17-transfer-tool/) | Build a reusable Node.js transfer tool | Arg parsing, balance check, signature output, Explorer link | ✅ Done |
-| [Day 18](./day-18-confirmation-ui/) | Add transaction confirmation UI | Processed→Confirmed→Finalized live tracking, error handling | ✅ Done |
-| [Day 19](./day-19-failed-transactions/) | Explore failed transactions | skipPreflight, on-chain error, fee charged on failure, custom program error 0x1 | ✅ Done |
-| [Day 20](./day-20-write-about-transactions/) | [Write about transactions — DEV.to post](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) | Technical writing, Web2→Web3 mental model, confirmation stages | ✅ Done |
-| [Day 21](./day-21-share-transfer-tool/) | [Share transfer tool — X post](https://x.com/GopichandAI/status/2054100764197634276) | Building in public, social proof, on-chain receipt | ✅ Done |
-
 ### 📅 Week 4 — Accounts & Programs
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 22](./day-22-inspect-account-data/) | Inspect account data | 5 account fields, wallet vs program vs native, owner model | ✅ Done |
-| [Day 23](./day-23-account-explorer/) | Build account explorer | Mini Solscan CLI, `getAccountInfo`, known program map, hex preview | ✅ Done |
+| [Day 23](./day-23-account-explorer/) | Build account explorer | Mini Solscan CLI, `getAccountInfo`, known program map | ✅ Done |
 | [Day 24](./day-24-decode-account-data/) | Decode account data | Borsh, DataView, little-endian, getMintDecoder, 3-way validation | ✅ Done |
-| Day 25 | Coming soon | — | ⏳ |
+| [Day 25](./day-25-system-program-accounts/) | Explore system program accounts | System Program, Native Loader, BPF programs, Sysvars, JSON output | ✅ Done |
 | Day 26 | Coming soon | — | ⏳ |
 | Day 27 | Coming soon | — | ⏳ |
 | Day 28 | Coming soon | — | ⏳ |
-
----
-
-## Live Outputs So Far
-
-**Day 24 — Decode Account Data (3-way validation)**
-```
-Codec decode  → Supply: 0 | Decimals: 9 | Initialized: true
-Manual decode → Supply: 0 | Decimals: 9 | Initialized: true
-jsonParsed    → Supply: 0 | Decimals: 9 | Initialized: true
-Match check   → Supply: true | Decimals: true ✅
-```
 
 ---
 
@@ -115,13 +94,12 @@ Match check   → Supply: true | Decimals: true ✅
 ![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 
 - `@solana/kit` — Official Solana TypeScript SDK
 - `@solana-program/token` — Pre-built Mint/Token codecs
 - `Node.js` — Runtime for scripts
-- `Solana CLI` — Transaction inspection, account inspection, transfers
-- Solana Devnet + Mainnet — Both networks
+- `Solana CLI` — Account inspection, transfers, program exploration
+- Solana Devnet + Mainnet
 
 ---
 
@@ -135,5 +113,5 @@ Match check   → Supply: true | Decimals: true ✅
 
 ---
 
-> *"Raw bytes are just data without a schema. Borsh is the schema. DataView is the reader. Now you can decode anything."*
-> — 100 Days of Solana, Day 24
+> *"The System Program is the OS kernel of Solana. Every wallet, every new account, every SOL transfer goes through it."*
+> — 100 Days of Solana, Day 25
