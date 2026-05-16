@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-25%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-26%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -39,52 +39,31 @@ Day 22  ████████████████████████
 Day 23  ████████████████████████████████████████  ✅
 Day 24  ████████████████████████████████████████  ✅
 Day 25  ████████████████████████████████████████  ✅
-Day 26  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 26  ████████████████████████████████████████  ✅
+Day 27  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████░░░░░░░░░░░░░░░░░] 25%
+[██████████████████████████░░░░░░░░░░░░░░░░] 26%
 ```
 
 ---
 
 ## Challenge Log
 
-### 📅 Week 1 — Identity & Wallets
-
-| Day | Challenge | Key Concept | Status |
-|-----|-----------|-------------|--------|
-| [Day 1](./day-01-keypair-devnet-sol/) | Generate a keypair & get devnet SOL | Public/private keypair, airdrop | ✅ Done |
-| [Day 2](./day-02-persistent-wallet/) | Create a persistent wallet & check balance | Saving keypair to file, reusing identity | ✅ Done |
-| [Day 3](./day-03-sol-and-lamports/) | Understand SOL and Lamports | 1 SOL = 1,000,000,000 lamports | ✅ Done |
-| [Day 4](./day-04-browser-wallet/) | Connect a browser wallet — live address & balance | Wallet Standard, browser integration | ✅ Done |
-| [Day 5](./day-05-wallet-types/) | Explore wallet types — CLI, browser, mobile | Wallet ecosystem overview | ✅ Done |
-| Day 6 | [DEV blog post](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) — On-chain identity | Public key = identity, no account needed | ✅ Done |
-| Day 7 | [Amplify Day](https://x.com/GopichandAI/status/2049175042584445308) — Week 1 recap on X | Building in public, community | ✅ Done |
-
-### 📅 Week 2 — Reading the Blockchain
-
-| Day | Challenge | Key Concept | Status |
-|-----|-----------|-------------|--------|
-| [Day 8](./day-08-read-solana/) | Read your first on-chain data — SOL balance | RPC, `getBalance`, lamports → SOL | ✅ Done |
-| [Day 9](./day-09-fetch-transactions/) | Fetch & display recent transactions | `getSignaturesForAddress`, slots, blockTime | ✅ Done |
-| [Day 10](./day-10-dashboard/) | Browser dashboard — balance + transactions UI | Vite, `@solana/kit` in browser, DOM rendering | ✅ Done |
-| [Day 11](./day-11-accounts-vs-databases/) | Compare accounts vs databases | Account model, rent, PDAs, ownership rules | ✅ Done |
-| [Day 12](./day-12-compare-networks/) | Compare devnet vs mainnet — same address, different data | `devnet()` & `mainnet()` helpers, network isolation | ✅ Done |
-| [Day 13](./day-13-week2-reflection/) | [Week 2 reflection — DEV.to post](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) | Writing, mental models, public learning | ✅ Done |
-| [Day 14](./day-14-amplify-week2/) | [Amplify Week 2 — X post](https://x.com/GopichandAI/status/2051216227356528884) | Social media, building in public | ✅ Done |
-
+### 📅 Week 1 — Identity & Wallets (✅ Complete!)
+### 📅 Week 2 — Reading the Blockchain (✅ Complete!)
 ### 📅 Week 3 — Transactions & State Changes (✅ Complete!)
 
 ### 📅 Week 4 — Accounts & Programs
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
-| [Day 22](./day-22-inspect-account-data/) | Inspect account data | 5 account fields, wallet vs program vs native, owner model | ✅ Done |
+| [Day 22](./day-22-inspect-account-data/) | Inspect account data | 5 account fields, wallet vs program vs native | ✅ Done |
 | [Day 23](./day-23-account-explorer/) | Build account explorer | Mini Solscan CLI, `getAccountInfo`, known program map | ✅ Done |
-| [Day 24](./day-24-decode-account-data/) | Decode account data | Borsh, DataView, little-endian, getMintDecoder, 3-way validation | ✅ Done |
-| [Day 25](./day-25-system-program-accounts/) | Explore system program accounts | System Program, Native Loader, BPF programs, Sysvars, JSON output | ✅ Done |
-| Day 26 | Coming soon | — | ⏳ |
+| [Day 24](./day-24-decode-account-data/) | Decode account data | Borsh, DataView, little-endian, getMintDecoder | ✅ Done |
+| [Day 25](./day-25-system-program-accounts/) | Explore system program accounts | System Program, Native Loader, BPF programs, Sysvars | ✅ Done |
+| [Day 26](./day-26-solana-explorer/) | Explore Solana Explorer | Visual on-chain browsing, Token-2022, live TPS | ✅ Done |
 | Day 27 | Coming soon | — | ⏳ |
 | Day 28 | Coming soon | — | ⏳ |
 
@@ -94,12 +73,6 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 ![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-
-- `@solana/kit` — Official Solana TypeScript SDK
-- `@solana-program/token` — Pre-built Mint/Token codecs
-- `Node.js` — Runtime for scripts
-- `Solana CLI` — Account inspection, transfers, program exploration
-- Solana Devnet + Mainnet
 
 ---
 
@@ -113,5 +86,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"The System Program is the OS kernel of Solana. Every wallet, every new account, every SOL transfer goes through it."*
-> — 100 Days of Solana, Day 25
+> *"The blockchain is public. Your wallet history, every transaction, every fee paid — visible to anyone, forever. That's not a bug. That's the point."*
+> — 100 Days of Solana, Day 26
