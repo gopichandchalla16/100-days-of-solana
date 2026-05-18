@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-26%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-27%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -40,11 +40,12 @@ Day 23  ████████████████████████
 Day 24  ████████████████████████████████████████  ✅
 Day 25  ████████████████████████████████████████  ✅
 Day 26  ████████████████████████████████████████  ✅
-Day 27  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 27  ████████████████████████████████████████  ✅
+Day 28  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████░░░░░░░░░░░░░░░░] 26%
+[███████████████████████████░░░░░░░░░░░░░░░] 27%
 ```
 
 ---
@@ -64,15 +65,19 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 24](./day-24-decode-account-data/) | Decode account data | Borsh, DataView, little-endian, getMintDecoder | ✅ Done |
 | [Day 25](./day-25-system-program-accounts/) | Explore system program accounts | System Program, Native Loader, BPF programs, Sysvars | ✅ Done |
 | [Day 26](./day-26-solana-explorer/) | Explore Solana Explorer | Visual on-chain browsing, Token-2022, live TPS | ✅ Done |
-| Day 27 | Coming soon | — | ⏳ |
+| [Day 27](./day-27-write-account-model/) | [Write about the account model — DEV.to](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) | Technical writing, Web2 analogy, filesystem model | ✅ Done |
 | Day 28 | Coming soon | — | ⏳ |
 
 ---
 
-## Tech Stack
-![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+## DEV.to Articles Published
+
+| Day | Article | Tags |
+|-----|---------|------|
+| Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) | solana, web3, beginners |
+| Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) | solana, blockchain, web3 |
+| Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) | solana, web3, blockchain |
+| Day 27 | [Solana’s Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) | solana, blockchain, web3, beginners |
 
 ---
 
@@ -86,5 +91,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"The blockchain is public. Your wallet history, every transaction, every fee paid — visible to anyone, forever. That's not a bug. That's the point."*
-> — 100 Days of Solana, Day 26
+> *"Writing forces clarity. When you explain the difference between a program account and a data account, you discover which parts you truly understand."*
+> — 100 Days of Solana, Day 27
