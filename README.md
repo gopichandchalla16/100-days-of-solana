@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-27%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-28%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -41,11 +41,12 @@ Day 24  ████████████████████████
 Day 25  ████████████████████████████████████████  ✅
 Day 26  ████████████████████████████████████████  ✅
 Day 27  ████████████████████████████████████████  ✅
-Day 28  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 28  ████████████████████████████████████████  ✅
+Day 29  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████░░░░░░░░░░░░░░░] 27%
+[████████████████████████████░░░░░░░░░░░░░░] 28%
 ```
 
 ---
@@ -56,7 +57,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 ### 📅 Week 2 — Reading the Blockchain (✅ Complete!)
 ### 📅 Week 3 — Transactions & State Changes (✅ Complete!)
 
-### 📅 Week 4 — Accounts & Programs
+### 📅 Week 4 — Accounts & Programs (✅ Complete!)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
@@ -65,31 +66,30 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 24](./day-24-decode-account-data/) | Decode account data | Borsh, DataView, little-endian, getMintDecoder | ✅ Done |
 | [Day 25](./day-25-system-program-accounts/) | Explore system program accounts | System Program, Native Loader, BPF programs, Sysvars | ✅ Done |
 | [Day 26](./day-26-solana-explorer/) | Explore Solana Explorer | Visual on-chain browsing, Token-2022, live TPS | ✅ Done |
-| [Day 27](./day-27-write-account-model/) | [Write about the account model — DEV.to](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) | Technical writing, Web2 analogy, filesystem model | ✅ Done |
-| Day 28 | Coming soon | — | ⏳ |
+| [Day 27](./day-27-write-account-model/) | [Write about the account model](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) | Technical writing, Web2 analogy, filesystem model | ✅ Done |
+| [Day 28](./day-28-share-explorer/) | [Share your explorer — X post](https://x.com/GopichandAI/status/2056271060836982834) | Building in public, community sharing | ✅ Done |
 
 ---
 
-## DEV.to Articles Published
+## DEV.to Articles
 
-| Day | Article | Tags |
-|-----|---------|------|
-| Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) | solana, web3, beginners |
-| Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) | solana, blockchain, web3 |
-| Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) | solana, web3, blockchain |
-| Day 27 | [Solana’s Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) | solana, blockchain, web3, beginners |
+| Day | Article |
+|-----|---------|
+| Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) |
+| Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
+| Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
+| Day 27 | [Solana’s Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
 
 ---
 
-## Connect with Me
+## Connect
 | Platform | Link |
 |----------|------|
-| 🐦 Twitter/X | [@GopichandAI](https://twitter.com/GopichandAI) |
+| 🐦 X/Twitter | [@GopichandAI](https://twitter.com/GopichandAI) |
 | 💼 GitHub | [gopichandchalla16](https://github.com/gopichandchalla16) |
-| 🔗 LinkedIn | [gopichandchalla](https://linkedin.com/in/gopichandchalla) |
 | ✍️ DEV.to | [gopichand_dev](https://dev.to/gopichand_dev) |
 
 ---
 
-> *"Writing forces clarity. When you explain the difference between a program account and a data account, you discover which parts you truly understand."*
-> — 100 Days of Solana, Day 27
+> *"Block explorers are the browser DevTools of the blockchain world. Get comfortable with them — you’ll use them every single day."*
+> — 100 Days of Solana, Day 28
