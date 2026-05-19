@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-28%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-29%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -42,11 +42,12 @@ Day 25  ████████████████████████
 Day 26  ████████████████████████████████████████  ✅
 Day 27  ████████████████████████████████████████  ✅
 Day 28  ████████████████████████████████████████  ✅
-Day 29  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 29  ████████████████████████████████████████  ✅
+Day 30  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████░░░░░░░░░░░░░░] 28%
+[████████████████████████████░░░░░░░░░░░░░░] 29%
 ```
 
 ---
@@ -69,6 +70,12 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 27](./day-27-write-account-model/) | [Write about the account model](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) | Technical writing, Web2 analogy, filesystem model | ✅ Done |
 | [Day 28](./day-28-share-explorer/) | [Share your explorer — X post](https://x.com/GopichandAI/status/2056271060836982834) | Building in public, community sharing | ✅ Done |
 
+### 📅 Week 5 — Token Fundamentals (🔥 In Progress)
+
+| Day | Challenge | Key Concept | Status |
+|-----|-----------|-------------|--------|
+| [Day 29](./day-29-spl-token/) | Create SPL token on devnet | Mint account, token account, spl-token CLI, decimals | ✅ Done |
+
 ---
 
 ## DEV.to Articles
@@ -78,7 +85,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) |
 | Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
 | Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
-| Day 27 | [Solana’s Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
+| Day 27 | [Solana's Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
 
 ---
 
@@ -91,5 +98,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"Block explorers are the browser DevTools of the blockchain world. Get comfortable with them — you’ll use them every single day."*
-> — 100 Days of Solana, Day 28
+> *"On Solana, any developer can create a token, define its rules, and distribute it — all without asking permission or spinning up a custom backend."*
+> — 100 Days of Solana, Day 29
