@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-29%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-30%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -43,11 +43,12 @@ Day 26  ████████████████████████
 Day 27  ████████████████████████████████████████  ✅
 Day 28  ████████████████████████████████████████  ✅
 Day 29  ████████████████████████████████████████  ✅
-Day 30  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 30  ████████████████████████████████████████  ✅
+Day 31  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████░░░░░░░░░░░░░░] 29%
+[██████████████████████████████░░░░░░░░░░░░] 30%
 ```
 
 ---
@@ -57,24 +58,14 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 ### 📅 Week 1 — Identity & Wallets (✅ Complete!)
 ### 📅 Week 2 — Reading the Blockchain (✅ Complete!)
 ### 📅 Week 3 — Transactions & State Changes (✅ Complete!)
-
 ### 📅 Week 4 — Accounts & Programs (✅ Complete!)
-
-| Day | Challenge | Key Concept | Status |
-|-----|-----------|-------------|--------|
-| [Day 22](./day-22-inspect-account-data/) | Inspect account data | 5 account fields, wallet vs program vs native | ✅ Done |
-| [Day 23](./day-23-account-explorer/) | Build account explorer | Mini Solscan CLI, `getAccountInfo`, known program map | ✅ Done |
-| [Day 24](./day-24-decode-account-data/) | Decode account data | Borsh, DataView, little-endian, getMintDecoder | ✅ Done |
-| [Day 25](./day-25-system-program-accounts/) | Explore system program accounts | System Program, Native Loader, BPF programs, Sysvars | ✅ Done |
-| [Day 26](./day-26-solana-explorer/) | Explore Solana Explorer | Visual on-chain browsing, Token-2022, live TPS | ✅ Done |
-| [Day 27](./day-27-write-account-model/) | [Write about the account model](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) | Technical writing, Web2 analogy, filesystem model | ✅ Done |
-| [Day 28](./day-28-share-explorer/) | [Share your explorer — X post](https://x.com/GopichandAI/status/2056271060836982834) | Building in public, community sharing | ✅ Done |
 
 ### 📅 Week 5 — Token Fundamentals (🔥 In Progress)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 29](./day-29-spl-token/) | Create SPL token on devnet | Mint account, token account, spl-token CLI, decimals | ✅ Done |
+| [Day 30](./day-30-token2022-metadata/) | Token-2022 with on-chain metadata | Token Extensions, metadata, transfer to second wallet | ✅ Done |
 
 ---
 
@@ -98,5 +89,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"On Solana, any developer can create a token, define its rules, and distribute it — all without asking permission or spinning up a custom backend."*
-> — 100 Days of Solana, Day 29
+> *"On Solana, the Token Extensions Program lets you embed metadata directly into the mint — fewer accounts, fewer transactions, lower costs."*
+> — 100 Days of Solana, Day 30
