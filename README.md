@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-30%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-31%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -44,11 +44,12 @@ Day 27  ████████████████████████
 Day 28  ████████████████████████████████████████  ✅
 Day 29  ████████████████████████████████████████  ✅
 Day 30  ████████████████████████████████████████  ✅
-Day 31  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 31  ████████████████████████████████████████  ✅
+Day 32  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████░░░░░░░░░░░░] 30%
+[███████████████████████████████░░░░░░░░░░░] 31%
 ```
 
 ---
@@ -66,6 +67,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 |-----|-----------|-------------|--------|
 | [Day 29](./day-29-spl-token/) | Create SPL token on devnet | Mint account, token account, spl-token CLI, decimals | ✅ Done |
 | [Day 30](./day-30-token2022-metadata/) | Token-2022 with on-chain metadata | Token Extensions, metadata, transfer to second wallet | ✅ Done |
+| [Day 31](./day-31-transfer-fee/) | Transfer fee extension | 1% fee, withhold, withdraw-withheld-tokens, 901 final | ✅ Done |
 
 ---
 
@@ -77,6 +79,8 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
 | Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
 | Day 27 | [Solana's Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
+| Day 29 | [How I Created My First Solana Token from Scratch](https://dev.to/gopichand_dev/how-i-created-my-first-solana-token-from-scratch-spl-token-basics-explained-2m39) |
+| Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
 
 ---
 
@@ -89,5 +93,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"On Solana, the Token Extensions Program lets you embed metadata directly into the mint — fewer accounts, fewer transactions, lower costs."*
-> — 100 Days of Solana, Day 30
+> *"On Solana, transfer fees are enforced at the protocol level. No middleware, no fee handler to bypass — the program rejects any transfer whose fee doesn't match."*
+> — 100 Days of Solana, Day 31
