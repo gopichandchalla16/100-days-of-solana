@@ -81,6 +81,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day 27 | [Solana's Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
 | Day 29 | [How I Created My First Solana Token from Scratch](https://dev.to/gopichand_dev/how-i-created-my-first-solana-token-from-scratch-spl-token-basics-explained-2m39) |
 | Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
+| Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
 
 ---
 
