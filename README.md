@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-31%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-32%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -45,11 +45,12 @@ Day 28  ████████████████████████
 Day 29  ████████████████████████████████████████  ✅
 Day 30  ████████████████████████████████████████  ✅
 Day 31  ████████████████████████████████████████  ✅
-Day 32  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 32  ████████████████████████████████████████  ✅
+Day 33  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████░░░░░░░░░░░] 31%
+[████████████████████████████████░░░░░░░░░] 32%
 ```
 
 ---
@@ -61,13 +62,14 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 ### 📅 Week 3 — Transactions & State Changes (✅ Complete!)
 ### 📅 Week 4 — Accounts & Programs (✅ Complete!)
 
-### 📅 Week 5 — Token Fundamentals (🔥 In Progress)
+### 📅 Week 5 — Token Fundamentals (✅ Complete!)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 29](./day-29-spl-token/) | Create SPL token on devnet | Mint account, token account, spl-token CLI, decimals | ✅ Done |
 | [Day 30](./day-30-token2022-metadata/) | Token-2022 with on-chain metadata | Token Extensions, metadata, transfer to second wallet | ✅ Done |
 | [Day 31](./day-31-transfer-fee/) | Transfer fee extension | 1% fee, withhold, withdraw-withheld-tokens, 901 final | ✅ Done |
+| [Day 32](./day-32/) | Review token incentive mechanics | Full lifecycle: Token-2022 + metadata + 2% fee + fee collection in one sitting | ✅ Done |
 
 ---
 
@@ -94,5 +96,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"On Solana, transfer fees are enforced at the protocol level. No middleware, no fee handler to bypass — the program rejects any transfer whose fee doesn't match."*
-> — 100 Days of Solana, Day 31
+> *"On Solana, the full token lifecycle — create, configure, mint, transfer, collect — is just CLI commands. No backend. No middleware. No payment processor."*
+> — 100 Days of Solana, Day 32
