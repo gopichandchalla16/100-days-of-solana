@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-33%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-34%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -47,11 +47,12 @@ Day 30  ████████████████████████
 Day 31  ████████████████████████████████████████  ✅
 Day 32  ████████████████████████████████████████  ✅
 Day 33  ████████████████████████████████████████  ✅
-Day 34  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 34  ████████████████████████████████████████  ✅
+Day 35  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████░░░░░░░░] 33%
+[██████████████████████████████████░░░░░░░] 34%
 ```
 
 ---
@@ -69,6 +70,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 33](./day-33/) | Test token distribution strategies | Non-transferable (soulbound) token — transfer fails, burn succeeds | ✅ Done |
+| Day 34 | Write about what you learned | DEV.to article covering Days 29–33 Token Extensions arc | ✅ Done |
 
 ---
 
@@ -83,6 +85,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day 29 | [How I Created My First Solana Token from Scratch](https://dev.to/gopichand_dev/how-i-created-my-first-solana-token-from-scratch-spl-token-basics-explained-2m39) |
 | Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
 | Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
+| Day 34 | [Transfer Fees, Metadata, and Soulbound Tokens: A Tour of Solana Token Extensions](https://dev.to/gopichand_dev/transfer-fees-metadata-and-soulbound-tokens-a-tour-of-solana-token-extensions-42bj) |
 
 ---
 
@@ -95,5 +98,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"Non-transferable means the token cannot move to another wallet, but the holder is not stuck with it forever. They can destroy it if they choose to. The blockchain enforces the restriction. The owner keeps the control."*
-> — 100 Days of Solana, Day 33
+> *"Developers who write about what they build get noticed by teams, communities, and collaborators. Writing forces you to organize what you know — it is a feedback loop for your own learning."*
+> — 100 Days of Solana, Day 34
