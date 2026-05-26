@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-34%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-35%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -48,11 +48,12 @@ Day 31  ████████████████████████
 Day 32  ████████████████████████████████████████  ✅
 Day 33  ████████████████████████████████████████  ✅
 Day 34  ████████████████████████████████████████  ✅
-Day 35  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 35  ████████████████████████████████████████  ✅
+Day 36  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████████░░░░░░░] 34%
+[███████████████████████████████████░░░░░░] 35%
 ```
 
 ---
@@ -71,6 +72,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 |-----|-----------|-------------|--------|
 | [Day 33](./day-33/) | Test token distribution strategies | Non-transferable (soulbound) token — transfer fails, burn succeeds | ✅ Done |
 | Day 34 | Write about what you learned | DEV.to article covering Days 29–33 Token Extensions arc | ✅ Done |
+| Day 35 | Share what you learned | X post published with #100DaysOfSolana + Week 5 recap | ✅ Done |
 
 ---
 
@@ -89,6 +91,14 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
+## X / Social Posts
+
+| Day | Post |
+|-----|------|
+| Day 35 | [Week 5 recap — SPL tokens, metadata, transfer fees, soulbound tokens](https://x.com/GopichandAI/status/2059138519097077939) |
+
+---
+
 ## Connect
 | Platform | Link |
 |----------|------|
@@ -98,5 +108,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"Developers who write about what they build get noticed by teams, communities, and collaborators. Writing forces you to organize what you know — it is a feedback loop for your own learning."*
-> — 100 Days of Solana, Day 34
+> *"Developers who build in public create a portfolio that speaks for itself. Every post, every screenshot, every blog link is another data point that says: this person ships."*
+> — 100 Days of Solana, Day 35
