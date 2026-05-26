@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-35%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-36%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -49,11 +49,12 @@ Day 32  ████████████████████████
 Day 33  ████████████████████████████████████████  ✅
 Day 34  ████████████████████████████████████████  ✅
 Day 35  ████████████████████████████████████████  ✅
-Day 36  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 36  ████████████████████████████████████████  ✅
+Day 37  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████████░░░░░░] 35%
+[████████████████████████████████████░░░░░] 36%
 ```
 
 ---
@@ -73,6 +74,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 33](./day-33/) | Test token distribution strategies | Non-transferable (soulbound) token — transfer fails, burn succeeds | ✅ Done |
 | Day 34 | Write about what you learned | DEV.to article covering Days 29–33 Token Extensions arc | ✅ Done |
 | Day 35 | Share what you learned | X post published with #100DaysOfSolana + Week 5 recap | ✅ Done |
+| [Day 36](./day-36/) | Create an interest-bearing token | 500bps → 15000bps rate update; raw=1000, UI=1000.000255096 | ✅ Done |
 
 ---
 
@@ -108,5 +110,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"Developers who build in public create a portfolio that speaks for itself. Every post, every screenshot, every blog link is another data point that says: this person ships."*
-> — 100 Days of Solana, Day 35
+> *"On Solana, interest is a property of the token itself. The formula runs in every wallet, every app, every reader — no backend, no cron job, no coordination required."*
+> — 100 Days of Solana, Day 36
