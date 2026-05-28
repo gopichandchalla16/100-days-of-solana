@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-37%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-38%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -51,11 +51,12 @@ Day 34  ████████████████████████
 Day 35  ████████████████████████████████████████  ✅
 Day 36  ████████████████████████████████████████  ✅
 Day 37  ████████████████████████████████████████  ✅
-Day 38  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 38  ████████████████████████████████████████  ✅
+Day 39  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████░░░] 37%
+[██████████████████████████████████████░░] 38%
 ```
 
 ---
@@ -72,11 +73,12 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
-| [Day 33](./day-33/) | Test token distribution strategies | Non-transferable (soulbound) token — transfer fails, burn succeeds | ✅ Done |
-| Day 34 | Write about what you learned | DEV.to article covering Days 29–33 Token Extensions arc | ✅ Done |
-| Day 35 | Share what you learned | X post published with #100DaysOfSolana + Week 5 recap | ✅ Done |
-| [Day 36](./day-36/) | Create an interest-bearing token | 500bps → 15000bps rate update; raw=1000, UI=1000.000255096 | ✅ Done |
-| [Day 37](./day-37/) | Build a Multi-Extension Token | Transfer fees + Interest-bearing + Metadata in one mint (ArcCoin/ARC) | ✅ Done |
+| [Day 33](./day-33/) | Test token distribution strategies | Non-transferable (soulbound) token | ✅ Done |
+| Day 34 | Write about what you learned | DEV.to article — Token Extensions arc | ✅ Done |
+| Day 35 | Share what you learned | X post — Week 5 recap | ✅ Done |
+| [Day 36](./day-36/) | Create an interest-bearing token | 500bps → 15000bps; raw=1000, UI=1000.000255 | ✅ Done |
+| [Day 37](./day-37/) | Build a Multi-Extension Token | Transfer fees + Interest + Metadata (ArcCoin/ARC) | ✅ Done |
+| [Day 38](./day-38/) | Compliance-Gated Token | Default frozen accounts; both sides must be thawed | ✅ Done |
 
 ---
 
@@ -91,7 +93,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day 29 | [How I Created My First Solana Token from Scratch](https://dev.to/gopichand_dev/how-i-created-my-first-solana-token-from-scratch-spl-token-basics-explained-2m39) |
 | Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
 | Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
-| Day 34 | [Transfer Fees, Metadata, and Soulbound Tokens: A Tour of Solana Token Extensions](https://dev.to/gopichand_dev/transfer-fees-metadata-and-soulbound-tokens-a-tour-of-solana-token-extensions-42bj) |
+| Day 34 | [Transfer Fees, Metadata, and Soulbound Tokens](https://dev.to/gopichand_dev/transfer-fees-metadata-and-soulbound-tokens-a-tour-of-solana-token-extensions-42bj) |
 
 ---
 
@@ -112,5 +114,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"In Web2, adding fees + interest + metadata to a payment token means 3 different services, 3 different failure modes. On Solana Token-2022, it's 3 flags in one command."*
-> — 100 Days of Solana, Day 37
+> *"Default frozen accounts = protocol-level KYC. No frontend bug can bypass it. Both sender and receiver must be explicitly approved before any value moves."*
+> — 100 Days of Solana, Day 38
