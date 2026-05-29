@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-38%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-39%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -52,11 +52,12 @@ Day 35  ████████████████████████
 Day 36  ████████████████████████████████████████  ✅
 Day 37  ████████████████████████████████████████  ✅
 Day 38  ████████████████████████████████████████  ✅
-Day 39  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 39  ████████████████████████████████████████  ✅
+Day 40  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████████████░░] 38%
+[███████████████████████████████████████░] 39%
 ```
 
 ---
@@ -76,9 +77,10 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 33](./day-33/) | Test token distribution strategies | Non-transferable (soulbound) token | ✅ Done |
 | Day 34 | Write about what you learned | DEV.to article — Token Extensions arc | ✅ Done |
 | Day 35 | Share what you learned | X post — Week 5 recap | ✅ Done |
-| [Day 36](./day-36/) | Create an interest-bearing token | 500bps → 15000bps; raw=1000, UI=1000.000255 | ✅ Done |
+| [Day 36](./day-36/) | Create an interest-bearing token | 500bps → 15000bps; raw=1000, UI growing | ✅ Done |
 | [Day 37](./day-37/) | Build a Multi-Extension Token | Transfer fees + Interest + Metadata (ArcCoin/ARC) | ✅ Done |
 | [Day 38](./day-38/) | Compliance-Gated Token | Default frozen accounts; both sides must be thawed | ✅ Done |
+| [Day 39](./day-39/) | Inspect & Compare Token Extensions | 171→222→599 bytes; rent 0.002→0.005 SOL | ✅ Done |
 
 ---
 
@@ -97,14 +99,6 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-## X / Social Posts
-
-| Day | Post |
-|-----|------|
-| Day 35 | [Week 5 recap — SPL tokens, metadata, transfer fees, soulbound tokens](https://x.com/GopichandAI/status/2059138519097077939) |
-
----
-
 ## Connect
 | Platform | Link |
 |----------|------|
@@ -114,5 +108,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"Default frozen accounts = protocol-level KYC. No frontend bug can bypass it. Both sender and receiver must be explicitly approved before any value moves."*
-> — 100 Days of Solana, Day 38
+> *"Reading config is not passive. On Solana, spl-token display tells you who controls what, what it costs, and what rules are enforced — before you touch a single byte."*
+> — 100 Days of Solana, Day 39
