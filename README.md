@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-39%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-40%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -53,11 +53,12 @@ Day 36  ████████████████████████
 Day 37  ████████████████████████████████████████  ✅
 Day 38  ████████████████████████████████████████  ✅
 Day 39  ████████████████████████████████████████  ✅
-Day 40  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 40  ████████████████████████████████████████  ✅
+Day 41  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████████████░] 39%
+[████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 40%
 ```
 
 ---
@@ -70,7 +71,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 ### 📅 Week 4 — Accounts & Programs (✅ Complete!)
 ### 📅 Week 5 — Token Fundamentals (✅ Complete!)
 
-### 📅 Week 6 — Token Distribution & Access Control (🔥 In Progress)
+### 📅 Week 6 — Token Distribution & Access Control (✅ Complete!)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
@@ -81,6 +82,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | [Day 37](./day-37/) | Build a Multi-Extension Token | Transfer fees + Interest + Metadata (ArcCoin/ARC) | ✅ Done |
 | [Day 38](./day-38/) | Compliance-Gated Token | Default frozen accounts; both sides must be thawed | ✅ Done |
 | [Day 39](./day-39/) | Inspect & Compare Token Extensions | 171→222→599 bytes; rent 0.002→0.005 SOL | ✅ Done |
+| [Day 40](./day-40/) | Revocable Credential Token | Non-Transferable + Permanent Delegate + Metadata | ✅ Done |
 
 ---
 
@@ -108,5 +110,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"Reading config is not passive. On Solana, spl-token display tells you who controls what, what it costs, and what rules are enforced — before you touch a single byte."*
-> — 100 Days of Solana, Day 39
+> *"Non-transferable = yours to hold. Permanent delegate = issuer's right to revoke. Together: a credential that works exactly like the real world."*
+> — 100 Days of Solana, Day 40
