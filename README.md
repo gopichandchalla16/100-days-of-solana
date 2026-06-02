@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-40%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-41%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -54,35 +54,31 @@ Day 37  ████████████████████████
 Day 38  ████████████████████████████████████████  ✅
 Day 39  ████████████████████████████████████████  ✅
 Day 40  ████████████████████████████████████████  ✅
-Day 41  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 41  ████████████████████████████████████████  ✅
+Day 42  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 40%
+[████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 41%
 ```
 
 ---
 
 ## Challenge Log
 
-### 📅 Week 1 — Identity & Wallets (✅ Complete!)
-### 📅 Week 2 — Reading the Blockchain (✅ Complete!)
-### 📅 Week 3 — Transactions & State Changes (✅ Complete!)
-### 📅 Week 4 — Accounts & Programs (✅ Complete!)
-### 📅 Week 5 — Token Fundamentals (✅ Complete!)
+### 📅 Weeks 1–5 (✅ Complete!)
+Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ### 📅 Week 6 — Token Distribution & Access Control (✅ Complete!)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
-| [Day 33](./day-33/) | Test token distribution strategies | Non-transferable (soulbound) token | ✅ Done |
-| Day 34 | Write about what you learned | DEV.to article — Token Extensions arc | ✅ Done |
-| Day 35 | Share what you learned | X post — Week 5 recap | ✅ Done |
-| [Day 36](./day-36/) | Create an interest-bearing token | 500bps → 15000bps; raw=1000, UI growing | ✅ Done |
-| [Day 37](./day-37/) | Build a Multi-Extension Token | Transfer fees + Interest + Metadata (ArcCoin/ARC) | ✅ Done |
-| [Day 38](./day-38/) | Compliance-Gated Token | Default frozen accounts; both sides must be thawed | ✅ Done |
-| [Day 39](./day-39/) | Inspect & Compare Token Extensions | 171→222→599 bytes; rent 0.002→0.005 SOL | ✅ Done |
+| [Day 36](./day-36/) | Interest-bearing token | 500bps → 15000bps rate update | ✅ Done |
+| [Day 37](./day-37/) | Multi-Extension Token | Transfer fees + Interest + Metadata (ArcCoin/ARC) | ✅ Done |
+| [Day 38](./day-38/) | Compliance-Gated Token | Default frozen; both sides must be thawed | ✅ Done |
+| [Day 39](./day-39/) | Inspect & Compare Extensions | 171→222→599 bytes; rent 0.002→0.005 SOL | ✅ Done |
 | [Day 40](./day-40/) | Revocable Credential Token | Non-Transferable + Permanent Delegate + Metadata | ✅ Done |
+| [Day 41](./day-41/) | DEV.to deep dive article | 5 Token Extension combinations explained | ✅ Done |
 
 ---
 
@@ -98,6 +94,7 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 | Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
 | Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
 | Day 34 | [Transfer Fees, Metadata, and Soulbound Tokens](https://dev.to/gopichand_dev/transfer-fees-metadata-and-soulbound-tokens-a-tour-of-solana-token-extensions-42bj) |
+| Day 41 | [I Built 5 Token Extension Combinations on Solana This Week](https://dev.to/gopichand_dev/i-built-5-token-extension-combinations-on-solana-this-week-heres-what-each-one-does-4ck3) |
 
 ---
 
@@ -110,5 +107,5 @@ Day100  ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-> *"Non-transferable = yours to hold. Permanent delegate = issuer's right to revoke. Together: a credential that works exactly like the real world."*
-> — 100 Days of Solana, Day 40
+> *"Documenting what you built forces you to understand it. Writing for someone a week behind you is the fastest way to solidify what you know."*
+> — 100 Days of Solana, Day 41
