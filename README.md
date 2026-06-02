@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-42%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-43%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -56,11 +56,12 @@ Day 39  ████████████████████████
 Day 40  ████████████████████████████████████████  ✅
 Day 41  ████████████████████████████████████████  ✅
 Day 42  ████████████████████████████████████████  ✅
-Day 43  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 43  ████████████████████████████████████████  ✅
+Day 44  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 42%
+[███████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 43%
 ```
 
 ---
@@ -81,6 +82,12 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 40](./day-40/) | Revocable Credential Token | Non-Transferable + Permanent Delegate + Metadata | ✅ Done |
 | [Day 41](./day-41/) | DEV.to deep dive article | 5 Token Extension combinations explained | ✅ Done |
 | [Day 42](./day-42/) | Social media amplification | X post promoting DEV.to article | ✅ Done |
+
+### 📅 Week 7 — NFTs & Digital Assets (🔥 In Progress)
+
+| Day | Challenge | Key Concept | Status |
+|-----|-----------|-------------|--------|
+| [Day 43](./day-43/) | Mint a 1-of-1 SPL token | 0 decimals + disable mint = first NFT | ✅ Done |
 
 ---
 
@@ -109,5 +116,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"An artifact nobody sees doesn't help you. Promotion is part of the work."*
-> — 100 Days of Solana, Day 42
+> *"Zero decimals + disabled mint = the two laws of non-fungibility. Everything else is decoration."*
+> — 100 Days of Solana, Day 43
