@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-41%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-42%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -55,11 +55,12 @@ Day 38  ████████████████████████
 Day 39  ████████████████████████████████████████  ✅
 Day 40  ████████████████████████████████████████  ✅
 Day 41  ████████████████████████████████████████  ✅
-Day 42  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 42  ████████████████████████████████████████  ✅
+Day 43  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 41%
+[█████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 42%
 ```
 
 ---
@@ -79,6 +80,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 39](./day-39/) | Inspect & Compare Extensions | 171→222→599 bytes; rent 0.002→0.005 SOL | ✅ Done |
 | [Day 40](./day-40/) | Revocable Credential Token | Non-Transferable + Permanent Delegate + Metadata | ✅ Done |
 | [Day 41](./day-41/) | DEV.to deep dive article | 5 Token Extension combinations explained | ✅ Done |
+| [Day 42](./day-42/) | Social media amplification | X post promoting DEV.to article | ✅ Done |
 
 ---
 
@@ -107,5 +109,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"Documenting what you built forces you to understand it. Writing for someone a week behind you is the fastest way to solidify what you know."*
-> — 100 Days of Solana, Day 41
+> *"An artifact nobody sees doesn't help you. Promotion is part of the work."*
+> — 100 Days of Solana, Day 42
