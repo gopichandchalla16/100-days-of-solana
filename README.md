@@ -9,7 +9,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-43%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-44%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -57,11 +57,12 @@ Day 40  ████████████████████████
 Day 41  ████████████████████████████████████████  ✅
 Day 42  ████████████████████████████████████████  ✅
 Day 43  ████████████████████████████████████████  ✅
-Day 44  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 44  ████████████████████████████████████████  ✅
+Day 45  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 43%
+[████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 44%
 ```
 
 ---
@@ -88,6 +89,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 43](./day-43/) | Mint a 1-of-1 SPL token | 0 decimals + disable mint = first NFT | ✅ Done |
+| [Day 44](./day-44/) | Add name, image, metadata | Token-2022 metadataPointer + tokenMetadata | ✅ Done |
 
 ---
 
@@ -116,5 +118,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"Zero decimals + disabled mint = the two laws of non-fungibility. Everything else is decoration."*
-> — 100 Days of Solana, Day 43
+> *"An NFT isn't magic. It's a mint with two rules: no decimals, no second copy. Everything else is metadata pointing to a JSON file."*
+> — 100 Days of Solana, Day 44
