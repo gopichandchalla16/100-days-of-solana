@@ -7,6 +7,22 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ---
 
+## 🏆 GitHub Finish-Up-A-Thon Challenge Submission
+
+> This repo is my official entry for the [GitHub Finish-Up-A-Thon Challenge](https://dev.to/challenges/github-2026-05-21) on DEV.to — a $3,000 prize pool challenge to revive and finish a project you started.
+
+📖 **Read the full submission article here:**
+👉 [44 Days of Solana: From an Empty README to a Live NFT On-Chain — My Finish-Up-A-Thon Story](https://dev.to/gopichand_dev/44-days-of-solana-from-an-empty-readme-to-a-live-nft-on-chain-my-finish-up-a-thon-story-fmg)
+
+**What the article covers:**
+- The before/after journey (Day 1 empty README → Day 44 live NFT)
+- 5 Token-2022 extension combinations built and verified on-chain
+- "First Light" NFT — minted with only the Solana CLI, no Metaplex
+- How GitHub Copilot helped at every critical turning point
+- All transaction signatures verifiable on Solana Explorer
+
+---
+
 ## Progress
 
 ![Progress](https://img.shields.io/badge/Progress-44%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
@@ -97,6 +113,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 | Day | Article |
 |-----|---------|
+| **Featured** | [🏆 GitHub Finish-Up-A-Thon Submission — 44 Days of Solana Story](https://dev.to/gopichand_dev/44-days-of-solana-from-an-empty-readme-to-a-live-nft-on-chain-my-finish-up-a-thon-story-fmg) |
 | Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) |
 | Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
 | Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
