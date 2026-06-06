@@ -25,7 +25,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-46%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-47%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -76,11 +76,12 @@ Day 43  ████████████████████████
 Day 44  ████████████████████████████████████████  ✅
 Day 45  ████████████████████████████████████████  ✅
 Day 46  ████████████████████████████████████████  ✅
-Day 47  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 47  ████████████████████████████████████████  ✅
+Day 48  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 46%
+[███████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 47%
 ```
 
 ---
@@ -110,6 +111,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 44](./day-44/) | Add name, image, metadata | Token-2022 metadataPointer + tokenMetadata | ✅ Done |
 | [Day 45](./day-45/) | Group NFTs into on-chain collection | Token-2022 group + member extensions; Size: 2, Max: 3 | ✅ Done |
 | [Day 46](./day-46/) | Audit NFT collection on-chain | spl-token display; foreign key verified on devnet | ✅ Done |
+| [Day 47](./day-47/) | Mutate NFT metadata live | rename + custom field + remove + URI swap; 4 txns | ✅ Done |
 
 ---
 
@@ -139,5 +141,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"The parent reference check is the most important moment. When the Group field on your member NFT equals your collection mint address byte-for-byte, you proved that anyone in the world can verify membership without trusting you or any off-chain index."*
-> — 100 Days of Solana, Day 46
+> *"You just performed an action a senior on-chain engineer performs every week: patching live state on a deployed program. One line. Real network. Real signatures. That is the muscle."*
+> — 100 Days of Solana, Day 47
