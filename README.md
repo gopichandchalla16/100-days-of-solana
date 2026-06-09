@@ -25,7 +25,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-47%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-48%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -77,11 +77,12 @@ Day 44  ████████████████████████
 Day 45  ████████████████████████████████████████  ✅
 Day 46  ████████████████████████████████████████  ✅
 Day 47  ████████████████████████████████████████  ✅
-Day 48  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 48  ████████████████████████████████████████  ✅
+Day 49  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 47%
+[████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 48%
 ```
 
 ---
@@ -103,7 +104,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 41](./day-41/) | DEV.to deep dive article | 5 Token Extension combinations explained | ✅ Done |
 | [Day 42](./day-42/) | Social media amplification | X post promoting DEV.to article | ✅ Done |
 
-### 📅 Week 7 — NFTs & Digital Assets (🔥 In Progress)
+### 📅 Week 7 — NFTs & Digital Assets (✅ Complete!)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
@@ -112,6 +113,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 45](./day-45/) | Group NFTs into on-chain collection | Token-2022 group + member extensions; Size: 2, Max: 3 | ✅ Done |
 | [Day 46](./day-46/) | Audit NFT collection on-chain | spl-token display; foreign key verified on devnet | ✅ Done |
 | [Day 47](./day-47/) | Mutate NFT metadata live | rename + custom field + remove + URI swap; 4 txns | ✅ Done |
+| [Day 48](./day-48/) | Publish NFT journey on DEV | Full article covering Days 44–47 | ✅ Done |
 
 ---
 
@@ -129,6 +131,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
 | Day 34 | [Transfer Fees, Metadata, and Soulbound Tokens](https://dev.to/gopichand_dev/transfer-fees-metadata-and-soulbound-tokens-a-tour-of-solana-token-extensions-42bj) |
 | Day 41 | [I Built 5 Token Extension Combinations on Solana This Week](https://dev.to/gopichand_dev/i-built-5-token-extension-combinations-on-solana-this-week-heres-what-each-one-does-4ck3) |
+| Day 48 | [Solana NFTs Without Metaplex: What I Learned Building with Token Extensions](https://dev.to/gopichand_dev/solana-nfts-without-metaplex-what-i-learned-building-with-token-extensionspublished-true-1070) |
 
 ---
 
@@ -141,5 +144,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"You just performed an action a senior on-chain engineer performs every week: patching live state on a deployed program. One line. Real network. Real signatures. That is the muscle."*
-> — 100 Days of Solana, Day 47
+> *"By publishing, you put your name on the search results for 'Solana Token Extensions NFT' for the next developer who lands on this question. That is the network."*
+> — 100 Days of Solana, Day 48
