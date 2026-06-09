@@ -18,8 +18,8 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-49%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
+![Progress](https://img.shields.io/badge/Progress-50%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Day%2050%20Milestone%20🎯-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
 ```
@@ -72,11 +72,12 @@ Day 46  ████████████████████████
 Day 47  ████████████████████████████████████████  ✅
 Day 48  ████████████████████████████████████████  ✅
 Day 49  ████████████████████████████████████████  ✅
-Day 50  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 50  ████████████████████████████████████████  ✅
+Day 51  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░] 49%
+[██████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░] 50%
 ```
 
 ---
@@ -110,6 +111,12 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 48](./day-48/) | Publish NFT journey on DEV | Full article covering Days 44–47 | ✅ Done |
 | [Day 49](./day-49/) | Amplify NFT post on X | 5-tweet thread; @solana @solana_devs tagged | ✅ Done |
 
+### 📅 Week 8 — Token-2022 Deep Dive (🚀 Started)
+
+| Day | Challenge | Key Concept | Status |
+|-----|-----------|-------------|--------|
+| [Day 50](./day-50/) | Create a fee-bearing token | TransferFeeConfig on-chain; 100bps fee middleware | ✅ Done |
+
 ---
 
 ## DEV.to Articles
@@ -139,5 +146,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"Amplification is a craft, not a chore. You showed up in the Solana developer community as someone who builds and shares, and that is how reputation compounds."*
-> — 100 Days of Solana, Day 49
+> *"Token extensions are like middleware for your currency. The transfer itself stays dumb — the mint carries the smart rule."*
+> — 100 Days of Solana, Day 50
