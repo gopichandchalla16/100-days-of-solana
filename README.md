@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-51%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-52%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -74,11 +74,12 @@ Day 48  ████████████████████████
 Day 49  ████████████████████████████████████████  ✅
 Day 50  ████████████████████████████████████████  ✅
 Day 51  ████████████████████████████████████████  ✅
-Day 52  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 52  ████████████████████████████████████████  ✅
+Day 53  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░] 51%
+[████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░] 52%
 ```
 
 ---
@@ -118,6 +119,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 |-----|-----------|-------------|--------|
 | [Day 50](./day-50/) | Create a fee-bearing token | TransferFeeConfig on-chain; 100bps = 1% | ✅ Done |
 | [Day 51](./day-51/) | Transfer + harvest withheld fees | Full lifecycle: transfer → withhold → withdraw | ✅ Done |
+| [Day 52](./day-52/) | Stack fees + interest on one mint | Multi-extension mint; UI amount drift + fee withholding | ✅ Done |
 
 ---
 
@@ -148,5 +150,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"You configured a mint, and the runtime did the rest — every time, for every transfer, forever."*
-> — 100 Days of Solana, Day 51
+> *"Interest is a view, not a balance update. The raw amount never changed — only the function that translates raw amount to displayed amount did."*
+> — 100 Days of Solana, Day 52
