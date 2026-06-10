@@ -18,8 +18,8 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-50%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Day%2050%20Milestone%20🎯-success?style=for-the-badge)
+![Progress](https://img.shields.io/badge/Progress-51%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
 ```
@@ -73,11 +73,12 @@ Day 47  ████████████████████████
 Day 48  ████████████████████████████████████████  ✅
 Day 49  ████████████████████████████████████████  ✅
 Day 50  ████████████████████████████████████████  ✅
-Day 51  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 51  ████████████████████████████████████████  ✅
+Day 52  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░] 50%
+[███████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░] 51%
 ```
 
 ---
@@ -111,11 +112,12 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 48](./day-48/) | Publish NFT journey on DEV | Full article covering Days 44–47 | ✅ Done |
 | [Day 49](./day-49/) | Amplify NFT post on X | 5-tweet thread; @solana @solana_devs tagged | ✅ Done |
 
-### 📅 Week 8 — Token-2022 Deep Dive (🚀 Started)
+### 📅 Week 8 — Token-2022 Deep Dive (🚀 In Progress)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
-| [Day 50](./day-50/) | Create a fee-bearing token | TransferFeeConfig on-chain; 100bps fee middleware | ✅ Done |
+| [Day 50](./day-50/) | Create a fee-bearing token | TransferFeeConfig on-chain; 100bps = 1% | ✅ Done |
+| [Day 51](./day-51/) | Transfer + harvest withheld fees | Full lifecycle: transfer → withhold → withdraw | ✅ Done |
 
 ---
 
@@ -123,7 +125,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 | Day | Article |
 |-----|---------|
-| **Featured** | [🏆 GitHub Finish-Up-A-Thon Submission — 44 Days of Solana Story](https://dev.to/gopichand_dev/44-days-of-solana-from-an-empty-readme-to-a-live-nft-on-chain-my-finish-up-a-thon-story-fmg) |
+| **Featured** | [🏆 GitHub Finish-Up-A-Thon Submission](https://dev.to/gopichand_dev/44-days-of-solana-from-an-empty-readme-to-a-live-nft-on-chain-my-finish-up-a-thon-story-fmg) |
 | Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) |
 | Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
 | Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
@@ -146,5 +148,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"Token extensions are like middleware for your currency. The transfer itself stays dumb — the mint carries the smart rule."*
-> — 100 Days of Solana, Day 50
+> *"You configured a mint, and the runtime did the rest — every time, for every transfer, forever."*
+> — 100 Days of Solana, Day 51
