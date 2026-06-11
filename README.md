@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-52%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-53%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -75,11 +75,12 @@ Day 49  ████████████████████████
 Day 50  ████████████████████████████████████████  ✅
 Day 51  ████████████████████████████████████████  ✅
 Day 52  ████████████████████████████████████████  ✅
-Day 53  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 53  ████████████████████████████████████████  ✅
+Day 54  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░] 52%
+[█████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░] 53%
 ```
 
 ---
@@ -120,6 +121,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 50](./day-50/) | Create a fee-bearing token | TransferFeeConfig on-chain; 100bps = 1% | ✅ Done |
 | [Day 51](./day-51/) | Transfer + harvest withheld fees | Full lifecycle: transfer → withhold → withdraw | ✅ Done |
 | [Day 52](./day-52/) | Stack fees + interest on one mint | Multi-extension mint; UI amount drift + fee withholding | ✅ Done |
+| [Day 53](./day-53/) | Audit two Token-2022 mints | spl-token display; fee-only vs fee+interest mapped | ✅ Done |
 
 ---
 
@@ -150,5 +152,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"Interest is a view, not a balance update. The raw amount never changed — only the function that translates raw amount to displayed amount did."*
-> — 100 Days of Solana, Day 52
+> *"The moment after you finish building is the moment you run DESCRIBE. On Solana, that command is spl-token display, and the schema is public forever."*
+> — 100 Days of Solana, Day 53
