@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-53%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-54%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -76,11 +76,12 @@ Day 50  ████████████████████████
 Day 51  ████████████████████████████████████████  ✅
 Day 52  ████████████████████████████████████████  ✅
 Day 53  ████████████████████████████████████████  ✅
-Day 54  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 54  ████████████████████████████████████████  ✅
+Day 55  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░] 53%
+[██████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░] 54%
 ```
 
 ---
@@ -122,6 +123,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 51](./day-51/) | Transfer + harvest withheld fees | Full lifecycle: transfer → withhold → withdraw | ✅ Done |
 | [Day 52](./day-52/) | Stack fees + interest on one mint | Multi-extension mint; UI amount drift + fee withholding | ✅ Done |
 | [Day 53](./day-53/) | Audit two Token-2022 mints | spl-token display; fee-only vs fee+interest mapped | ✅ Done |
+| [Day 54](./day-54/) | Soul-bound non-transferable token | Transfer rejected by protocol; error 0x25 confirmed | ✅ Done |
 
 ---
 
@@ -152,5 +154,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"The moment after you finish building is the moment you run DESCRIBE. On Solana, that command is spl-token display, and the schema is public forever."*
-> — 100 Days of Solana, Day 53
+> *"The failed transfer is not a bug. It is the entire product."*
+> — 100 Days of Solana, Day 54
