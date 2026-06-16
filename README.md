@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-55%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-56%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -78,11 +78,12 @@ Day 52  ████████████████████████
 Day 53  ████████████████████████████████████████  ✅
 Day 54  ████████████████████████████████████████  ✅
 Day 55  ████████████████████████████████████████  ✅
-Day 56  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 56  ████████████████████████████████████████  ✅
+Day 57  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░] 55%
+[████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░] 56%
 ```
 
 ---
@@ -126,6 +127,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 53](./day-53/) | Audit two Token-2022 mints | spl-token display; fee-only vs fee+interest mapped | ✅ Done |
 | [Day 54](./day-54/) | Soul-bound non-transferable token | Transfer rejected by protocol; error 0x25 confirmed | ✅ Done |
 | [Day 55](./day-55/) | Publish Token-2022 trilogy on DEV | Fees, yield, soul-bound — live article with all 3 mints | ✅ Done |
+| [Day 56](./day-56/) | Social thread for Token-2022 trilogy | X thread + LinkedIn amplification post published | ✅ Done |
 
 ---
 
@@ -157,5 +159,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"Writing exposes the seams in your mental model. That moment of 'wait, why does the interest extension work that way' is the real payoff of documentation."*
-> — 100 Days of Solana, Day 55
+> *"The dev.to post is the artifact. The social thread is the front door."*
+> — 100 Days of Solana, Day 56
