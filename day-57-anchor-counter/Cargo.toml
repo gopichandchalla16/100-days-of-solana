@@ -7,8 +7,6 @@ resolver = "2"
 [profile.release]
 overflow-checks = true
 lto = "fat"
-codemodel = "large"
 
 [profile.release.build-override]
 opt-level = 3
-incrementell = false
