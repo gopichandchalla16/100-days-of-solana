@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-57%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-58%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -80,11 +80,12 @@ Day 54  ████████████████████████
 Day 55  ████████████████████████████████████████  ✅
 Day 56  ████████████████████████████████████████  ✅
 Day 57  ████████████████████████████████████████  ✅
-Day 58  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 58  ████████████████████████████████████████  ✅
+Day 59  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████████████▓░░░░░░░░░░░░░░░░░░░] 57%
+[█████████████████████████████████████████████████████████████▓░░░░░░░░░░░░░░░░░░░] 58%
 ```
 
 ---
@@ -135,7 +136,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 57](./day-57-anchor-counter/) | First Anchor Program: Counter | `initialize`, `increment`, `decrement`, `reset`; `has_one` auth guard | ✅ Done |
-| Day 58 | Add PDA to counter | Program Derived Address; seeds + bump | ⏳ |
+| [Day 58](./day-58-counter-state/) | Stateful Counter + LiteSVM Test | `#[account]`, `#[derive(InitSpace)]`, `init` constraint; `initialize_sets_count_to_zero` passes in 0.34s | ✅ Done |
 | Day 59 | Counter with events | `emit!` macro; TypeScript event listener | ⏳ |
 | Day 60 | Publish Anchor intro on DEV | Anchor vs raw Solana; IDL explained | ⏳ |
 | Day 61 | Social amplification | X thread for Week 9 | ⏳ |
@@ -170,5 +171,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"Anchor is to Solana what Hardhat is to Ethereum — but with Rust superpowers."*
-> — 100 Days of Solana, Day 57
+> *"LiteSVM is to Anchor what an in-memory DB is to backend tests — instant, clean, and no flakiness."*
+> — 100 Days of Solana, Day 58
