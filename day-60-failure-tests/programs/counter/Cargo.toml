@@ -17,6 +17,11 @@ default = []
 
 [dependencies]
 anchor-lang = "0.31.0"
+# Pin deps that ship edition2024 in newer versions — incompatible with
+# the Cargo 1.79 bundled inside cargo-build-sbf / anchor build.
+bytemuck_derive = "=1.8.1"
+crypto-common = "=0.1.6"
+block-buffer = "=0.10.4"
 
 [dev-dependencies]
 litesvm = "0.6"
