@@ -8,8 +8,7 @@ resolver = "2"
 overflow-checks = true
 lbt = true
 
-# ── Block-buffer fix ─────────────────────────────────────────────────────────
 # block-buffer v0.12.1 uses `edition2024` which Solana's bundled Cargo 1.79
-# cannot parse. Pin both versions used transitively to ones that work.
+# cannot parse. Pin to 0.10.4 which works fine.
 [patch.crates-io]
-block-buffer = { version "= 0.10.4" }
+block-buffer = { version = "=0.10.4" }
