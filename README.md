@@ -84,10 +84,12 @@ Day 58  ████████████████████████
 Day 59  ████████████████████████████████████████  ✅
 Day 60  ████████████████████████████████████████  ✅
 Day 61  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 62  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 63  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[███████████████████████████████████████████████████████████████▓░░░░░░░░░░░░░░░░░░] 60%
+[████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░] 60%
 ```
 
 ---
@@ -140,7 +142,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 57](./day-57-anchor-counter/) | First Anchor Program: Counter | `initialize`, `increment`, `decrement`, `reset`; `has_one` auth guard | ✅ Done |
 | [Day 58](./day-58-counter-state/) | Stateful Counter + LiteSVM Test | `#[account]`, `#[derive(InitSpace)]`, `init` constraint; 1 passed in 0.34s | ✅ Done |
 | [Day 59](./day-59-anchor-increment/) | Increment instruction + has_one auth | `has_one = authority`; `checked_add`; e2e LiteSVM: init → inc → assert count == 1 | ✅ Done |
-| [Day 60](./day-60-failure-tests/) | Failure tests — wrong authority + double-init | 3 tests (1 happy + 2 sad path); `ConstraintHasOne` + `AccountAlreadyInitialized` proven | ✅ Done |
+| [Day 60](./day-60-failure-tests/) | Failure tests — wrong authority + double-init | 3 tests (1 happy + 2 sad-path); `ConstraintHasOne` error 2001 + `AccountAlreadyInUse` proven in logs | ✅ Done |
 | Day 61 | Delete has_one, watch tests scream | Mutation testing: remove constraint, suite catches regression | ⏳ |
 | Day 62 | Publish Anchor intro on DEV | Anchor vs raw Solana; IDL explained | ⏳ |
 | Day 63 | Social amplification | X thread for Week 9 | ⏳ |

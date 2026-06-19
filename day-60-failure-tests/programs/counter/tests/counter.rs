@@ -14,21 +14,17 @@ use solana_transaction::Transaction;
 fn setup_svm_with_program() -> (LiteSVM, Pubkey) {
     let mut svm = LiteSVM::new();
     let program_id = counter::ID;
-
-    // CARGO_MANIFEST_DIR = .../day-60-failure-tests/programs/counter
-    // ../../target/deploy/ = .../day-60-failure-tests/target/deploy/
     let so_path = concat!(
         env!("CARGO_MANIFEST_DIR"),
         "/../../target/deploy/counter.so"
     );
-
-    // Give a clear error message if the .so is missing
     assert!(
         std::path::Path::new(so_path).exists(),
-        "counter.so not found at {}. Run: cargo build-sbf --manifest-path programs/counter/Cargo.toml --sbf-out-dir target/deploy",
+        "counter.so not found at {}. Run: cargo build-sbf \
+         --manifest-path programs/counter/Cargo.toml \
+         --sbf-out-dir target/deploy",
         so_path
     );
-
     svm.add_program_from_file(program_id, so_path).unwrap();
     (svm, program_id)
 }
@@ -80,7 +76,7 @@ fn build_increment_tx(
     )
 }
 
-// ── happy-path test (from Day 59 — must be kept) ─────────────────────────────
+// ── happy-path test (Day 59 — must be kept) ──────────────────────────────────
 
 #[test]
 fn initialize_then_increment() {
@@ -103,6 +99,11 @@ fn initialize_then_increment() {
 }
 
 // ── failure test 1: wrong authority cannot increment ─────────────────────────
+//
+// authority_a creates the counter. authority_b tries to increment it.
+// The has_one = authority constraint compares the signer pubkey against
+// the pubkey stored in the Counter account. Mismatch → ConstraintHasOne
+// (Anchor error code 2001). Transaction must be rejected.
 
 #[test]
 fn increment_fails_when_wrong_authority_signs() {
@@ -115,22 +116,29 @@ fn increment_fails_when_wrong_authority_signs() {
 
     let counter = Keypair::new();
 
-    // authority_a creates the counter. This must succeed.
+    // authority_a creates the counter — must succeed
     let init_tx = build_initialize_tx(&svm, program_id, &authority_a, &counter);
     svm.send_transaction(init_tx).expect("initialize should succeed");
 
-    // authority_b tries to increment it. This must fail.
+    // authority_b tries to increment — must fail
     let bad_tx = build_increment_tx(&svm, program_id, &authority_b, counter.pubkey());
-
     let result = svm.send_transaction(bad_tx);
-    println!("{:?}", result);
+
     assert!(
         result.is_err(),
         "increment should fail when signed by the wrong authority"
     );
 }
 
-// ── failure test 2: cannot initialize the same counter twice ─────────────────
+// ── failure test 2: cannot initialize the same counter account twice ─────────
+//
+// The first initialize must succeed. The second must fail because Anchor's
+// `init` constraint refuses to allocate / overwrite an account that already
+// exists at that address (system program error: account already in use).
+//
+// svm.expire_blockhash() is called between the two transactions so the second
+// tx is not byte-for-byte identical to the first. Without it, LiteSVM rejects
+// it as a duplicate signature before the program runs, giving the wrong error.
 
 #[test]
 fn initialize_fails_when_counter_already_exists() {
@@ -141,17 +149,17 @@ fn initialize_fails_when_counter_already_exists() {
 
     let counter = Keypair::new();
 
+    // First initialize — must succeed
     let first_tx = build_initialize_tx(&svm, program_id, &authority, &counter);
     svm.send_transaction(first_tx).expect("first initialize should succeed");
 
-    // Advance the blockhash so the second tx is not a duplicate of the first.
+    // Advance blockhash so the second tx is genuinely new
     svm.expire_blockhash();
 
-    // Same counter keypair, same payer. The account is already on chain.
+    // Same counter keypair → same address already exists on chain
     let second_tx = build_initialize_tx(&svm, program_id, &authority, &counter);
-
     let result = svm.send_transaction(second_tx);
-    println!("{:?}", result);
+
     assert!(
         result.is_err(),
         "initializing the same counter twice should fail"
