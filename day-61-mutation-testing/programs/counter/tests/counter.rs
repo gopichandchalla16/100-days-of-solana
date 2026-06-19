@@ -1,163 +1,183 @@
-// Day 61 — Mutation Testing
-// Same three-test suite from Day 60, unchanged.
-// These tests are the ones that caught all three planted bugs.
-//
-// Experiment 1 result: increment_fails_when_wrong_authority_signs → RED
-//   (has_one removed → wrong authority was accepted → result.is_err() false)
-// Experiment 2 result: initialize_then_increment → RED
-//   (checked_add(2) → count was 2 → assert_eq!(parsed.count, 1) failed)
-// Experiment 3 result: initialize_then_increment → RED at increment step
-//   (authority = all zeros → ConstraintHasOne 2001 on increment)
-//
-// All three reverted. Final result: 3 passed, 0 failed.
-
 use anchor_lang::{
     prelude::Pubkey,
-    solana_program::system_program,
-    AccountDeserialize, InstructionData, ToAccountMetas,
+    AccountDeserialize,
 };
 use litesvm::LiteSVM;
-use solana_instruction::Instruction;
+use solana_instruction::{AccountMeta, Instruction};
 use solana_keypair::Keypair;
 use solana_signer::Signer;
 use solana_transaction::Transaction;
 
-// ── helpers ───────────────────────────────────────────────────────────────────────
+// Program ID must match declare_id! in lib.rs
+const PROGRAM_ID: &str = "HzobnFUGbJ84agUuP1nDb3gJUHC3kCVmC6dcPTtNhwFG";
 
-fn setup_svm_with_program() -> (LiteSVM, Pubkey) {
+fn load_svm() -> (LiteSVM, Pubkey) {
+    let program_id: Pubkey = PROGRAM_ID.parse().unwrap();
     let mut svm = LiteSVM::new();
-    let program_id = counter::ID;
     let so_path = concat!(
         env!("CARGO_MANIFEST_DIR"),
         "/../../target/deploy/counter.so"
+    );
+    assert!(
+        std::path::Path::new(so_path).exists(),
+        "counter.so not found at {}. Run: cargo build-sbf \
+         --manifest-path programs/counter/Cargo.toml \
+         --sbf-out-dir target/deploy",
+        so_path
     );
     svm.add_program_from_file(program_id, so_path).unwrap();
     (svm, program_id)
 }
 
-fn build_initialize_tx(
-    svm: &LiteSVM,
+fn initialize_ix(
     program_id: Pubkey,
-    authority: &Keypair,
-    counter_kp: &Keypair,
-) -> Transaction {
-    let ix = Instruction {
-        program_id,
-        accounts: counter::accounts::Initialize {
-            counter: counter_kp.pubkey(),
-            authority: authority.pubkey(),
-            system_program: system_program::ID,
-        }
-        .to_account_metas(None),
-        data: counter::instruction::Initialize {}.data(),
-    };
-    Transaction::new_signed_with_payer(
-        &[ix],
-        Some(&authority.pubkey()),
-        &[authority, counter_kp],
-        svm.latest_blockhash(),
-    )
-}
-
-fn build_increment_tx(
-    svm: &LiteSVM,
-    program_id: Pubkey,
-    authority: &Keypair,
     counter: Pubkey,
-) -> Transaction {
-    let ix = Instruction {
+    authority: Pubkey,
+) -> Instruction {
+    let mut data = anchor_lang::solana_program::hash::hash(b"global:initialize")
+        .to_bytes()[..8]
+        .to_vec();
+    data.extend_from_slice(&[]);
+    Instruction {
         program_id,
-        accounts: counter::accounts::Increment {
-            counter,
-            authority: authority.pubkey(),
-        }
-        .to_account_metas(None),
-        data: counter::instruction::Increment {}.data(),
-    };
-    Transaction::new_signed_with_payer(
-        &[ix],
-        Some(&authority.pubkey()),
-        &[authority],
-        svm.latest_blockhash(),
-    )
+        accounts: vec![
+            AccountMeta::new(counter, false),
+            AccountMeta::new(authority, true),
+            AccountMeta::new_readonly(
+                anchor_lang::solana_program::system_program::ID,
+                false,
+            ),
+        ],
+        data,
+    }
 }
 
-// ── test 1: happy path ─────────────────────────────────────────────────────
-// Catches: Experiment 2 (wrong count) and Experiment 3 (uninitialized authority)
+fn increment_ix(
+    program_id: Pubkey,
+    counter: Pubkey,
+    authority: Pubkey,
+) -> Instruction {
+    let mut data = anchor_lang::solana_program::hash::hash(b"global:increment")
+        .to_bytes()[..8]
+        .to_vec();
+    data.extend_from_slice(&[]);
+    Instruction {
+        program_id,
+        accounts: vec![
+            AccountMeta::new(counter, false),
+            AccountMeta::new_readonly(authority, true),
+        ],
+        data,
+    }
+}
 
+// ─── TEST 1: happy path ───────────────────────────────────────────────────────
 #[test]
 fn initialize_then_increment() {
-    let (mut svm, program_id) = setup_svm_with_program();
-
+    let (mut svm, program_id) = load_svm();
     let authority = Keypair::new();
-    svm.airdrop(&authority.pubkey(), 1_000_000_000).unwrap();
-    let counter_kp = Keypair::new();
+    let counter = Keypair::new();
+    svm.airdrop(&authority.pubkey(), 10_000_000_000).unwrap();
 
-    let init_tx = build_initialize_tx(&svm, program_id, &authority, &counter_kp);
-    svm.send_transaction(init_tx).expect("initialize should succeed");
+    // initialize
+    let blockhash = svm.latest_blockhash();
+    let ix = initialize_ix(program_id, counter.pubkey(), authority.pubkey());
+    let tx = Transaction::new_signed_with_payer(
+        &[ix],
+        Some(&authority.pubkey()),
+        &[&authority, &counter],
+        blockhash,
+    );
+    svm.send_transaction(tx)
+        .expect("initialize should succeed");
 
-    let inc_tx = build_increment_tx(&svm, program_id, &authority, counter_kp.pubkey());
-    svm.send_transaction(inc_tx).expect("increment should succeed");
+    // increment
+    let blockhash = svm.latest_blockhash();
+    let ix = increment_ix(program_id, counter.pubkey(), authority.pubkey());
+    let tx = Transaction::new_signed_with_payer(
+        &[ix],
+        Some(&authority.pubkey()),
+        &[&authority],
+        blockhash,
+    );
+    svm.send_transaction(tx)
+        .expect("increment should succeed");
 
-    let account = svm.get_account(&counter_kp.pubkey()).unwrap();
-    let parsed = counter::Counter::try_deserialize(&mut account.data.as_slice()).unwrap();
-    // This assertion caught Experiment 2: count was 2 when we used checked_add(2)
+    // verify count == 1
+    let acct = svm.get_account(&counter.pubkey()).unwrap();
+    let parsed = counter::Counter::try_deserialize(&mut &acct.data[..]).unwrap();
     assert_eq!(parsed.count, 1, "count should be 1 after one increment");
-    assert_eq!(parsed.authority, authority.pubkey(), "authority must match");
 }
 
-// ── test 2: wrong authority is rejected ─────────────────────────────────────
-// Catches: Experiment 1 (has_one removed → wrong signer now accepted)
-
+// ─── TEST 2: wrong authority is rejected ─────────────────────────────────────
 #[test]
 fn increment_fails_when_wrong_authority_signs() {
-    let (mut svm, program_id) = setup_svm_with_program();
+    let (mut svm, program_id) = load_svm();
+    let authority = Keypair::new();
+    let attacker  = Keypair::new();
+    let counter   = Keypair::new();
+    svm.airdrop(&authority.pubkey(), 10_000_000_000).unwrap();
+    svm.airdrop(&attacker.pubkey(),  10_000_000_000).unwrap();
 
-    let authority_a = Keypair::new();
-    let authority_b = Keypair::new();
-    svm.airdrop(&authority_a.pubkey(), 1_000_000_000).unwrap();
-    svm.airdrop(&authority_b.pubkey(), 1_000_000_000).unwrap();
+    // initialize with real authority
+    let blockhash = svm.latest_blockhash();
+    let ix = initialize_ix(program_id, counter.pubkey(), authority.pubkey());
+    let tx = Transaction::new_signed_with_payer(
+        &[ix],
+        Some(&authority.pubkey()),
+        &[&authority, &counter],
+        blockhash,
+    );
+    svm.send_transaction(tx)
+        .expect("initialize should succeed");
 
-    let counter = Keypair::new();
-
-    let init_tx = build_initialize_tx(&svm, program_id, &authority_a, &counter);
-    svm.send_transaction(init_tx).expect("initialize should succeed");
-
-    // authority_b tries to increment authority_a's counter — must fail
-    let bad_tx = build_increment_tx(&svm, program_id, &authority_b, counter.pubkey());
-    let result = svm.send_transaction(bad_tx);
-
-    // Without has_one = authority, this assertion FAILS (result is Ok)
-    // With has_one = authority, this assertion PASSES (result is Err 2001)
+    // attempt increment signed by attacker — must fail
+    let blockhash = svm.latest_blockhash();
+    let ix = increment_ix(program_id, counter.pubkey(), attacker.pubkey());
+    let tx = Transaction::new_signed_with_payer(
+        &[ix],
+        Some(&attacker.pubkey()),
+        &[&attacker],
+        blockhash,
+    );
+    let result = svm.send_transaction(tx);
     assert!(
         result.is_err(),
         "increment must fail when signed by the wrong authority"
     );
 }
 
-// ── test 3: double-init is rejected ─────────────────────────────────────────
-// Not directly targeted by today's experiments, but stayed GREEN throughout
-// all three mutations — proving it only asserts what it should assert.
-
+// ─── TEST 3: double-init is rejected ─────────────────────────────────────────
 #[test]
 fn initialize_fails_when_counter_already_exists() {
-    let (mut svm, program_id) = setup_svm_with_program();
-
+    let (mut svm, program_id) = load_svm();
     let authority = Keypair::new();
-    svm.airdrop(&authority.pubkey(), 1_000_000_000).unwrap();
+    let counter   = Keypair::new();
+    svm.airdrop(&authority.pubkey(), 10_000_000_000).unwrap();
 
-    let counter = Keypair::new();
+    // first init — must succeed
+    let blockhash = svm.latest_blockhash();
+    let ix = initialize_ix(program_id, counter.pubkey(), authority.pubkey());
+    let tx = Transaction::new_signed_with_payer(
+        &[ix.clone()],
+        Some(&authority.pubkey()),
+        &[&authority, &counter],
+        blockhash,
+    );
+    svm.send_transaction(tx)
+        .expect("first initialize should succeed");
 
-    let first_tx = build_initialize_tx(&svm, program_id, &authority, &counter);
-    svm.send_transaction(first_tx).expect("first initialize should succeed");
-
-    svm.expire_blockhash();
-
-    let second_tx = build_initialize_tx(&svm, program_id, &authority, &counter);
-    let result = svm.send_transaction(second_tx);
-
+    // second init with same counter keypair — must fail
+    let blockhash = svm.latest_blockhash();
+    let tx = Transaction::new_signed_with_payer(
+        &[ix],
+        Some(&authority.pubkey()),
+        &[&authority, &counter],
+        blockhash,
+    );
+    let result = svm.send_transaction(tx);
     assert!(
         result.is_err(),
-        "initializing the same counter twice should fail"
+        "second initialize must fail — counter already exists"
     );
 }

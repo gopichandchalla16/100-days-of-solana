@@ -1,31 +1,33 @@
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::program_error::ProgramError;
 
-declare_id!("4yXwSNTTQNAArrvxfwTB3fE2WPiePZbADzDqHQSsPttz");
+// Program ID matches the compiled .so in target/deploy/counter.so
+// (same binary reused from day-60-failure-tests — identical logic)
+declare_id!("HzobnFUGbJ84agUuP1nDb3gJUHC3kCVmC6dcPTtNhwFG");
 
 // ────────────────────────────────────────────────────────────────────────
 // Day 61 — Mutation Testing (hand-rolled)
 //
 // EXPERIMENT 1: Remove has_one = authority from Increment accounts struct
 //   Bug:   #[account(mut)]  <- no has_one
-//   Catch: increment_fails_when_wrong_authority_signs → RED (wrong authority
-//          now accepted, assertion that result.is_err() fails)
+//   Catch: increment_fails_when_wrong_authority_signs → RED
+//          (wrong authority now accepted, assertion fails)
 //   Fix:   restore has_one = authority
 //
 // EXPERIMENT 2: Change checked_add(1) to checked_add(2)
 //   Bug:   counter.count.checked_add(2)
-//   Catch: initialize_then_increment → RED (assert_eq!(parsed.count, 1) fails
-//          with left=2, right=1)
+//   Catch: initialize_then_increment → RED
+//          assertion `left == right` failed: left: 2, right: 1
 //   Fix:   restore checked_add(1)
 //
 // EXPERIMENT 3: Comment out counter.authority = ctx.accounts.authority.key()
-//   Bug:   authority field left as default Pubkey::default() (all zeros)
+//   Bug:   authority field left as Pubkey::default() (all zeros)
 //   Catch: initialize_then_increment → RED at increment step
 //          ConstraintHasOne 2001: Left=111...111 Right=<real pubkey>
-//          (failure is at increment, but the bug lives in initialize)
+//          (failure at increment, bug lives in initialize)
 //   Fix:   uncomment the line
 //
-// All three bugs were planted, observed to turn the suite RED, then reverted.
+// All three bugs were planted, turned the suite RED, then restored.
 // This file is the RESTORED (clean) version. Suite: 3 passed, 0 failed.
 // ────────────────────────────────────────────────────────────────────────
 
@@ -46,8 +48,8 @@ pub mod counter {
 
     pub fn increment(ctx: Context<Increment>) -> Result<()> {
         let counter = &mut ctx.accounts.counter;
-        // MUTATION 2 TARGET: change checked_add(1) to checked_add(2) to
-        // plant the off-by-one bug. The tx succeeds but count == 2,
+        // MUTATION 2 TARGET: change checked_add(1) to checked_add(2)
+        // to plant the off-by-one bug. The tx succeeds but count == 2,
         // and assert_eq!(parsed.count, 1) turns RED immediately.
         counter.count = counter
             .count
