@@ -12,6 +12,14 @@ pub mod counter {
         counter.count = 0;
         Ok(())
     }
+
+    pub fn increment(ctx: Context<Increment>) -> Result<()> {
+        let counter = &mut ctx.accounts.counter;
+        counter.count = counter.count
+            .checked_add(1)
+            .ok_or(error!(ErrorCode::ArithmeticOverflow))?;
+        Ok(())
+    }
 }
 
 #[derive(Accounts)]
@@ -27,9 +35,22 @@ pub struct Initialize<'info> {
     pub system_program: Program<'info, System>,
 }
 
+#[derive(Accounts)]
+pub struct Increment<'info> {
+    #[account(mut, has_one = authority)]
+    pub counter: Account<'info, Counter>,
+    pub authority: Signer<'info>,
+}
+
 #[account]
 #[derive(InitSpace)]
 pub struct Counter {
     pub authority: Pubkey,
     pub count: u64,
+}
+
+#[error_code]
+pub enum ErrorCode {
+    #[msg("Arithmetic overflow")]
+    ArithmeticOverflow,
 }

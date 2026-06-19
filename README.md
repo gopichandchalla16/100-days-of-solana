@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-59%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-60%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -82,11 +82,12 @@ Day 56  ████████████████████████
 Day 57  ████████████████████████████████████████  ✅
 Day 58  ████████████████████████████████████████  ✅
 Day 59  ████████████████████████████████████████  ✅
-Day 60  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 60  ████████████████████████████████████████  ✅
+Day 61  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████████████████████████████████████▓░░░░░░░░░░░░░░░░░░] 59%
+[███████████████████████████████████████████████████████████████▓░░░░░░░░░░░░░░░░░░] 60%
 ```
 
 ---
@@ -138,10 +139,11 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 |-----|-----------|-------------|--------|
 | [Day 57](./day-57-anchor-counter/) | First Anchor Program: Counter | `initialize`, `increment`, `decrement`, `reset`; `has_one` auth guard | ✅ Done |
 | [Day 58](./day-58-counter-state/) | Stateful Counter + LiteSVM Test | `#[account]`, `#[derive(InitSpace)]`, `init` constraint; 1 passed in 0.34s | ✅ Done |
-| [Day 59](./day-59-anchor-increment/) | Increment instruction + has_one auth | `has_one = authority`; `checked_add`; e2e LiteSVM test: initialize → increment → assert count == 1 | ✅ Done |
-| Day 60 | Break the auth constraint | Stranger signer → `ConstraintHasOne` error proven | ⏳ |
-| Day 61 | Publish Anchor intro on DEV | Anchor vs raw Solana; IDL explained | ⏳ |
-| Day 62 | Social amplification | X thread for Week 9 | ⏳ |
+| [Day 59](./day-59-anchor-increment/) | Increment instruction + has_one auth | `has_one = authority`; `checked_add`; e2e LiteSVM: init → inc → assert count == 1 | ✅ Done |
+| [Day 60](./day-60-failure-tests/) | Failure tests — wrong authority + double-init | 3 tests (1 happy + 2 sad path); `ConstraintHasOne` + `AccountAlreadyInitialized` proven | ✅ Done |
+| Day 61 | Delete has_one, watch tests scream | Mutation testing: remove constraint, suite catches regression | ⏳ |
+| Day 62 | Publish Anchor intro on DEV | Anchor vs raw Solana; IDL explained | ⏳ |
+| Day 63 | Social amplification | X thread for Week 9 | ⏳ |
 
 ---
 
@@ -173,5 +175,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"`has_one = authority` is the Solana equivalent of a 403 check — declared on the struct, enforced before your handler even runs."*
-> — 100 Days of Solana, Day 59
+> *"A test suite that only checks green is a story that never tries to lie. Failure tests are what make the story honest."*
+> — 100 Days of Solana, Day 60
