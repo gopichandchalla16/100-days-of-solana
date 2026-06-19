@@ -14,10 +14,21 @@ use solana_transaction::Transaction;
 fn setup_svm_with_program() -> (LiteSVM, Pubkey) {
     let mut svm = LiteSVM::new();
     let program_id = counter::ID;
+
+    // CARGO_MANIFEST_DIR = .../day-60-failure-tests/programs/counter
+    // ../../target/deploy/ = .../day-60-failure-tests/target/deploy/
     let so_path = concat!(
         env!("CARGO_MANIFEST_DIR"),
         "/../../target/deploy/counter.so"
     );
+
+    // Give a clear error message if the .so is missing
+    assert!(
+        std::path::Path::new(so_path).exists(),
+        "counter.so not found at {}. Run: cargo build-sbf --manifest-path programs/counter/Cargo.toml --sbf-out-dir target/deploy",
+        so_path
+    );
+
     svm.add_program_from_file(program_id, so_path).unwrap();
     (svm, program_id)
 }
