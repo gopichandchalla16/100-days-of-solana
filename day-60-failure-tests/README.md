@@ -1,49 +1,53 @@
 # Day 60 — Add Failure Tests So Green Checks Actually Mean Something
 
-## What I Built
-Added two **negative/sad-path tests** to the existing Anchor counter suite, proving the `has_one = authority` constraint and the `init` constraint both fire correctly when someone tries to break them.
+## What this is
 
-## Key Concepts
+A Reinforce day. No new program logic — just two new **failure (sad-path) tests** added to the Day 59 counter program to prove that the `has_one = authority` constraint and the `init` constraint are actually doing their jobs.
 
-### Why failure tests matter
-A passing suite that only covers the happy path can’t catch a broken auth check. If someone removes `has_one = authority` from the struct, only a test that *expects rejection* will catch the regression. This is the Solana equivalent of a backend “403 test”.
+## Project structure
 
-### `has_one = authority`
-Anchor compares `counter.authority` (stored on-chain) with the `authority` account passed in. If they don’t match, the transaction is **rejected before the handler runs** with `ConstraintHasOne`.
+```
+day-60-failure-tests/
+├── Anchor.toml
+├── Cargo.toml
+├── rust-toolchain.toml
+└── programs/
+    └── counter/
+        ├── Cargo.toml
+        └── src/
+            └── lib.rs          ← same counter program from Day 59
+        └── tests/
+            └── counter.rs      ← 3 tests: 1 happy-path + 2 failure tests
+```
 
-### `init` constraint
-Anchor refuses to call `system_program::create_account` for an address that already holds lamports. Second init → `AccountAlreadyInitialized` error.
+## The 3 tests
 
-### `svm.expire_blockhash()`
-Without this, two identical transactions share the same signature and LiteSVM rejects the second as a **duplicate** — giving you the wrong error. Expiring the blockhash makes the second tx genuinely new so the failure comes from the program constraint, not the duplicate check.
+| Test | Type | What it proves |
+|---|---|---|
+| `initialize_then_increment` | Happy path | Counter initializes and increments correctly |
+| `increment_fails_when_wrong_authority_signs` | Failure | `has_one = authority` blocks a different wallet |
+| `initialize_fails_when_counter_already_exists` | Failure | `init` constraint blocks double-initialization |
 
-## Test Suite (3 tests, all must pass)
+## Key concepts
 
-| Test | Scenario | Expected result |
-|------|----------|-----------------|
-| `initialize_then_increment` | Happy path | count == 1, authority matches ✅ |
-| `increment_fails_when_wrong_authority_signs` | Wrong wallet calls increment | `is_err()` → ConstraintHasOne in logs ✅ |
-| `initialize_fails_when_counter_already_exists` | Same account init’d twice | `is_err()` → AccountAlreadyInitialized in logs ✅ |
+- **`has_one = authority`** — Anchor compares the `authority` field stored in the Counter account with the `authority` account passed in the instruction. If they don't match → `ConstraintHasOne` error (code 2001).
+- **`svm.expire_blockhash()`** — Without this, the second initialize tx is byte-for-byte identical to the first (same blockhash = same signature), and LiteSVM rejects it as a duplicate before the program even runs. Expiring the blockhash forces a genuinely new transaction so the failure comes from the `init` constraint, not the duplicate-signature check.
+- **Sad-path tests** — On Solana, the program is a public endpoint anyone can call with any signer. The sad path is half of production traffic.
 
-## How to Run
+## How to run
+
 ```bash
-cd ~/100-days-of-solana/day-58-counter-state
+cd day-60-failure-tests
+anchor keys sync
 anchor build
 cargo test -p counter -- --nocapture
 ```
 
 Expected output:
 ```
-running 3 tests
 test initialize_then_increment ... ok
 test increment_fails_when_wrong_authority_signs ... ok
 test initialize_fails_when_counter_already_exists ... ok
+
 test result: ok. 3 passed; 0 failed
 ```
-
-## Files Changed
-- `day-58-counter-state/programs/counter/src/lib.rs` — added `increment` handler + `Increment` accounts struct + `has_one = authority`
-- `day-58-counter-state/programs/counter/tests/counter.rs` — 3 tests + 3 helper functions
-
-## Tomorrow (Day 61)
-Deliberately **delete** `has_one = authority` from `lib.rs`, run tests, and watch `increment_fails_when_wrong_authority_signs` scream — proving the constraint was doing real work.

@@ -1,0 +1,15 @@
+[features]
+skip-lint = false
+
+[programs.devnet]
+counter = "4yXwSNTTQNAArrvxfwTB3fE2WPiePZbADzDqHQSsPttz"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test -p counter"
