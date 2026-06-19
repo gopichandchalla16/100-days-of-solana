@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-60%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-61%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -83,13 +83,13 @@ Day 57  ████████████████████████
 Day 58  ████████████████████████████████████████  ✅
 Day 59  ████████████████████████████████████████  ✅
 Day 60  ████████████████████████████████████████  ✅
-Day 61  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 61  ████████████████████████████████████████  ✅
 Day 62  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 Day 63  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░] 60%
+[█████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░] 61%
 ```
 
 ---
@@ -142,8 +142,8 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 57](./day-57-anchor-counter/) | First Anchor Program: Counter | `initialize`, `increment`, `decrement`, `reset`; `has_one` auth guard | ✅ Done |
 | [Day 58](./day-58-counter-state/) | Stateful Counter + LiteSVM Test | `#[account]`, `#[derive(InitSpace)]`, `init` constraint; 1 passed in 0.34s | ✅ Done |
 | [Day 59](./day-59-anchor-increment/) | Increment instruction + has_one auth | `has_one = authority`; `checked_add`; e2e LiteSVM: init → inc → assert count == 1 | ✅ Done |
-| [Day 60](./day-60-failure-tests/) | Failure tests — wrong authority + double-init | 3 tests (1 happy + 2 sad-path); `ConstraintHasOne` error 2001 + `AccountAlreadyInUse` proven in logs | ✅ Done |
-| Day 61 | Delete has_one, watch tests scream | Mutation testing: remove constraint, suite catches regression | ⏳ |
+| [Day 60](./day-60-failure-tests/) | Failure tests — wrong authority + double-init | 3 tests (1 happy + 2 sad-path); `ConstraintHasOne` 2001 + `AccountAlreadyInUse` proven | ✅ Done |
+| [Day 61](./day-61-mutation-testing/) | Mutation testing — 3 bugs planted, 3 caught | Remove `has_one`; `checked_add(2)`; unset authority — each turned suite RED, then restored | ✅ Done |
 | Day 62 | Publish Anchor intro on DEV | Anchor vs raw Solana; IDL explained | ⏳ |
 | Day 63 | Social amplification | X thread for Week 9 | ⏳ |
 
@@ -163,7 +163,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
 | Day 34 | [Transfer Fees, Metadata, and Soulbound Tokens](https://dev.to/gopichand_dev/transfer-fees-metadata-and-soulbound-tokens-a-tour-of-solana-token-extensions-42bj) |
 | Day 41 | [I Built 5 Token Extension Combinations on Solana This Week](https://dev.to/gopichand_dev/i-built-5-token-extension-combinations-on-solana-this-week-heres-what-each-one-does-4ck3) |
-| Day 48 | [Solana NFTs Without Metaplex: What I Learned Building with Token Extensions](https://dev.to/gopichand_dev/solana-nfts-without-metaplex-what-i-learned-building-with-token-extensionspublished-true-1070) |
+| Day 48 | [Solana NFTs Without Metaplex](https://dev.to/gopichand_dev/solana-nfts-without-metaplex-what-i-learned-building-with-token-extensionspublished-true-1070) |
 | Day 55 | [Three Token-2022 Mints in One Week: Fees, Yield, and Soul-Bound](https://dev.to/gopichand_dev/three-token-2022-mints-in-one-week-fees-yield-and-soul-bound-2b5k) |
 
 ---
@@ -177,5 +177,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"A test suite that only checks green is a story that never tries to lie. Failure tests are what make the story honest."*
-> — 100 Days of Solana, Day 60
+> *"An untested assertion is also a guess. Today we made every assertion a fact."*
+> — 100 Days of Solana, Day 61
