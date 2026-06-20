@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-61%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-62%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -84,12 +84,12 @@ Day 58  ████████████████████████
 Day 59  ████████████████████████████████████████  ✅
 Day 60  ████████████████████████████████████████  ✅
 Day 61  ████████████████████████████████████████  ✅
-Day 62  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
+Day 62  ████████████████████████████████████████  ✅
 Day 63  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░] 61%
+[██████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 62%
 ```
 
 ---
@@ -106,7 +106,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 36](./day-36/) | Interest-bearing token | 500bps → 15000bps rate update | ✅ Done |
 | [Day 37](./day-37/) | Multi-Extension Token | Transfer fees + Interest + Metadata (ArcCoin/ARC) | ✅ Done |
 | [Day 38](./day-38/) | Compliance-Gated Token | Default frozen; both sides must be thawed | ✅ Done |
-| [Day 39](./day-39/) | Inspect & Compare Extensions | 171→222→599 bytes; rent 0.002→0.005 SOL | ✅ Done |
+| [Day 39](./day-39/) | Inspect & Compare Extensions | 171→222→599 bytes; rent 0.002’0.005 SOL | ✅ Done |
 | [Day 40](./day-40/) | Revocable Credential Token | Non-Transferable + Permanent Delegate + Metadata | ✅ Done |
 | [Day 41](./day-41/) | DEV.to deep dive article | 5 Token Extension combinations explained | ✅ Done |
 | [Day 42](./day-42/) | Social media amplification | X post promoting DEV.to article | ✅ Done |
@@ -144,7 +144,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 59](./day-59-anchor-increment/) | Increment instruction + has_one auth | `has_one = authority`; `checked_add`; e2e LiteSVM: init → inc → assert count == 1 | ✅ Done |
 | [Day 60](./day-60-failure-tests/) | Failure tests — wrong authority + double-init | 3 tests (1 happy + 2 sad-path); `ConstraintHasOne` 2001 + `AccountAlreadyInUse` proven | ✅ Done |
 | [Day 61](./day-61-mutation-testing/) | Mutation testing — 3 bugs planted, 3 caught | Remove `has_one`; `checked_add(2)`; unset authority — each turned suite RED, then restored | ✅ Done |
-| Day 62 | Publish Anchor intro on DEV | Anchor vs raw Solana; IDL explained | ⏳ |
+| [Day 62](./day-62-anchor-post/) | Publish Anchor intro on DEV.to | Accounts struct · has_one · handlers · tests · mutation testing explained | ✅ Done |
 | Day 63 | Social amplification | X thread for Week 9 | ⏳ |
 
 ---
@@ -157,7 +157,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) |
 | Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
 | Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
-| Day 27 | [Solana's Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
+| Day 27 | [Solana’s Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
 | Day 29 | [How I Created My First Solana Token from Scratch](https://dev.to/gopichand_dev/how-i-created-my-first-solana-token-from-scratch-spl-token-basics-explained-2m39) |
 | Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
 | Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
@@ -165,6 +165,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 41 | [I Built 5 Token Extension Combinations on Solana This Week](https://dev.to/gopichand_dev/i-built-5-token-extension-combinations-on-solana-this-week-heres-what-each-one-does-4ck3) |
 | Day 48 | [Solana NFTs Without Metaplex](https://dev.to/gopichand_dev/solana-nfts-without-metaplex-what-i-learned-building-with-token-extensionspublished-true-1070) |
 | Day 55 | [Three Token-2022 Mints in One Week: Fees, Yield, and Soul-Bound](https://dev.to/gopichand_dev/three-token-2022-mints-in-one-week-fees-yield-and-soul-bound-2b5k) |
+| Day 62 | [How I Built a Counter Program in Anchor and Learned to Trust My Tests](https://dev.to/gopichand_dev/how-i-built-a-counter-program-in-anchor-and-learned-to-trust-my-tests-4afi) |
 
 ---
 
@@ -177,5 +178,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"An untested assertion is also a guess. Today we made every assertion a fact."*
-> — 100 Days of Solana, Day 61
+> *“The blog post is the artifact, but the gap you found is the actual deliverable.”*
+> — 100 Days of Solana, Day 62
