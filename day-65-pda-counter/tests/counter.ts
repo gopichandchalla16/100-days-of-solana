@@ -1,84 +1,51 @@
-import * as anchor from "@coral-xyz/anchor";
-import { Program } from "@coral-xyz/anchor";
-import { Counter } from "../target/types/counter";
+import * as anchor from "@anchor-lang/core";
 import { PublicKey, Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { assert } from "chai";
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const idl = require("../target/idl/counter.json");
 
 describe("counter", () => {
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
-  const program = anchor.workspace.Counter as Program<Counter>;
 
-  const counterPda = (user: PublicKey) =>
+  const programId = new PublicKey(idl.address);
+  const program   = new anchor.Program(idl, provider);
+
+  const getCounterPda = (user: PublicKey) =>
     PublicKey.findProgramAddressSync(
       [Buffer.from("counter"), user.toBuffer()],
-      program.programId
+      programId
     )[0];
 
   it("creates a counter per user and increments independently", async () => {
     const alice = provider.wallet.publicKey;
-    const bob = Keypair.generate();
+    const bob   = Keypair.generate();
 
-    // fund bob so he can pay rent
-    const sig = await provider.connection.requestAirdrop(
-      bob.publicKey,
-      2 * LAMPORTS_PER_SOL
-    );
+    // Airdrop SOL to bob
+    const sig    = await provider.connection.requestAirdrop(bob.publicKey, 2 * LAMPORTS_PER_SOL);
     const latest = await provider.connection.getLatestBlockhash();
-    await provider.connection.confirmTransaction(
-      { signature: sig, ...latest },
-      "confirmed"
-    );
+    await provider.connection.confirmTransaction({ signature: sig, ...latest }, "confirmed");
 
-    // init counters for both users
-    await program.methods
-      .initCounter()
-      .accounts({ user: alice })
-      .rpc();
+    // Init both counters
+    await program.methods.initCounter().accounts({ user: alice }).rpc();
+    await program.methods.initCounter().accounts({ user: bob.publicKey }).signers([bob]).rpc();
 
-    await program.methods
-      .initCounter()
-      .accounts({ user: bob.publicKey })
-      .signers([bob])
-      .rpc();
-
-    // alice increments twice, bob increments once
+    // Alice increments twice, Bob increments once
     await program.methods.increment().accounts({ user: alice }).rpc();
     await program.methods.increment().accounts({ user: alice }).rpc();
-    await program.methods
-      .increment()
-      .accounts({ user: bob.publicKey })
-      .signers([bob])
-      .rpc();
+    await program.methods.increment().accounts({ user: bob.publicKey }).signers([bob]).rpc();
 
-    // fetch both states and assert independence
-    const aliceState = await program.account.counter.fetch(counterPda(alice));
-    const bobState = await program.account.counter.fetch(
-      counterPda(bob.publicKey)
-    );
+    const aliceState = await program.account.counter.fetch(getCounterPda(alice));
+    const bobState   = await program.account.counter.fetch(getCounterPda(bob.publicKey));
 
-    assert.equal(aliceState.count.toNumber(), 2, "alice count should be 2");
-    assert.equal(bobState.count.toNumber(), 1, "bob count should be 1");
-    assert.ok(aliceState.user.equals(alice), "alice.user field mismatch");
-    assert.ok(
-      bobState.user.equals(bob.publicKey),
-      "bob.user field mismatch"
-    );
+    assert.equal(aliceState.count.toNumber(), 2, "Alice count should be 2");
+    assert.equal(bobState.count.toNumber(),   1, "Bob count should be 1");
+    assert.ok(aliceState.user.equals(alice),            "Alice PDA owner mismatch");
+    assert.ok(bobState.user.equals(bob.publicKey),      "Bob PDA owner mismatch");
 
-    console.log(
-      "\n✅ Alice PDA:",
-      counterPda(alice).toBase58(),
-      "count =",
-      aliceState.count.toNumber()
-    );
-    console.log(
-      "✅ Bob   PDA:",
-      counterPda(bob.publicKey).toBase58(),
-      "count =",
-      bobState.count.toNumber()
-    );
-    console.log(
-      "\n🎯 Per-user PDA mapping proven — Alice and Bob counters are fully independent!"
-    );
+    console.log("\n  PDA Results:");
+    console.log("  Alice:", getCounterPda(alice).toBase58(), "→ count:", aliceState.count.toNumber());
+    console.log("  Bob:  ", getCounterPda(bob.publicKey).toBase58(), "→ count:", bobState.count.toNumber());
   });
 });

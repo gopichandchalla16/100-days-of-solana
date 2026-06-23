@@ -1,82 +1,83 @@
-# Day 65 — Per-User Counter with PDA State
+# Day 65 — Per-User PDA Counter
 
-**Challenge:** Build a counter program where each wallet gets its own isolated state account, derived deterministically from the user's public key — no keypair tracking needed.
+> **100 Days of Solana** · Week 10 · PDA State
 
----
+## What I Built
 
-## What Was Built
+An Anchor program that creates a **separate on-chain counter for every user** using a PDA derived from `["counter", user.pubkey]`. Each user's counter is fully independent — Alice incrementing doesn't affect Bob.
 
-An Anchor program with two instructions:
+## Key Concept
 
-| Instruction | What it does |
-|-------------|-------------|
-| `init_counter` | Creates a PDA account seeded with `["counter", user.pubkey]`, sets `count = 0` |
-| `increment` | Increments the caller's own counter by 1 using `checked_add` |
+A **Program Derived Address (PDA)** is a deterministic account address generated from seeds + program ID. No private key exists — only the program can sign for it. This makes PDAs the standard pattern for per-user or per-resource on-chain state.
 
-### Key Program Design
-
-```rust
-// seeds = [b"counter", user.key().as_ref()]
-// Each wallet → its own unique PDA address
-// No has_one needed — seed constraint IS the auth
+```
+PDA = findProgramAddress(["counter", user.pubkey], programId)
 ```
 
-- `seeds = [b"counter", user.key().as_ref()]` — address derived from who is calling
-- `bump` stored in account for CPI and re-derivation
-- `8 + Counter::INIT_SPACE` — discriminator (8) + auto-computed struct size
-- `checked_add(1)` — overflow-safe increment
+## Program: `src/lib.rs`
 
----
+```rust
+#[derive(Accounts)]
+pub struct InitCounter<'info> {
+    #[account(
+        init,
+        payer = user,
+        space = 8 + Counter::INIT_SPACE,
+        seeds = [b"counter", user.key().as_ref()],
+        bump
+    )]
+    pub counter: Account<'info, Counter>,
+    #[account(mut)]
+    pub user: Signer<'info>,
+    pub system_program: Program<'info, System>,
+}
+```
 
 ## Test Results
 
 ```
-counter
-  ✅ Alice PDA: <derived>  count = 2
-  ✅ Bob   PDA: <derived>  count = 1
+  counter
+  ✔ Alice PDA: E8wpeaMX8Tis4pyKowXQTowytVVGEBRRvv2nknXW4GKZ | count: 2
+  ✔ Bob   PDA: 5GGpVzMbQt6RevoWGDHLJsCr76DSohFA7gSfZkNJ13Va | count: 1
+    ✔ creates a counter per user and increments independently (1264ms)
 
-  🎯 Per-user PDA mapping proven — Alice and Bob counters are fully independent!
-
-  1 passing
+  1 passing (1s)
 ```
 
-### What the test proved
+- Alice called `increment` twice → count = **2**
+- Bob called `increment` once → count = **1**
+- PDAs are **completely isolated** — different addresses, different state
 
-| User | init_counter | increments | final count |
-|------|-------------|------------|-------------|
-| Alice (wallet) | ✅ | 2× | **2** |
-| Bob (generated keypair) | ✅ | 1× | **1** |
+## ESM / ts-node Fix
 
-Two different users, two different PDA addresses, zero keypair tracking.
+The tests were failing with `ReferenceError: require is not defined in ES module scope`. Root cause: `ts-node` was detecting ESM from the `tsconfig.json` `module` field at runtime.
 
----
+**Fix**: Added a `ts-node` override block directly in `tsconfig.json`:
 
-## The Big Insight
-
-The `seeds` constraint replaces all manual authorization logic:
-
-- **No `has_one`** — because the PDA address itself is derived from `user.pubkey`
-- **No explicit owner check** — wrong signer → different PDA → constraint fails before handler runs
-- **Scales to unbounded users** — each wallet always maps to exactly one counter, deterministically
-
-This is the on-chain equivalent of a Postgres row keyed by `user_id`. The key falls out of who is asking.
-
----
-
-## Project Structure
-
-```
-day-65-pda-counter/
-├── programs/counter/src/lib.rs   ← Anchor program
-├── tests/counter.ts              ← Per-user independence test
-└── README.md
+```json
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}
 ```
 
----
+This forces `ts-node` to use CJS at runtime regardless of the outer `module` setting.
 
-## Resources
+## Program ID
 
-- [Anchor Docs: PDA](https://www.anchor-lang.com/docs/basics/pda)
-- [Anchor Docs: Account Constraints](https://www.anchor-lang.com/docs/references/account-constraints)
-- [Anchor Docs: InitSpace](https://www.anchor-lang.com/docs/space)
-- [Solana Docs: PDAs](https://solana.com/docs/core/pda)
+`DodFVa4BFYGnMB49Z274dBDWiBAz7wTpaaWnWeeU7KJq`
+
+## Key Takeaways
+
+- PDAs give every user their own on-chain state — no shared mutable global
+- `seeds + bump` pattern is the backbone of all Anchor account derivation
+- `ts-node` ESM conflicts are solved by the `"ts-node"` block in `tsconfig.json`, not by changing `package.json`
+- Always pass `signers([bob])` when a non-wallet keypair pays or owns an instruction
