@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-65%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-66%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -88,10 +88,11 @@ Day 62  ████████████████████████
 Day 63  ████████████████████████████████████████  ✅
 Day 64  ████████████████████████████████████████  ✅
 Day 65  ████████████████████████████████████████  ✅
+Day 66  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 65%
+[██████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 66%
 ```
 
 ---
@@ -155,6 +156,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 |-----|-----------|-------------|--------|
 | [Day 64](./day-64-derive-pda/) | Derive your first PDA from seeds | `findProgramAddressSync`; 4 runs; determinism ✅ MATCH; bump 253–255 | ✅ Done |
 | [Day 65](./day-65-pda-counter/) | Per-user counter with PDA state | `seeds = [b"counter", user.pubkey]`; Alice=2, Bob=1; fully independent | ✅ Done |
+| [Day 66](./day-66-config-pda/) | Config PDA + constraints | Singleton Config + `has_one` + `constraint = !paused`; 2 tests pass (happy + sad) | ✅ Done |
 
 ---
 
