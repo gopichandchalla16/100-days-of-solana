@@ -4,7 +4,7 @@
 
 ## What I Built
 
-Extended the Day 65 per-user counter with a **singleton Config PDA** that acts as the program’s control plane. The Config account holds an admin, a pause flag, and a counter of total users. Two new constraints wire the two PDAs together so the program enforces rules at the account-validation layer — before any handler code runs.
+Extended the Day 65 per-user counter with a **singleton Config PDA** that acts as the program's control plane. The Config account holds an admin, a pause flag, and a counter of total users. Two new constraints wire the two PDAs together so the program enforces rules at the account-validation layer — before any handler code runs.
 
 ## Program Architecture
 
@@ -44,20 +44,21 @@ has_one = user,
 has_one = admin,
 ```
 
-## Test Results
+## ✅ Test Results
 
 ```
+yarn run v1.22.22
+$ ts-mocha -p ./tsconfig.json -t 1000000 'tests/**/*.ts'
+
   counter with config
-    Config PDA : <singleton address>
-    Counter PDA: <per-user address>
-    count      : 1
-    totalCounters: 1
-  ✔ initializes config and a counter, then increments
+  count: 1 | counterPda: 6ujZdNRyztUDeEUmigDM2tDkoSX3mpUsMcy73t5nrDDk
+    ✔ initializes config and a counter, then increments (1928ms)
+  Increment correctly blocked while paused ✓
+    ✔ refuses to increment when paused (860ms)
 
-    ✅ Paused error caught correctly: Increments are currently paused
-  ✔ refuses to increment when paused
+  2 passing (3s)
 
-  2 passing
+Done in 6.93s.
 ```
 
 ## The Three Constraint Jobs
@@ -74,7 +75,7 @@ has_one = admin,
 - All three constraint types (`seeds`, `has_one`, `constraint`) run **before** handler code — failures are cheap
 - `has_one = admin` on `SetPaused` means a non-admin call fails at deserialization, not inside the function
 - Storing `bump` on the account itself (not recomputing it) is the canonical Anchor pattern for efficiency
-- The Config’s `total_counters` field demonstrates cross-PDA state mutation in a single instruction
+- The Config's `total_counters` field demonstrates cross-PDA state mutation in a single instruction
 
 ## How to Run
 
