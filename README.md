@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-68%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-69%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -91,10 +91,11 @@ Day 65  ████████████████████████
 Day 66  ████████████████████████████████████████  ✅
 Day 67  ████████████████████████████████████████  ✅
 Day 68  ████████████████████████████████████████  ✅
+Day 69  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 68%
+[█████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 69%
 ```
 
 ---
@@ -152,7 +153,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 62](./day-62-anchor-post/) | Publish Anchor intro on DEV.to | Accounts struct · has_one · handlers · tests · mutation testing explained | ✅ Done |
 | [Day 63](./day-63-amplify-counter/) | Social amplification — X thread | 4-tweet thread published; Discord message posted | ✅ Done |
 
-### 📅 Week 10 — PDAs and State (🔥 In Progress)
+### 📅 Week 10 — PDAs and State (✅ Complete!)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
@@ -161,6 +162,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 66](./day-66-config-pda/) | Config PDA + constraints | Singleton Config + `has_one` + `constraint = !paused`; 2 tests pass (happy + sad) | ✅ Done |
 | [Day 67](./day-67-close-pda/) | Close a PDA account + reclaim rent | `close = user`; 1,231,920 lamports refunded; `getAccountInfo` → `null` ✅ | ✅ Done |
 | [Day 68](./day-68-pda-collisions/) | PDA collision explorer | Per-user ≠ global · near-miss seeds all different · `ConstraintSeeds` spoof rejection ✅ | ✅ Done |
+| [Day 69](./day-69-pda-explainer/) | PDA explainer on DEV.to | Full lifecycle + bump + seeds + spoof test — published article for Web2 devs | ✅ Done |
 
 ---
 
@@ -181,6 +183,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 48 | [Solana NFTs Without Metaplex](https://dev.to/gopichand_dev/solana-nfts-without-metaplex-what-i-learned-building-with-token-extensionspublished-true-1070) |
 | Day 55 | [Three Token-2022 Mints in One Week: Fees, Yield, and Soul-Bound](https://dev.to/gopichand_dev/three-token-2022-mints-in-one-week-fees-yield-and-soul-bound-2b5k) |
 | Day 62 | [How I Built a Counter Program in Anchor and Learned to Trust My Tests](https://dev.to/gopichand_dev/how-i-built-a-counter-program-in-anchor-and-learned-to-trust-my-tests-4afi) |
+| Day 69 | [What I Learned About PDAs in a Week of Building on Solana](https://dev.to/gopichand_dev/what-i-learned-about-pdas-in-a-week-of-building-on-solana-4n9b) |
 
 ---
 
@@ -193,5 +196,5 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 ---
 
-> *"The blog post is the artifact, but the gap you found is the actual deliverable."*
-> — 100 Days of Solana, Day 62
+> *"Every time you try to explain why find_program_address needs a program ID, you will discover a gap. Fill the gap, then keep writing."*
+> — 100 Days of Solana, Day 69
