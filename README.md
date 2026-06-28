@@ -164,7 +164,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 67](./day-67-close-pda/) | Close a PDA account + reclaim rent | `close = user`; 1,231,920 lamports refunded; `getAccountInfo` → `null` ✅ | ✅ Done |
 | [Day 68](./day-68-pda-collisions/) | PDA collision explorer | Per-user ≠ global · near-miss seeds all different · `ConstraintSeeds` spoof rejection ✅ | ✅ Done |
 | [Day 69](./day-69-pda-explainer/) | PDA explainer on DEV.to | Full lifecycle + bump + seeds + spoof test — published article for Web2 devs | ✅ Done |
-| [Day 70](./day-70-amplify-pda/) | Amplify PDA explainer on X + LinkedIn | 5-post X thread + LinkedIn post + 2 community replies ✅ | ✅ Done |
+| [Day 70](./day-70-amplify-pda/) | Amplify PDA explainer on X | [X post live](https://x.com/GopichandAI/status/2071155375219597591) · `#100DaysOfSolana` · community replies ✅ | ✅ Done |
 
 ---
 
