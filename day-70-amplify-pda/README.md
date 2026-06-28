@@ -5,14 +5,14 @@ Take the DEV.to PDA explainer from Day 69 and turn it into a social post that he
 
 ## What Was Done
 
-- Published a 5-post X thread amplifying the Day 69 DEV.to article
-- Posted on LinkedIn with the article linked in the first comment
-- Replied to two other `#100DaysOfSolana` posts from fellow participants
-- Used `#100DaysOfSolana` hashtag on every post
+- ✅ Published an X post amplifying the Day 69 DEV.to article with `#100DaysOfSolana`
+- ❌ LinkedIn post — not published
+- Replied to other `#100DaysOfSolana` posts from fellow participants
 
-## X Thread (5 posts)
+## Live X Post
 
-**Post 1 — Hook:**
+**🔗 [https://x.com/GopichandAI/status/2071155375219597591](https://x.com/GopichandAI/status/2071155375219597591)**
+
 ```
 Spent a week on Solana PDAs.
 
@@ -20,76 +20,12 @@ The thing that finally made them click:
 PDAs are not accounts a program owns.
 They are accounts a program can prove it derived.
 
-Thread 🧵 #100DaysOfSolana #Solana
-```
-
-**Post 2 — Where I started:**
-```
-I came in with a Web2 mental model.
-
-I thought: “it’s like a database row with a foreign key.”
-
-That works until it doesn’t — because there’s no
-private key, no signer, and no randomness.
-The address IS the proof.
-```
-
-**Post 3 — Core insight:**
-```
-The model that works:
-
-seed bytes + program ID → deterministic address
-
-Same seeds, same program = same address every time.
-Different wallet, same seeds = different PDA.
-
-Your program signs for it. No private key needed.
-```
-
-**Post 4 — Concrete artifact:**
-```
-Proved it live across 6 days:
-
-Derive → Init → Mutate → Close → Spoof test
-
-Anchored rejected the cross-wallet spoof:
-ConstraintSeeds error 2006 ✅
-1,231,920 lamports reclaimed on close ✅
-```
-
-**Post 5 — Closing + link:**
-```
-If you’re at Day 64 and confused about bumps,
-seeds, or why your PDA address doesn’t match —
-this is what I wish I had.
+Derive → Init → Mutate → Close → Spoof test — built it all.
 
 🔗 https://dev.to/gopichand_dev/what-i-learned-about-pdas-in-a-week-of-building-on-solana-4n9b
 
 #100DaysOfSolana #Solana #Anchor #Web3Dev
 ```
-
-## LinkedIn Post
-
-```
-Week 10 of #100DaysOfSolana wrapped.
-
-This week I built the full PDA lifecycle from scratch:
-
-• Derived a PDA deterministically from seeds
-• Built a per-user counter — Alice and Bob got isolated state
-• Added a singleton Config PDA with admin auth + pause guard
-• Closed a PDA account and watched 1.2M lamports return
-• Ran a collision explorer to prove near-miss seeds diverge
-
-The mental model that finally clicked: PDAs are not
-accounts a program owns. They are accounts a program
-can prove it derived — deterministic, ownable, closeable.
-
-Wrote the full explainer in the first comment ↓
-
-#Solana #Anchor #Web3 #BuildingInPublic #100DaysOfSolana
-```
-*(Article link posted in first comment)*
 
 ## Source Article
 
