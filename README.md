@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-70%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-71%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -93,10 +93,11 @@ Day 67  ████████████████████████
 Day 68  ████████████████████████████████████████  ✅
 Day 69  ████████████████████████████████████████  ✅
 Day 70  ████████████████████████████████████████  ✅
+Day 71  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 70%
+[████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 71%
 ```
 
 ---
@@ -166,6 +167,12 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 69](./day-69-pda-explainer/) | PDA explainer on DEV.to | Full lifecycle + bump + seeds + spoof test — published article for Web2 devs | ✅ Done |
 | [Day 70](./day-70-amplify-pda/) | Amplify PDA explainer on X | [X post live](https://x.com/GopichandAI/status/2071155375219597591) · `#100DaysOfSolana` · community replies ✅ | ✅ Done |
 
+### 📅 Week 11 — Cross-Program Invocations (🔥 In Progress)
+
+| Day | Challenge | Key Concept | Status |
+|-----|-----------|-------------|--------|
+| [Day 71](./day-71-sol-cpi/) | Move SOL with a CPI to the System Program | `Transfer` struct · `CpiContext::new` · `transfer()` helper · 250000000 lamports delivered ✅ | ✅ Done |
+
 ---
 
 ## DEV.to Articles
@@ -176,7 +183,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) |
 | Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
 | Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
-| Day 27 | [Solana’s Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
+| Day 27 | [Solana's Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
 | Day 29 | [How I Created My First Solana Token from Scratch](https://dev.to/gopichand_dev/how-i-created-my-first-solana-token-from-scratch-spl-token-basics-explained-2m39) |
 | Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
 | Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
@@ -199,4 +206,4 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 ---
 
 > *"A private writeup helps you learn. A public post helps other developers find the mental model you just built."*
-> — 100 Days of Solana, Day 70
+> — 100 Days of Solana, Day 71
