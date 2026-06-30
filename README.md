@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-71%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-72%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -94,10 +94,11 @@ Day 68  ████████████████████████
 Day 69  ████████████████████████████████████████  ✅
 Day 70  ████████████████████████████████████████  ✅
 Day 71  ████████████████████████████████████████  ✅
+Day 72  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 71%
+[█████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 72%
 ```
 
 ---
@@ -172,6 +173,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
 | [Day 71](./day-71-sol-cpi/) | Move SOL with a CPI to the System Program | `Transfer` struct · `CpiContext::new` · `transfer()` helper · 250000000 lamports delivered ✅ | ✅ Done |
+| [Day 72](./day-72-token-cpi/) | Mint Token-2022 tokens via CPI | `token_interface::mint_to` · `InterfaceAccount<Mint>` · `Interface<TokenInterface>` · 1,000,000,000 base units minted ✅ | ✅ Done |
 
 ---
 
@@ -206,4 +208,4 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 ---
 
 > *"A private writeup helps you learn. A public post helps other developers find the mental model you just built."*
-> — 100 Days of Solana, Day 71
+> — 100 Days of Solana, Day 72
