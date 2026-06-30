@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-72%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-73%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -95,10 +95,11 @@ Day 69  ████████████████████████
 Day 70  ████████████████████████████████████████  ✅
 Day 71  ████████████████████████████████████████  ✅
 Day 72  ████████████████████████████████████████  ✅
+Day 73  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 72%
+[████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 73%
 ```
 
 ---
@@ -172,8 +173,9 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
-| [Day 71](./day-71-sol-cpi/) | Move SOL with a CPI to the System Program | `Transfer` struct · `CpiContext::new` · `transfer()` helper · 250000000 lamports delivered ✅ | ✅ Done |
+| [Day 71](./day-71-sol-cpi/) | Move SOL with a CPI to the System Program | `Transfer` struct · `CpiContext::new` · `transfer()` helper · 250,000,000 lamports delivered ✅ | ✅ Done |
 | [Day 72](./day-72-token-cpi/) | Mint Token-2022 tokens via CPI | `token_interface::mint_to` · `InterfaceAccount<Mint>` · `Interface<TokenInterface>` · 1,000,000,000 base units minted ✅ | ✅ Done |
+| [Day 73](./day-73-vault/) | PDA Vault — deposit + PDA-signed withdraw | `CpiContext::new_with_signer` · `signer_seeds` · per-user PDA vault · 500,000,000 lamports deposited then fully withdrawn ✅ | ✅ Done |
 
 ---
 
@@ -185,27 +187,10 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 6 | [Your Public Key Is Your Identity](https://dev.to/gopichand_dev/your-public-key-is-your-identity-what-web2-devs-need-to-know-about-solana-4lpm) |
 | Day 13 | [Week 2: When the Public Database Finally Clicked](https://dev.to/gopichand_dev/week-2-on-solana-when-the-public-database-finally-clicked-273a) |
 | Day 20 | [Solana Transactions Explained for Backend Developers](https://dev.to/gopichand_dev/solana-transactions-explained-for-backend-developers-with-real-failures-2ido) |
-| Day 27 | [Solana's Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-no-blockchain-experience-needed-4acg) |
-| Day 29 | [How I Created My First Solana Token from Scratch](https://dev.to/gopichand_dev/how-i-created-my-first-solana-token-from-scratch-spl-token-basics-explained-2m39) |
-| Day 30 | [I Built a Branded Token on Solana in 5 Minutes](https://dev.to/gopichand_dev/i-built-a-branded-token-on-solana-in-5-minutes-no-smart-contract-needed-32n) |
-| Day 31 | [Week 5 on Solana: Everything I Learned About Tokens](https://dev.to/gopichand_dev/week-5-on-solana-everything-i-learned-about-tokens-days-29-31-2bko) |
-| Day 34 | [Transfer Fees, Metadata, and Soulbound Tokens](https://dev.to/gopichand_dev/transfer-fees-metadata-and-soulbound-tokens-a-tour-of-solana-token-extensions-42bj) |
-| Day 41 | [I Built 5 Token Extension Combinations on Solana This Week](https://dev.to/gopichand_dev/i-built-5-token-extension-combinations-on-solana-this-week-heres-what-each-one-does-4ck3) |
-| Day 48 | [Solana NFTs Without Metaplex](https://dev.to/gopichand_dev/solana-nfts-without-metaplex-what-i-learned-building-with-token-extensionspublished-true-1070) |
-| Day 55 | [Three Token-2022 Mints in One Week: Fees, Yield, and Soul-Bound](https://dev.to/gopichand_dev/three-token-2022-mints-in-one-week-fees-yield-and-soul-bound-2b5k) |
-| Day 62 | [How I Built a Counter Program in Anchor and Learned to Trust My Tests](https://dev.to/gopichand_dev/how-i-built-a-counter-program-in-anchor-and-learned-to-trust-my-tests-4afi) |
+| Day 27 | [Solana's Account Model Explained for Web2 Developers](https://dev.to/gopichand_dev/solanas-account-model-explained-for-web2-developers-3d7o) |
+| Day 34 | [SPL Tokens Explained for Web2 Developers](https://dev.to/gopichand_dev/spl-tokens-explained-for-web2-developers-4jop) |
+| Day 41 | [5 Token Extension Combinations Explained](https://dev.to/gopichand_dev/5-token-extension-combinations-explained-5gib) |
+| Day 48 | [How I Put an NFT On-Chain with Token-2022](https://dev.to/gopichand_dev/how-i-put-an-nft-on-chain-with-token-2022-4e7e) |
+| Day 55 | [Three Token-2022 Mints: Fees, Yield, and Soul-Bound](https://dev.to/gopichand_dev/three-token-2022-mints-in-one-week-fees-yield-and-soul-bound-2b5k) |
+| Day 62 | [How I Built a Counter Program in Anchor](https://dev.to/gopichand_dev/how-i-built-a-counter-program-in-anchor-and-learned-to-trust-my-tests-4afi) |
 | Day 69 | [What I Learned About PDAs in a Week of Building on Solana](https://dev.to/gopichand_dev/what-i-learned-about-pdas-in-a-week-of-building-on-solana-4n9b) |
-
----
-
-## Connect
-| Platform | Link |
-|----------|------|
-| 🐦 X/Twitter | [@GopichandAI](https://twitter.com/GopichandAI) |
-| 💼 GitHub | [gopichandchalla16](https://github.com/gopichandchalla16) |
-| ✍️ DEV.to | [gopichand_dev](https://dev.to/gopichand_dev) |
-
----
-
-> *"A private writeup helps you learn. A public post helps other developers find the mental model you just built."*
-> — 100 Days of Solana, Day 72
