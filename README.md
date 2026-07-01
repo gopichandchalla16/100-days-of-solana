@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-74%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-75%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -97,10 +97,11 @@ Day 71  ████████████████████████
 Day 72  ████████████████████████████████████████  ✅
 Day 73  ████████████████████████████████████████  ✅
 Day 74  ████████████████████████████████████████  ✅
+Day 75  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 74%
+[█████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 75%
 ```
 
 ---
@@ -178,6 +179,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 72](./day-72-token-cpi/) | Mint Token-2022 tokens via CPI | `token_interface::mint_to` · `InterfaceAccount<Mint>` · `Interface<TokenInterface>` · 1,000,000,000 base units minted ✅ | ✅ Done |
 | [Day 73](./day-73-vault/) | PDA Vault — deposit + PDA-signed withdraw | `CpiContext::new_with_signer` · `signer_seeds` · per-user PDA vault · 500,000,000 lamports deposited then fully withdrawn ✅ | ✅ Done |
 | [Day 74](./day-74-compose-lab/) | CPI between two Anchor programs | `declare_program!(counter)` · `CpiContext::new` · caller → callee · `count == 1` ✅ | ✅ Done |
+| [Day 75](./day-75-cpi-failures/) | Read a CPI failure like a sentence | 3 deliberate breaks: wrong seeds → `privilege escalation` · wrong constraint → `ConstraintHasOne` · wrong program → `invalid instruction data` ✅ | ✅ Done |
 
 ---
 
