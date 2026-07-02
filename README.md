@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-75%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-76%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -98,10 +98,11 @@ Day 72  ████████████████████████
 Day 73  ████████████████████████████████████████  ✅
 Day 74  ████████████████████████████████████████  ✅
 Day 75  ████████████████████████████████████████  ✅
+Day 76  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[█████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 75%
+[██████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░] 76%
 ```
 
 ---
@@ -171,7 +172,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 69](./day-69-pda-explainer/) | PDA explainer on DEV.to | Full lifecycle + bump + seeds + spoof test — published article for Web2 devs | ✅ Done |
 | [Day 70](./day-70-amplify-pda/) | Amplify PDA explainer on X | [X post live](https://x.com/GopichandAI/status/2071155375219597591) · `#100DaysOfSolana` · community replies ✅ | ✅ Done |
 
-### 📅 Week 11 — Cross-Program Invocations (🔥 In Progress)
+### 📅 Week 11 — Cross-Program Invocations (✅ Complete!)
 
 | Day | Challenge | Key Concept | Status |
 |-----|-----------|-------------|--------|
@@ -180,6 +181,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 73](./day-73-vault/) | PDA Vault — deposit + PDA-signed withdraw | `CpiContext::new_with_signer` · `signer_seeds` · per-user PDA vault · 500,000,000 lamports deposited then fully withdrawn ✅ | ✅ Done |
 | [Day 74](./day-74-compose-lab/) | CPI between two Anchor programs | `declare_program!(counter)` · `CpiContext::new` · caller → callee · `count == 1` ✅ | ✅ Done |
 | [Day 75](./day-75-cpi-failures/) | Read a CPI failure like a sentence | 3 deliberate breaks: wrong seeds → `privilege escalation` · wrong constraint → `ConstraintHasOne` · wrong program → `invalid instruction data` ✅ | ✅ Done |
+| [Day 76](./day-76-cpi-post/) | Publish CPI mental model article on DEV.to | Full Week 11 recap: 5 patterns · 4 callees · error taxonomy · [live article](https://dev.to/gopichand_dev/cpi-on-solana-the-mental-model-i-wish-i-had-on-day-71-ceh) ✅ | ✅ Done |
 
 ---
 
@@ -198,3 +200,4 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | Day 55 | [Three Token-2022 Mints: Fees, Yield, and Soul-Bound](https://dev.to/gopichand_dev/three-token-2022-mints-in-one-week-fees-yield-and-soul-bound-2b5k) |
 | Day 62 | [How I Built a Counter Program in Anchor](https://dev.to/gopichand_dev/how-i-built-a-counter-program-in-anchor-and-learned-to-trust-my-tests-4afi) |
 | Day 69 | [What I Learned About PDAs in a Week of Building on Solana](https://dev.to/gopichand_dev/what-i-learned-about-pdas-in-a-week-of-building-on-solana-4n9b) |
+| Day 76 | [CPI on Solana: The Mental Model I Wish I Had on Day 71](https://dev.to/gopichand_dev/cpi-on-solana-the-mental-model-i-wish-i-had-on-day-71-ceh) |
