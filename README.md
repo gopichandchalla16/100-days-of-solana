@@ -18,7 +18,7 @@ Daily Solana, Web3, and on-chain development — from keypairs to smart contract
 
 ## Progress
 
-![Progress](https://img.shields.io/badge/Progress-76%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-77%20%2F%20100%20Days-9945FF?style=for-the-badge&logo=solana&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20🔥-success?style=for-the-badge)
 ![Chain](https://img.shields.io/badge/Chain-Solana%20Devnet-14f195?style=for-the-badge)
 
@@ -99,10 +99,11 @@ Day 73  ████████████████████████
 Day 74  ████████████████████████████████████████  ✅
 Day 75  ████████████████████████████████████████  ✅
 Day 76  ████████████████████████████████████████  ✅
+Day 77  ████████████████████████████████████████  ✅
 ...
 Day100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ⏳
 
-[██████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░] 76%
+[██████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░] 77%
 ```
 
 ---
@@ -182,6 +183,7 @@ Wallets, blockchain reading, transactions, accounts, token fundamentals.
 | [Day 74](./day-74-compose-lab/) | CPI between two Anchor programs | `declare_program!(counter)` · `CpiContext::new` · caller → callee · `count == 1` ✅ | ✅ Done |
 | [Day 75](./day-75-cpi-failures/) | Read a CPI failure like a sentence | 3 deliberate breaks: wrong seeds → `privilege escalation` · wrong constraint → `ConstraintHasOne` · wrong program → `invalid instruction data` ✅ | ✅ Done |
 | [Day 76](./day-76-cpi-post/) | Publish CPI mental model article on DEV.to | Full Week 11 recap: 5 patterns · 4 callees · error taxonomy · [live article](https://dev.to/gopichand_dev/cpi-on-solana-the-mental-model-i-wish-i-had-on-day-71-ceh) ✅ | ✅ Done |
+| [Day 77](./day-77-amplify-cpi/) | Take your composed program public | Public X post sharing the repo and Week 11 CPI learnings · [live post](https://x.com/GopichandAI/status/2073638281275949395?s=20) ✅ | ✅ Done |
 
 ---
 
