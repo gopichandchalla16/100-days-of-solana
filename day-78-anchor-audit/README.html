@@ -1,0 +1,158 @@
+<html><body style="font-family:sans-serif;max-width:900px;margin:40px auto;"><h1>Day 78 — Audit Your Own Code Like an Attacker</h1>
+<p><strong>Arc theme:</strong> Advanced Testing and Security
+<strong>Program audited:</strong> <a href="../day-67-close-pda/programs/counter/src/lib.rs"><code>day-67-close-pda/programs/counter/src/lib.rs</code></a> — the PDA-backed counter with <code>set_paused</code> and <code>close_counter</code>, gated behind an authority account.</p>
+<h2>The two questions</h2>
+<ol>
+<li><strong>Owner question</strong> — if this account's data matters to my logic, does the program guarantee which program owns it?</li>
+<li><strong>Signer question</strong> — if this account authorizes the action, does the program require it to actually sign the transaction?</li>
+</ol>
+<h2>Inventory + classification</h2>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Account</th>
+<th>Type</th>
+<th>Owner check?</th>
+<th>Signer check?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InitConfig</code></td>
+<td><code>config</code></td>
+<td><code>Account&lt;'info, Config&gt;</code></td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>InitConfig</code></td>
+<td><code>admin</code></td>
+<td><code>Signer&lt;'info&gt;</code></td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>InitConfig</code></td>
+<td><code>system_program</code></td>
+<td><code>Program&lt;'info, System&gt;</code></td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>SetPaused</code></td>
+<td><code>config</code></td>
+<td><code>Account&lt;'info, Config&gt;</code>, <code>has_one = admin</code></td>
+<td>✅</td>
+<td>✅ (has_one + Signer)</td>
+</tr>
+<tr>
+<td><code>SetPaused</code></td>
+<td><code>admin</code></td>
+<td><code>Signer&lt;'info&gt;</code></td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>InitCounter</code></td>
+<td><code>counter</code></td>
+<td><code>Account&lt;'info, Counter&gt;</code> (init, PDA seeds)</td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>InitCounter</code></td>
+<td><code>config</code></td>
+<td><code>Account&lt;'info, Config&gt;</code> (seeds-checked)</td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>InitCounter</code></td>
+<td><code>user</code></td>
+<td><code>Signer&lt;'info&gt;</code></td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>InitCounter</code></td>
+<td><code>system_program</code></td>
+<td><code>Program&lt;'info, System&gt;</code></td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>Increment</code></td>
+<td><code>counter</code></td>
+<td><code>Account&lt;'info, Counter&gt;</code>, <code>has_one = user</code></td>
+<td>✅</td>
+<td>✅ (has_one + Signer)</td>
+</tr>
+<tr>
+<td><code>Increment</code></td>
+<td><code>config</code></td>
+<td><code>Account&lt;'info, Config&gt;</code> (seeds-checked)</td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>Increment</code></td>
+<td><code>user</code></td>
+<td><code>Signer&lt;'info&gt;</code></td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>CloseCounter</code></td>
+<td><code>counter</code></td>
+<td><code>Account&lt;'info, Counter&gt;</code>, <code>close = user</code>, <code>has_one = user</code></td>
+<td>✅</td>
+<td>✅ (has_one + Signer)</td>
+</tr>
+<tr>
+<td><code>CloseCounter</code></td>
+<td><code>user</code></td>
+<td><code>Signer&lt;'info&gt;</code></td>
+<td>—</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2>Terminal confirmation</h2>
+<p>$ grep -rn "UncheckedAccount|AccountInfo|/// CHECK" day-67-close-pda/programs/counter/src
+(no output — clean sweep)                                                                                       </p>
+<p>See <code>screenshots/audit_scan.txt</code> — empty file confirms no escape hatches anywhere in the program.</p>
+<h2>Findings</h2>
+<p><strong>Clean bill of health — 0 findings</strong> on my own code:</p>
+<ul>
+<li><code>config</code> is never trusted blind — re-derived from <code>seeds = [b"config"]</code> with <code>bump = config.bump</code> in every instruction that reads it, so an attacker can't substitute a look-alike account at a different address.</li>
+<li><code>admin</code> (in <code>SetPaused</code>) passes the signer question twice over: typed <code>Signer&lt;'info&gt;</code> (must actually sign) <strong>and</strong> <code>config</code> enforces <code>has_one = admin</code> (must match the pubkey stored on-chain). Neither check alone is sufficient — <code>has_one</code> alone only proves a matching pubkey was <em>named</em>, not that its key holder approved the tx; <code>Signer</code> alone would let any signer act, not just the real admin.</li>
+<li><code>user</code> in <code>Increment</code> and <code>CloseCounter</code> gets identical treatment via <code>has_one = user</code> + <code>Signer&lt;'info&gt;</code>.</li>
+<li><code>CloseCounter</code>'s <code>close = user</code> sends reclaimed rent back to the same signer-verified <code>user</code>, so there's no dangling account for a later re-init attack.</li>
+</ul>
+<p><strong>One flagged specimen (from the challenge's own example, not my code):</strong></p>
+<pre><code class="language-rust">#[derive(Accounts)]
+pub struct UpdateProfile&lt;'info&gt; {
+    #[account(mut, has_one = authority)]
+    pub profile: Account&lt;'info, Profile&gt;,
+
+    /// CHECK: compared to profile.authority via has_one
+    pub authority: UncheckedAccount&lt;'info&gt;,
+}
+</code></pre>
+<ul>
+<li><strong>Account:</strong> <code>authority</code></li>
+<li><strong>Type:</strong> <code>UncheckedAccount&lt;'info&gt;</code></li>
+<li><strong>Fails:</strong> the signer question</li>
+<li><strong>Consequence:</strong> <code>has_one = authority</code> only proves the caller <em>named</em> the correct pubkey — it never proves the tx was signed by that key's holder. Since <code>authority</code> isn't <code>Signer&lt;'info&gt;</code>, anyone who merely knows the real authority's public key (public keys are public) can pass it in as a non-signing account and edit any profile.</li>
+<li><strong>Fix (not applied — today is reconnaissance only):</strong> change to <code>pub authority: Signer&lt;'info&gt;</code>.</li>
+</ul>
+<h2>What this confirmed</h2>
+<p>Every privileged action in my counter (<code>set_paused</code>, <code>close_counter</code>) is gated behind an account that's simultaneously owner-checked (<code>Account&lt;'info, T&gt;</code>) and signer-checked (<code>Signer&lt;'info&gt;</code> cross-referenced via <code>has_one</code>). No <code>UncheckedAccount</code>/<code>AccountInfo</code> escape hatches anywhere.</p>
+<h2>Resources referenced</h2>
+<ul>
+<li>Solana Program Security course: Signer Authorization</li>
+<li>Solana Program Security course: Owner Checks</li>
+<li>Anchor Account Constraints reference</li>
+<li><em>A Hitchhiker's Guide to Solana Program Security</em></li>
+</ul></body></html>
